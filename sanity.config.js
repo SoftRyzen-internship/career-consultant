@@ -8,7 +8,7 @@ import { projectId, dataset } from '@/sanity/env';
 
 export default defineConfig({
   name: 'test',
-  title: 'project test sanity',
+  title: 'Career consultant project',
   basePath: '/admin',
   projectId,
   dataset,
