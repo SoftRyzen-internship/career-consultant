@@ -10,12 +10,18 @@ type HeroPlatesProps = {
 };
 
 const HeroPlates: React.FC<HeroPlatesProps> = () => {
+  const plateClasses = [
+    'xl:w-[270px] xl:h-[152px]',
+    'xl:w-[202px] xl:h-[130px]',
+    'xl:w-[171px] xl:h-[152px]',
+    'xl:w-[209px] xl:h-[152px]',
+  ];
   return (
-    <div className="hidden md:flex md:gap-[16px] xl:flex-col xl:gap-[30px] list-none ">
+    <div className=" md:flex md:gap-[16px] xl:flex-col xl:gap-[30px] list-none ">
       {plates.map((plate, index) => (
         <li key={plate.id}>
           <HeroPlate
-            className={`plate-${index + 1}`}
+            className={plateClasses[index]}
             quantity={plate.quantity}
             description={plate.description}
           />
