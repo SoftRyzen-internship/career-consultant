@@ -1,0 +1,10 @@
+{
+  "buttons": [
+    {
+      "readMore": "Читати більше",
+      "submit": "Відправити",
+      "submitDone": "Відправлено",
+      "submitError": "Помилка"
+    }
+  ]
+}
