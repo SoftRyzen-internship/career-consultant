@@ -29,6 +29,7 @@ const config: Config = {
         'fixel-bold': ['FixelDisplay-Bold', 'sans-serif'],
         'fixel-medium': ['FixelDisplay-Medium', 'sans-serif'],
         'fixel-semibold': ['FixelDisplay-SemiBold', 'sans-serif'],
+        'fixel-regular': ['FixelDisplay-Regular', 'sans-serif'],
       },
       colors: {
         accent: '#0838C1',
@@ -42,6 +43,12 @@ const config: Config = {
         errorCol: '#D40000',
         inactive: '#E6E6E6',
         inactiveText: '#999999',
+        swiperBtn: '#C8D4F3',
+        swiperBtnHover: '#ABBEED',
+        swiperBtnPress: '#819DE4',
+        inputBg: '#E7ECF9',
+        inputBorder: '##AAB8DD',
+        imgBg: '#84A0E6',
       },
       boxShadow: {
         custom: ' 0px 0px 24px 0px rgba(2, 12, 41, 0.10)',
