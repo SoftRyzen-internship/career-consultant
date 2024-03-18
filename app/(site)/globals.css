@@ -46,3 +46,23 @@ body {
     text-wrap: balance;
   }
 }
+
+.section {
+  @apply py-[30px] md:py-[40px] xl:py-[50px];
+}
+.plate-1 {
+  width: 270px;
+  height: 152px;
+}
+.plate-2 {
+  width: 202px;
+  height: 130px;
+}
+.plate-3 {
+  width: 171px;
+  height: 152px;
+}
+.plate-4 {
+  width: 209px;
+  height: 152px;
+}
