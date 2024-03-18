@@ -17,13 +17,23 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: #f3f6fb;
+  font-family: 'Mulish', sans-serif;
+}
+
+@font-face {
+  font-family: 'FixelDisplay-Bold';
+  src: url(../../public/fonts/FixelDisplay-Bold.otf);
+}
+
+@font-face {
+  font-family: 'FixelDisplay-Medium';
+  src: url(../../public/fonts/FixelDisplay-Medium.otf);
+}
+
+@font-face {
+  font-family: 'FixelDisplay-SemiBold';
+  src: url(../../public/fonts/FixelDisplay-SemiBold.otf);
 }
 
 @layer utilities {
