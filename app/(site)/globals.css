@@ -36,6 +36,11 @@ body {
   src: url(../../public/fonts/FixelDisplay-SemiBold.otf);
 }
 
+@font-face {
+  font-family: 'FixelDisplay-Regular';
+  src: url(../../public/fonts/FixelDisplay-Regular.otf);
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
