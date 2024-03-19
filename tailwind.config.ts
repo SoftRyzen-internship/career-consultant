@@ -26,10 +26,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        'fixel-bold': ['FixelDisplay-Bold', 'sans-serif'],
-        'fixel-medium': ['FixelDisplay-Medium', 'sans-serif'],
-        'fixel-semibold': ['FixelDisplay-SemiBold', 'sans-serif'],
-        'fixel-regular': ['FixelDisplay-Regular', 'sans-serif'],
+        fixel: ['var(--font-fixelDisplay)'],
+        mulish: ['var(--font-mulish)'],
       },
       colors: {
         accent: '#0838C1',

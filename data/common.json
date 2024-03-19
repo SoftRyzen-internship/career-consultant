@@ -1,4 +1,12 @@
 {
   "email": "yuliia.stepanenko10@gmail.com",
-  "telegram": "@Julia_Step15"
+  "telegram": "@Julia_Step15",
+  "buttons": [
+    {
+      "readMore": "Читати більше",
+      "submit": "Відправити",
+      "submitDone": "Відправлено",
+      "submitError": "Помилка"
+    }
+  ]
 }

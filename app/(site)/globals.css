@@ -3,46 +3,59 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
   }
-}
-
-body {
-  background: #f3f6fb;
-  font-family: 'Mulish', sans-serif;
-}
-
-@font-face {
-  font-family: 'FixelDisplay-Bold';
-  src: url(../../public/fonts/FixelDisplay-Bold.otf);
-}
-
-@font-face {
-  font-family: 'FixelDisplay-Medium';
-  src: url(../../public/fonts/FixelDisplay-Medium.otf);
-}
-
-@font-face {
-  font-family: 'FixelDisplay-SemiBold';
-  src: url(../../public/fonts/FixelDisplay-SemiBold.otf);
-}
-
-@font-face {
-  font-family: 'FixelDisplay-Regular';
-  src: url(../../public/fonts/FixelDisplay-Regular.otf);
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.section {
+  @apply py-[30px] md:py-[40px] xl:py-[50px];
+}
+
+@layer base {
+  .submit-btn-base {
+    @apply py-[20px] px-[32px] w-full text-white text-[18px] leading-[1.25] font-bold rounded-[20px] shadow-custom;
+  }
+}
+
+@layer components {
+  .read-more-btn {
+    @apply text-sm text-accent hover:text-accentPressed focus:text-accentPressed transition-[color] ease-in-out xl:text-[18px] xl:leading-[1.5];
+  }
+
+  .submit-btn {
+    @apply submit-btn-base;
+    @apply bg-accent hover:bg-accentHover focus:bg-accentHover active:bg-accentPressed transition-[background] ease-in-out;
+  }
+
+  .submit-err-btn {
+    @apply submit-btn-base;
+    @apply text-errorCol bg-inactive;
+  }
+
+  .submitted-btn {
+    @apply submit-btn-base;
+    @apply flex justify-center gap-[16px] bg-accentPressed;
+  }
+
+  .submit-disable-btn {
+    @apply submit-btn-base;
+    @apply text-inactiveText bg-inactive pointer-events-none;
+  }
+}
+
+.submitted-btn::after {
+  content: url('/icons/check.svg');
+  display: block;
+
+  width: 24px;
+  height: 24px;
 }
