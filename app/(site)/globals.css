@@ -3,42 +3,11 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
   }
-}
-
-body {
-  background: #f3f6fb;
-  font-family: 'Mulish', sans-serif;
-}
-
-@font-face {
-  font-family: 'FixelDisplay-Bold';
-  src: url(../../public/fonts/FixelDisplay-Bold.otf);
-}
-
-@font-face {
-  font-family: 'FixelDisplay-Medium';
-  src: url(../../public/fonts/FixelDisplay-Medium.otf);
-}
-
-@font-face {
-  font-family: 'FixelDisplay-SemiBold';
-  src: url(../../public/fonts/FixelDisplay-SemiBold.otf);
-}
-
-@font-face {
-  font-family: 'FixelDisplay-Regular';
-  src: url(../../public/fonts/FixelDisplay-Regular.otf);
 }
 
 @layer utilities {
