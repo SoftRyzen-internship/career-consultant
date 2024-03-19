@@ -1,5 +1,10 @@
 import classNames from 'classnames';
-import { ICardTitle } from './types';
+
+type ICardTitle = {
+  text: string;
+  className?: string;
+};
+
 export const CardTitle = ({ text, className = '' }: ICardTitle) => {
   return (
     <h3

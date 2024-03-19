@@ -1,5 +1,9 @@
 import classNames from 'classnames';
-import { ISectionTitle } from './types';
+
+type ISectionTitle = {
+  text: string;
+  className?: string;
+};
 
 export const SectionTitle = ({ text, className = '' }: ISectionTitle) => {
   return (
