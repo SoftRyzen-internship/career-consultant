@@ -3,7 +3,7 @@ export const myStructure = (S: any) =>
     .title('Контент')
     .items([
       S.listItem()
-        .title('Переваги')
+        .title('Досягнення')
         .child(
           S.document().schemaType('achievements').documentId('achievements'),
         ),

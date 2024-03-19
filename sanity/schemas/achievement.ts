@@ -23,12 +23,16 @@ export const achievements = defineType({
               name: 'description',
               title: 'Опис',
               type: 'text',
-              readOnly: true,
+              validation: (Rule: any) => Rule.required(),
             },
           ],
         },
       ],
-      validation: (Rule: any) => Rule.max(4),
+      validation: (Rule: any) =>
+        Rule.min(4)
+          .error('Ви повинні додати мінімум 4 картки')
+          .max(4)
+          .error('Ви можете додати максимум 4 картки'),
     }),
   ],
 });
