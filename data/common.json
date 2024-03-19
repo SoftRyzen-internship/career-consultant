@@ -10,5 +10,12 @@
     }
   ],
   "order": "Замовити",
-  "writeToTelegram": "Написати в телеграм"
+  "writeToTelegram": "Написати в телеграм",
+  "navBar": [
+    {
+      "request": [{ "text": "Запити", "moveTo": "requestSection" }],
+      "reviews": [{ "text": "Послуги", "moveTo": "reviewsSection" }],
+      "feedback": [{ "text": "Відгуки", "moveTo": "feedbackSection" }]
+    }
+  ]
 }
