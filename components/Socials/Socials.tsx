@@ -22,10 +22,10 @@ export const Socials = ({ className = '' }: ISocials) => {
           href={`mailto:${email}`}
           target="_blank"
           rel="noopener noreferrer nofollow"
-          className="py-2 xl:py-3 inline-flex gap-4 items-center text-accent active:text-text02 xl:hover:text-text02 xl:focus:text-text02"
+          className="py-2 xl:py-3 inline-flex gap-4 items-center text-accent active:text-text02 xl:hover:text-text02 xl:focus:text-text02 transition-all duration-300"
         >
           <EmailIcon className="w-6 h-6 stroke-accent" aria-label="Envelope" />
-          <span className="md:w-[148px] break-all xl:w-full text-text01 active:text-text02 xl:hover:text-text02 xl:focus:text-text02">
+          <span className="md:w-[148px] break-all xl:w-full font-mulish text-text01 active:text-text02 xl:hover:text-text02 xl:focus:text-text02 transition-all duration-300">
             {email}
           </span>
         </Link>
@@ -35,10 +35,10 @@ export const Socials = ({ className = '' }: ISocials) => {
           href={`https://t.me/${telegram.substring(1)}`}
           target="_blank"
           rel="noopener noreferrer nofollow"
-          className="py-2 xl:py-3 inline-flex gap-4 items-center text-accent active:text-text02 xl:hover:text-text02 xl:focus:text-text02"
+          className="py-2 xl:py-3 inline-flex gap-4 items-center text-accent active:text-text02 xl:hover:text-text02 xl:focus:text-text02 transition-all duration-300"
         >
           <TelegramIcon className="w-6 h-6" aria-label="Paper airplane" />
-          <span className="text-text01 active:text-text02 xl:hover:text-text02 xl:focus:text-text02">
+          <span className="font-mulish text-text01 active:text-text02 xl:hover:text-text02 xl:focus:text-text02 transition-all duration-300">
             {telegram}
           </span>
         </Link>
