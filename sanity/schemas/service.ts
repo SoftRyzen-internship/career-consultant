@@ -7,14 +7,26 @@ export const service = defineType({
   fields: [
     defineField({
       name: 'title',
-      title: 'Заголовок',
+      title: 'Назва послуги',
       type: 'string',
       validation: (Rule: any) => Rule.required(),
     }),
     defineField({
       name: 'duration',
       title: 'Тривалість',
-      type: 'number',
+      type: 'object',
+      fields: [
+        defineField({
+          name: 'from',
+          title: 'Від',
+          type: 'number',
+        }),
+        defineField({
+          name: 'to',
+          title: 'До',
+          type: 'number',
+        }),
+      ],
     }),
     defineField({
       name: 'description',
