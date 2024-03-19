@@ -6,5 +6,12 @@
       "submitDone": "Відправлено",
       "submitError": "Помилка"
     }
+  ],
+  "navBar": [
+    {
+      "request": [{ "text": "Запити", "moveTo": "requestSection" }],
+      "reviews": [{ "text": "Послуги", "moveTo": "reviewsSection" }],
+      "feedback": [{ "text": "Відгуки", "moveTo": "feedbackSection" }]
+    }
   ]
 }
