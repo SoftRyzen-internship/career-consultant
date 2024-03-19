@@ -1,10 +1,12 @@
 'use client';
 
 import { Button } from '@/components/Button';
+import { LinkOrder } from '@/components/LinkOrder';
+import { LinkTelegram } from '@/components/LinkTelegram';
 
 const page = () => {
   return (
-    <div className="max-w-[300px] w-full mx-auto">
+    <div className=" w-full mx-auto">
       <p className="mb-[20px]">test page</p>
       <Button
         type="submit"
@@ -17,6 +19,8 @@ const page = () => {
       >
         Read more
       </Button>
+      <LinkOrder />
+      <LinkTelegram />
     </div>
   );
 };
