@@ -2,6 +2,8 @@
 
 import { Button } from '@/components/Button';
 import { Form } from '@/components/Form';
+import { NavBar } from '@/components/NavBar/NavBar';
+import { Element } from 'react-scroll';
 
 const page = () => {
   return (
@@ -19,6 +21,19 @@ const page = () => {
         >
           Read more
         </Button>
+
+        <NavBar />
+        <Element name="test1" className="requestSection">
+          <div className="mt-[50px] h-[1000px] bg-green-500">
+            requestSection
+          </div>
+        </Element>
+        <Element name="target" className="reviewsSection">
+          <div className="h-[1000px] bg-red-400">reviewsSection</div>
+        </Element>
+        <Element name="target" className="feedbackSection">
+          <div className="h-[1000px] bg-blue-600">feedbackSection</div>
+        </Element>
       </div>
       <Form />
     </>
