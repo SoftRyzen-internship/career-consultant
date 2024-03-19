@@ -16,6 +16,7 @@
     "test-all": "npm run check-format && npm run check-lint && npm run check-types && npm run build"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.3.4",
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.34.0",
     "@svgr/webpack": "^8.1.0",
@@ -24,7 +25,9 @@
     "next-sanity": "^8.3.2",
     "react": "^18",
     "react-dom": "^18",
-    "sanity": "^3.34.0"
+    "react-hook-form": "^7.51.1",
+    "sanity": "^3.34.0",
+    "yup": "^1.4.0"
   },
   "devDependencies": {
     "@types/node": "^20",

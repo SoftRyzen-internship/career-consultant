@@ -45,11 +45,15 @@ const config: Config = {
         swiperBtnHover: '#ABBEED',
         swiperBtnPress: '#819DE4',
         inputBg: '#E7ECF9',
-        inputBorder: '##AAB8DD',
+        inputBorder: '#AAB8DD',
         imgBg: '#84A0E6',
+        inputDefaultBg: '#F6F7F9',
       },
       boxShadow: {
         custom: ' 0px 0px 24px 0px rgba(2, 12, 41, 0.10)',
+      },
+      borderWidth: {
+        inputBorderW: '3px',
       },
       fontSize: {
         xs: [
