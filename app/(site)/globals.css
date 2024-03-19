@@ -47,6 +47,10 @@ body {
   }
 }
 
+.section {
+  @apply py-[30px] md:py-[40px] xl:py-[50px];
+}
+
 @layer base {
   .submit-btn-base {
     @apply py-[20px] px-[32px] w-full text-white text-[18px] leading-[1.25] font-bold rounded-[20px] shadow-custom;
