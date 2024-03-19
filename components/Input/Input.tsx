@@ -2,20 +2,18 @@ import React from 'react';
 import { useFormContext } from 'react-hook-form';
 import classNames from 'classnames';
 
-interface FormData {
-  name: string;
-  email: string;
-  message?: string;
-}
+import Image from 'next/image';
 
-interface InputProps {
-  name: keyof FormData;
+import { IFormData } from './types';
+
+type InputPropsType = {
+  name: keyof IFormData;
   label: string;
   type?: 'text' | 'email' | 'textarea';
   className?: string;
-}
+};
 
-export const Input: React.FC<InputProps> = ({
+export const Input: React.FC<InputPropsType> = ({
   name,
   label,
   type,
@@ -24,38 +22,57 @@ export const Input: React.FC<InputProps> = ({
   const {
     register,
     formState: { errors },
-  } = useFormContext<FormData>();
+  } = useFormContext<IFormData>();
+
+  let inputStyles: string;
+
+  if (errors[name]) {
+    inputStyles =
+      'w-full bg-inputDefaultBg rounded-lg py-6 px-5 xl:p-6 text-sm xl:text-base text-text01 focus:caret-accent focus:bg-inputBg focus:border-errorCol border-errorCol focus:outline-none focus:border-inputBorderW border-inputBorderW';
+  } else {
+    inputStyles =
+      'w-full bg-inputDefaultBg rounded-lg py-6 px-5 xl:p-6 text-sm xl:text-base text-text01 focus:caret-accent focus:bg-inputBg focus:border-inputBorder focus:outline-none focus:border-inputBorderW';
+  }
 
   if (type === 'textarea') {
     return (
-      <label className="flex flex-col gap-1">
-        {label}
+      <label className="flex flex-col gap-1 font-mulish">
+        <span className="text-xs text-inactiveText xl:text-sm">{label}</span>
         <textarea
           id={name}
           {...register(name)}
           className={classNames(
-            'w-full bg-inputDefaultBg rounded-lg py-6 px-5 text-sm text-text01 focus:caret-accent focus:bg-inputBg focus:border-inputBorder focus:outline-none focus:border-inputBorderW',
+            'w-full bg-inputDefaultBg rounded-lg py-6 px-5 xl:p-6 text-sm xl:text-base text-text01 focus:caret-accent focus:bg-inputBg focus:border-inputBorder focus:outline-none focus:border-inputBorderW resize-none h-[151px]',
             className,
           )}
         />
-        {errors[name] && <span>{errors[name]?.message}</span>}
       </label>
     );
   }
 
   return (
-    <label className="flex flex-col gap-1 ">
-      <span className="">{label}</span>
+    <label className="flex flex-col gap-1 font-mulish relative">
+      <span className="text-xs text-inactiveText xl:text-sm">{label}</span>
       <input
         type={type}
         id={name}
         {...register(name)}
-        className={classNames(
-          'w-full bg-inputDefaultBg rounded-lg py-6 px-5 text-sm text-text01 focus:caret-accent focus:bg-inputBg focus:border-inputBorder focus:outline-none focus:border-inputBorderW',
-          className,
-        )}
+        className={classNames(`${inputStyles}`, className)}
       />
-      {errors[name] && <span>{errors[name]?.message}</span>}
+      {errors[name] && (
+        <>
+          <span className="text-xs xl:text-sm text-errorCol text-right">
+            {errors[name]?.message}
+          </span>
+          <Image
+            src="icons/error.svg"
+            alt="error icon"
+            width={32}
+            height={32}
+            className="absolute right-[18px] top-10 xl:top-12"
+          />
+        </>
+      )}
     </label>
   );
 };

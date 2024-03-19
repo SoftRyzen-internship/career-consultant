@@ -6,33 +6,32 @@ import { Input } from '../Input/Input';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 
-interface FormData {
-  name: string;
-  email: string;
-  message?: string;
-}
+import { IFormData } from '@/components/Input/types';
 
 const schema = yup.object().shape({
-  name: yup.string().required("Ім'я* обов'язкове"),
-  email: yup.string().required("E-mail* обов'язкове"),
+  name: yup.string().required("Ім'я обов'язкове"),
+  email: yup.string().required("E-mail обов'язкове"),
   message: yup.string(),
 });
 
-export const MyForm: React.FC = () => {
-  const methods = useForm<FormData>({
+export const Form: React.FC = () => {
+  const methods = useForm<IFormData>({
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = (data: FormData) => {
+  const onSubmit = (data: IFormData) => {
     console.log(data);
   };
 
   return (
     <FormProvider {...methods}>
-      <form onSubmit={methods.handleSubmit(onSubmit)} className="my-20">
-        <Input name="name" label="First Name" type="text" />
+      <form
+        onSubmit={methods.handleSubmit(onSubmit)}
+        className="p-3 bg-white md:w-1/2"
+      >
+        <Input name="name" label="Ім'я*" type="text" />
         <Input name="email" label="E-mail*" type="email" />
-        <Input name="message" label="Message" type="textarea" />
+        <Input name="message" label="Повідомлення" type="textarea" />
         <button type="submit">Submit</button>
       </form>
     </FormProvider>
