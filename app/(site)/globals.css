@@ -3,16 +3,11 @@
 @tailwind utilities;
 
 :root {
-  --body-background: #f3f6fb;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
   }
-}
-
-body {
-  background: var(--body-background);
 }
 
 @layer utilities {

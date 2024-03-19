@@ -52,7 +52,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${fixelDisplay.variable} ${mulish.variable}`}>
+      <body
+        className={`${fixelDisplay.variable} ${mulish.variable} bg-customBackground`}
+      >
         <Header className="fixed w-full h-10 border border-b-gray-700 z-10 bg-gradient-to-t font-fixel" />
 
         <main className="flex min-h-screen flex-col">{children}</main>
