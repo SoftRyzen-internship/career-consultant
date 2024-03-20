@@ -3,31 +3,84 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+.section {
+  @apply py-[30px] md:py-[40px] xl:py-[50px];
+}
+
+@layer base {
+  .submit-btn-base {
+    @apply py-[20px] px-[32px] w-full text-white text-[18px] leading-[1.25] font-bold rounded-[20px] shadow-custom;
+  }
+}
+
+@layer components {
+}
+
+.submitted-btn::after {
+  content: url('/icons/check.svg');
+  display: block;
+
+  width: 24px;
+  height: 24px;
+}
+
+.truncate-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hover-pseudo-underline {
+  position: relative;
+  text-decoration: none;
+}
+
+.hover-pseudo-underline::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: transparent;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.hover-pseudo-underline:hover::before {
+  background-color: #001d44;
+}
+
+.navbar-link:active .navbar-icon {
+  stroke: #445066;
+}
+
+@media (min-width: 768px) {
+  .truncate-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+@media (max-width: 1279px) {
+  .hover-pseudo-underline::before {
+    display: none;
   }
 }

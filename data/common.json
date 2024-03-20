@@ -1,0 +1,23 @@
+{
+  "email": "yuliia.stepanenko10@gmail.com",
+  "telegram": "@Julia_Step15",
+  "buttons": [
+    {
+      "readMore": "Читати більше",
+      "submit": "Відправити",
+      "submitDone": "Відправлено",
+      "submitError": "Помилка"
+    }
+  ],
+  "order": "Замовити",
+  "writeToTelegram": "Написати в телеграм",
+  "leaveApplication": "Залишити заявку",
+  "moveToFeedback": "feedback",
+  "navBar": [
+    {
+      "request": [{ "text": "Запити", "moveTo": "requestSection" }],
+      "reviews": [{ "text": "Послуги", "moveTo": "reviewsSection" }],
+      "feedback": [{ "text": "Відгуки", "moveTo": "feedbackSection" }]
+    }
+  ]
+}
