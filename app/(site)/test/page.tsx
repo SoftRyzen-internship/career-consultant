@@ -4,6 +4,7 @@ import { Button } from '@/components/Button';
 import { Form } from '@/components/Form';
 import { NavBar } from '@/components/NavBar/NavBar';
 import { Element } from 'react-scroll';
+import { Socials } from '@/components/Socials';
 
 const page = () => {
   return (
@@ -36,6 +37,7 @@ const page = () => {
         </Element>
       </div>
       <Form />
+      <Socials />
     </>
   );
 };
