@@ -59,3 +59,15 @@
   width: 24px;
   height: 24px;
 }
+
+.error-input {
+  @apply w-full bg-inputDefaultBg rounded-lg py-6 px-5 xl:p-6 text-sm xl:text-base text-text01 focus:caret-accent focus:bg-inputBg focus:border-errorCol border-errorCol focus:outline-none focus:border-inputBorderW border-inputBorderW transition-all duration-300 outline-none;
+}
+
+.default-input {
+  @apply w-full bg-inputDefaultBg rounded-lg py-6 px-5 xl:p-6 text-sm xl:text-base text-text01 focus:caret-accent focus:bg-inputBg focus:border-inputBorder focus:outline-none focus:border-inputBorderW border-inputBorderW border-transparent transition-all duration-300 outline-none;
+}
+
+.default-textarea {
+  @apply w-full bg-inputDefaultBg rounded-lg py-6 px-5 xl:p-6 text-sm xl:text-base text-text01 focus:caret-accent focus:bg-inputBg focus:border-inputBorder focus:outline-none focus:border-inputBorderW resize-none h-[151px] border-inputBorderW border-transparent transition-all duration-300 outline-none;
+}
