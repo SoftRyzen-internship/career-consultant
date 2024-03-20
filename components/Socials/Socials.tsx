@@ -25,7 +25,7 @@ export const Socials = ({ className = '' }: ISocials) => {
           rel="noopener noreferrer nofollow"
           className="py-2 xl:py-3 inline-flex gap-4 items-center text-accent active:text-text02 xl:hover:text-text02 xl:focus:text-text02 transition-all duration-300"
         >
-          <EmailIcon className="w-6 h-6 stroke-accent" aria-label="Envelope" />
+          <EmailIcon className="w-6 h-6 stroke-accent" aria-label="Конверт" />
           <span className="md:w-[148px] break-all xl:w-full font-mulish text-text01 active:text-text02 xl:hover:text-text02 xl:focus:text-text02 transition-all duration-300">
             {email}
           </span>
@@ -38,7 +38,7 @@ export const Socials = ({ className = '' }: ISocials) => {
           rel="noopener noreferrer nofollow"
           className="py-2 xl:py-3 inline-flex gap-4 items-center text-accent active:text-text02 xl:hover:text-text02 xl:focus:text-text02 transition-all duration-300"
         >
-          <TelegramIcon className="w-6 h-6" aria-label="Paper airplane" />
+          <TelegramIcon className="w-6 h-6" aria-label="Паперовий літачок" />
           <span className="font-mulish text-text01 active:text-text02 xl:hover:text-text02 xl:focus:text-text02 transition-all duration-300">
             {telegram}
           </span>
