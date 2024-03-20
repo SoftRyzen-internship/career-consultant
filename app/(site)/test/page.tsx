@@ -4,6 +4,7 @@ import { Button } from '@/components/Button';
 import { Form } from '@/components/Form';
 import { NavBar } from '@/components/NavBar/NavBar';
 import { Element } from 'react-scroll';
+import { Socials } from '@/components/Socials';
 import { LinkTelegram } from '@/components/LinkTelegram';
 import { LinkToFeedback } from '@/components/LinkToFeedback';
 
@@ -43,6 +44,7 @@ const page = () => {
         </Element>
       </div>
       <Form />
+      <Socials />
       <div className="px-6">
         <LinkTelegram />
         <div className="mb-5"></div>
