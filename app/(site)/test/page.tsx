@@ -5,6 +5,8 @@ import { Form } from '@/components/Form';
 import { NavBar } from '@/components/NavBar/NavBar';
 import { Element } from 'react-scroll';
 import { Socials } from '@/components/Socials';
+import { LinkTelegram } from '@/components/LinkTelegram';
+import { LinkToFeedback } from '@/components/LinkToFeedback';
 
 const page = () => {
   return (
@@ -35,9 +37,26 @@ const page = () => {
         <Element name="target" className="feedbackSection">
           <div className="h-[1000px] bg-blue-600">feedbackSection</div>
         </Element>
+        <Element name="target" className="feedback">
+          <div className="h-[1000px] bg-orange-600 text-white text-base">
+            Feedback Section with Form
+          </div>
+        </Element>
       </div>
       <Form />
       <Socials />
+      <div className="px-6">
+        <LinkTelegram />
+        <div className="mb-5"></div>
+        <LinkToFeedback section="header" />
+        <div className="mb-5"></div>
+        <LinkToFeedback section="hero" />
+        <div className="mb-5"></div>
+        <LinkToFeedback section="services" />
+        <div className="mb-5"></div>
+        <LinkToFeedback section="mobileMenu" />
+        <div className="mb-5"></div>
+      </div>
     </>
   );
 };
