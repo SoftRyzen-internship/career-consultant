@@ -18,20 +18,7 @@ export const service = {
       name: 'duration',
       title: 'Тривалість',
       description: 'Введіть тривалість послуги',
-      type: 'object',
-
-      fields: [
-        defineField({
-          name: 'from',
-          title: 'Від',
-          type: 'number',
-        }),
-        defineField({
-          name: 'to',
-          title: 'До',
-          type: 'number',
-        }),
-      ],
+      type: 'string',
     }),
     defineField({
       name: 'description',
@@ -45,7 +32,7 @@ export const service = {
     defineField({
       name: 'price',
       title: 'Ціна',
-      type: 'number',
+      type: 'string',
       validation: (Rule: any) => Rule.required(),
     }),
   ],
