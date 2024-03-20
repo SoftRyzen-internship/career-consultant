@@ -9,7 +9,11 @@ export const policy = defineType({
       name: 'text',
       title: 'Текст',
       type: 'array',
-      of: [{ type: 'block' }],
+      of: [
+        {
+          type: 'block',
+        },
+      ],
     }),
   ],
 });
