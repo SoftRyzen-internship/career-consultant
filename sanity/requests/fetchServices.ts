@@ -1,7 +1,7 @@
 import { client } from '../client';
-import { serviceQuery } from './queries/service';
+import { servicesQuery } from './queries/servicesQuery';
 
 export const fetchServices = async () => {
-  const services = await client.fetch(serviceQuery);
+  const services = await client.fetch(servicesQuery);
   return services;
 };

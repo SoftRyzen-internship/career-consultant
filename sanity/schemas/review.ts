@@ -1,27 +1,43 @@
-import { defineType, defineField } from 'sanity';
+import { defineField } from 'sanity';
 
-export const review = defineType({
+export const review = {
   name: 'reviews',
   title: 'Відгуки',
   type: 'document',
+
   fields: [
     defineField({
       name: 'name',
       title: "Ім'я",
+      description: "Введіть ім'я",
       type: 'string',
-      validation: (Rule: any) => Rule.required(),
+      validation: rule =>
+        rule
+          .required()
+          .error("Ім'я є обов'язковим полем")
+          .max(30)
+          .error('Введіть імя, яке містить не більше 30 символів'),
     }),
     defineField({
       name: 'position',
       title: 'Посада',
       type: 'string',
-      validation: (Rule: any) => Rule.required().max(30),
+      description: 'Введіть посаду',
+
+      validation: rule =>
+        rule
+          .required()
+          .error("Посада є обов'язковим полем")
+          .max(35)
+          .error('Введіть посаду, яка містить не більше 35 символів'),
     }),
+
     defineField({
-      name: 'description',
-      title: 'Опис',
+      name: 'text',
+      title: 'Текст відгука',
       type: 'text',
-      validation: (Rule: any) => Rule.required().max(35),
+      description: 'Напишіть повний текст для цього відгука',
+      validation: rule => rule.required().error('Введіть текст відгука'),
     }),
   ],
-});
+};

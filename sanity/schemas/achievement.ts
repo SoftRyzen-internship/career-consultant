@@ -1,21 +1,25 @@
 import { defineType, defineField } from 'sanity';
+
 export const achievements = defineType({
   name: 'achievements',
   title: 'Досягнення',
   type: 'document',
+  description: 'Список досягнень',
 
   fields: [
     defineField({
       name: 'item',
       title: 'Досягнення',
+      description: 'Список досягнень',
       type: 'array',
       of: [
         {
           type: 'object',
+
           fields: [
             {
-              name: 'quantity',
               title: 'Кількість',
+              name: 'quantity',
               type: 'number',
               validation: (Rule: any) => Rule.required(),
             },
@@ -26,6 +30,17 @@ export const achievements = defineType({
               validation: (Rule: any) => Rule.required(),
             },
           ],
+          preview: {
+            select: {
+              quantity: 'quantity',
+              description: 'description',
+            },
+            prepare(selection: any) {
+              return {
+                title: `${selection.quantity} ${selection.description} `,
+              };
+            },
+          },
         },
       ],
       validation: (Rule: any) =>
