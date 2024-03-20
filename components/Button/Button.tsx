@@ -19,12 +19,16 @@ export const Button = ({
   disabled = false,
 }: IButton) => {
   const className = classNames({
-    'read-more-btn': type === 'button',
-    'submit-btn':
+    'text-sm text-accent hover:text-accentPressed focus:text-accentPressed transition-[color] ease-in-out xl:text-[18px] xl:leading-[1.5]':
+      type === 'button',
+    'submit-btn-base bg-accent hover:bg-accentHover focus:bg-accentHover active:bg-accentPressed transition-[background] ease-in-out':
       type === 'submit' && isSubmitError === false && isSubmitted === false,
-    'submit-err-btn': type === 'submit' && isSubmitError === true,
-    'submitted-btn': type === 'submit' && isSubmitted === true,
-    'submit-disable-btn': type === 'submit' && disabled === true,
+    'submit-btn-base text-errorCol bg-inactive':
+      type === 'submit' && isSubmitError === true,
+    'submitted-btn submit-btn-base flex justify-center gap-[16px] bg-accentPressed':
+      type === 'submit' && isSubmitted === true,
+    'submit-btn-base text-inactiveText bg-inactive pointer-events-none':
+      type === 'submit' && disabled === true,
   });
 
   return (
