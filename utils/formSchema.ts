@@ -8,7 +8,7 @@ export const formSchema = yup.object().shape({
     .matches(/^[\sA-Za-zА-Яа-яҐґЄєІіЇїʼ`-]+$/, "Невірне ім'я"),
   email: yup
     .string()
-    .required("E-mail обов'язкове")
+    .required("E-mail обов'язковий")
     .max(63, 'Максимальна кількість символів - 63')
     .matches(
       /^[A-Za-z0-9]+([._+-][A-Za-z0-9]+)*@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/,

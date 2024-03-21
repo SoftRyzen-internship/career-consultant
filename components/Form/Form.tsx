@@ -6,13 +6,13 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import toast, { Toaster } from 'react-hot-toast';
 import classNames from 'classnames';
 
+import { IFormData } from '@/components/Input/types';
+import { FormInput } from './types';
+
 import { Input } from '../Input/Input';
 import { Button } from '@/components/Button';
 import { formSchema } from '@/utils/formSchema';
 import form from '@/data/form.json';
-
-import { IFormData } from '@/components/Input/types';
-import { FormInput } from './types';
 
 export const Form: React.FC = () => {
   const methods = useForm<IFormData>({

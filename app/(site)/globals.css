@@ -115,7 +115,7 @@
   transition-duration: 300ms;
 }
 .input-check:checked + .check-text::before {
-  background-color: #0838c1;
+  @apply bg-accent;
   border: 2px solid #0838c1;
   background-image: url(/icons/check.svg);
   background-repeat: no-repeat;
@@ -135,7 +135,7 @@
 }
 
 .input-check:checked + .check-text-error::before {
-  background-color: #0838c1;
+  @apply bg-accent;
   border: 2px solid #0838c1;
   background-image: url(/icons/check.svg);
   background-repeat: no-repeat;

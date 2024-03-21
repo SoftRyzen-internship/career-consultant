@@ -1,7 +1,7 @@
+import Image from 'next/image';
+
 import React from 'react';
 import { useFormContext } from 'react-hook-form';
-
-import Image from 'next/image';
 
 import classNames from 'classnames';
 
@@ -51,7 +51,7 @@ export const Input: React.FC<InputPropsType> = ({ name, label, type }) => {
             alt="error icon"
             width={32}
             height={32}
-            className="absolute right-[18px] top-10 xl:top-12"
+            className="absolute right-[18px] top-[42px] xl:top-[46px]"
           />
         </>
       )}
