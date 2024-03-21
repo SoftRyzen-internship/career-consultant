@@ -2,7 +2,7 @@
 
 import { Container } from '@/components/Container';
 import { HeroPlate } from '@/components/HeroPlate';
-import { HeroPlates } from '@/components/HeroPlates/HeroPlates';
+import { HeroPlates } from '@/components/HeroPlates';
 import { Slider } from '@/components/Slider';
 
 import hero from '@/data/hero.json';

@@ -1,10 +1,6 @@
 import React from 'react';
 
-type Plate = {
-  id?: string;
-  quantity?: string;
-  description?: string;
-};
+import { Plate } from './types';
 
 type HeroPlateProps = {
   card: Plate;
@@ -21,7 +17,7 @@ export const HeroPlate: React.FC<HeroPlateProps> = ({ card, className }) => {
       <span className="inline-block text-text01 font-fixel font-normal text-[32px] leading-[1] mb-[8px] md:leading-[1.21] xl:text-[48px] xl:leading-[1]  xl:mb-3 ">
         {quantity}
       </span>
-      <p className=" font-mulish font-normal text-text02 text-xs xl:text-[16px] xl:font-medium leading-[1.4] ">
+      <p className=" font-mulish font-normal whitespace-pre-wrap text-text02 text-xs xl:text-[16px] xl:font-medium leading-[1.4] ">
         {description}
       </p>
     </div>
