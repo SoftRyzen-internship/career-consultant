@@ -1,11 +1,21 @@
 import classNames from 'classnames';
-import { ISection } from './types';
-// import { Container } from '@/components/Container';
 
-export const Section = ({ className = '' }: ISection) => {
+import { IWhatChoose } from './types';
+
+import { SectionTitle } from '@/components/SectionTitle';
+import { LinkTelegram } from '@/components/LinkTelegram';
+
+import dataJSON from '../../data/whatChoose.json';
+
+export const WhatChoose = ({ className = '' }: IWhatChoose) => {
+  const { title, text } = dataJSON;
   return (
-    <section
-      className={classNames('sm:py-15 md:py-20 xl:py-25', className)}
-    ></section>
+    <section className={classNames('', className)}>
+      <div className="container">
+        <SectionTitle text={title} />
+        <p>{text}</p>
+        <LinkTelegram />
+      </div>
+    </section>
   );
 };

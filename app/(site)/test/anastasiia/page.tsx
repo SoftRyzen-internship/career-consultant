@@ -9,6 +9,7 @@ import { LinkToFeedback } from '@/components/LinkToFeedback';
 
 import requests from '../../../../data/requests.json';
 import { RequestCard } from '@/components/RequestCard';
+import { WhatChoose } from '@/sections/WhatChoose';
 
 const page = () => {
   return (
@@ -71,6 +72,7 @@ const page = () => {
           })}
         </ul>
       </div>
+      <WhatChoose />
     </>
   );
 };

@@ -1,6 +1,6 @@
 // import { ReactNode } from 'react';
 
-export type ISection = {
+export type IWhatChoose = {
   // children: ReactNode;
   className?: string;
 };
