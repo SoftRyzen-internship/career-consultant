@@ -35,8 +35,6 @@ export const Form: React.FC = () => {
 
   const { errors } = methods.formState;
 
-  const isDesebledCheck = !methods.watch('checkbox');
-
   const isEmpty = (errors: Record<string, any>): boolean => {
     return Object.keys(errors).length === 0;
   };
@@ -46,6 +44,9 @@ export const Form: React.FC = () => {
 
   const [btnText, setBtnText] = useState(sendText);
   const [isBtnSubmitted, setIsBtnSubmitted] = useState(false);
+  const [isDesebledCheck, setIsDesebledCheck] = useState<boolean | undefined>(
+    true,
+  );
 
   const classname = classNames({
     'label-ckeck-default': isEmptyCheck,
@@ -59,11 +60,16 @@ export const Form: React.FC = () => {
     methods.setValue('name', '');
     methods.setValue('email', '');
     methods.setValue('message', '');
+    methods.setValue('checkbox', false);
     localStorage.removeItem('formData');
+
+    setIsDesebledCheck(false);
   };
 
   methods.watch(data => {
     localStorage.setItem('formData', JSON.stringify(data));
+
+    setIsDesebledCheck(!data.checkbox);
   });
 
   if (!isEmpty(errors)) {
@@ -87,6 +93,7 @@ export const Form: React.FC = () => {
       methods.setValue('name', result.name);
       methods.setValue('email', result.email);
       methods.setValue('message', result.message);
+      methods.setValue('checkbox', result.checkbox);
     }
   }, [
     errors,

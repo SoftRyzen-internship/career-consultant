@@ -6,7 +6,7 @@ import { Form } from '@/components/Form';
 // import { LinkTelegram } from '@/components/LinkTelegram';
 // import { LinkToFeedback } from '@/components/LinkToFeedback';
 import { FeedbackCard } from '@/components/FeedbackCard';
-import { Section } from '@/components/Section';
+// import { Section } from '@/components/Section';
 
 const page = () => {
   return (
@@ -41,13 +41,13 @@ const page = () => {
         <LinkToFeedback section="mobileMenu" />
         <div className="mb-5"></div>
       </div> */}
-      <Section
+      {/* <Section
         isGeneralSection={false}
         isReviewsSection={true}
         className="bg-red-500"
       >
         <div>Hello</div>
-      </Section>
+      </Section> */}
     </>
   );
 };

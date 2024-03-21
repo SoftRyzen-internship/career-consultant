@@ -43,7 +43,7 @@ export const Input: React.FC<InputPropsType> = ({ name, label, type }) => {
       <input type={type} id={name} {...register(name)} className={classname} />
       {errors[name] && (
         <>
-          <span className="text-xs xl:text-sm text-errorCol absolute right-0 bottom-[-20px]">
+          <span className="text-xs xl:text-sm text-errorCol absolute right-0 bottom-[-20px] xl:bottom-[-24px]">
             {errors[name]?.message}
           </span>
           <Image
