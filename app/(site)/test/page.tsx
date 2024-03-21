@@ -39,7 +39,11 @@ const page = () => {
       </div>
       <Form />
       <Socials />
-      <Section isGeneralSection={false} isReviewsSection={true}>
+      <Section
+        isGeneralSection={false}
+        isReviewsSection={true}
+        className="bg-red-500"
+      >
         <div>Hello</div>
       </Section>
     </>
