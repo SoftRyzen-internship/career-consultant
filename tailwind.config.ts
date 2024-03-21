@@ -135,6 +135,6 @@ const config: Config = {
       backgroundImage: {},
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 };
 export default config;

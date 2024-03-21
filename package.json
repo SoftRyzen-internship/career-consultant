@@ -16,6 +16,7 @@
     "test-all": "npm run check-format && npm run check-lint && npm run check-types && npm run build"
   },
   "dependencies": {
+    "@portabletext/react": "^3.0.13",
     "@hookform/resolvers": "^3.3.4",
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.34.0",
@@ -32,6 +33,7 @@
     "yup": "^1.4.0"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.10",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
