@@ -15,4 +15,5 @@ export const formSchema = yup.object().shape({
       'Невірний e-mail',
     ),
   message: yup.string(),
+  checkbox: yup.boolean().required("Обов'язкове поле"),
 });

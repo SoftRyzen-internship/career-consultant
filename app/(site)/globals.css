@@ -67,14 +67,88 @@
   }
 }
 
+/*-----Form styles start-------*/
+
 .error-input {
-  @apply w-full bg-inputDefaultBg rounded-lg py-6 px-5 xl:p-6 text-sm xl:text-base text-text01 focus:caret-accent focus:bg-inputBg focus:border-errorCol border-errorCol focus:outline-none focus:border-inputBorderW border-inputBorderW transition-all duration-300 outline-none;
+  @apply w-full bg-inputDefaultBg rounded-lg py-6 pl-5 pr-12 xl:pl-6 text-sm xl:text-base text-text01 focus:caret-accent focus:bg-inputBg focus:border-errorCol border-errorCol focus:outline-none focus:border-inputBorderW border-inputBorderW transition-all duration-300 outline-none;
 }
 
 .default-input {
-  @apply w-full bg-inputDefaultBg rounded-lg py-6 px-5 xl:p-6 text-sm xl:text-base text-text01 focus:caret-accent focus:bg-inputBg focus:border-inputBorder focus:outline-none focus:border-inputBorderW border-inputBorderW border-transparent transition-all duration-300 outline-none;
+  @apply w-full bg-inputDefaultBg rounded-lg py-6 pl-5 pr-12 xl:pl-6 text-sm xl:text-base text-text01 focus:caret-accent focus:bg-inputBg focus:border-inputBorder focus:outline-none focus:border-inputBorderW border-inputBorderW border-transparent transition-all duration-300 outline-none;
 }
 
 .default-textarea {
   @apply w-full bg-inputDefaultBg rounded-lg py-6 px-5 xl:p-6 text-sm xl:text-base text-text01 focus:caret-accent focus:bg-inputBg focus:border-inputBorder focus:outline-none focus:border-inputBorderW resize-none h-[151px] border-inputBorderW border-transparent transition-all duration-300 outline-none;
 }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.check-text {
+  display: flex;
+  align-items: center;
+}
+.check-text-error {
+  display: flex;
+  align-items: center;
+}
+
+.check-text::before {
+  content: '';
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  border: 2px solid #062b93;
+  transition: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+.input-check:checked + .check-text::before {
+  background-color: #0838c1;
+  border: 2px solid #0838c1;
+  background-image: url(/icons/check.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.check-text-error::before {
+  content: '';
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  border: 2px solid #ba1a1a;
+  transition: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.input-check:checked + .check-text-error::before {
+  background-color: #0838c1;
+  border: 2px solid #0838c1;
+  background-image: url(/icons/check.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.label-ckeck-default {
+  @apply check-text gap-3 cursor-pointer font-mulish text-xs text-text02 md:mb-2 xl:text-sm xl:mb-0;
+}
+
+.label-ckeck-error {
+  @apply check-text-error gap-3 cursor-pointer font-mulish text-xs text-text02 md:mb-2 xl:text-sm xl:mb-0;
+}
+
+/*-----Form styles end-------*/

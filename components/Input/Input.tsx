@@ -10,7 +10,7 @@ import { IFormData } from './types';
 type InputPropsType = {
   name: keyof IFormData;
   label: string;
-  type?: 'text' | 'email' | 'textarea';
+  type?: 'text' | 'email' | 'textarea' | 'checkbox';
   className?: string;
 };
 
@@ -24,11 +24,13 @@ export const Input: React.FC<InputPropsType> = ({ name, label, type }) => {
     'error-input': errors[name],
     'default-input': !errors[name],
     'default-textarea': type === 'textarea',
+    'label-ckeck-default': !errors[name],
+    'label-ckeck-error': errors[name],
   });
 
   if (type === 'textarea') {
     return (
-      <label className="flex flex-col gap-1 font-mulish">
+      <label className="flex flex-col gap-1 font-mulish mb-2 xl:mb-3">
         <span className="text-xs text-inactiveText xl:text-sm">{label}</span>
         <textarea id={name} {...register(name)} className={classname} />
       </label>
@@ -36,7 +38,7 @@ export const Input: React.FC<InputPropsType> = ({ name, label, type }) => {
   }
 
   return (
-    <label className="flex flex-col gap-1 font-mulish relative">
+    <label className="flex flex-col gap-1 font-mulish relative mb-1.5 xl:mb-2.5">
       <span className="text-xs text-inactiveText xl:text-sm">{label}</span>
       <input type={type} id={name} {...register(name)} className={classname} />
       {errors[name] && (

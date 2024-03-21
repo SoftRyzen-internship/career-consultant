@@ -3,36 +3,38 @@
 import React, { useEffect, useState } from 'react';
 import { useForm, FormProvider } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
+import toast, { Toaster } from 'react-hot-toast';
+import classNames from 'classnames';
 
 import { Input } from '../Input/Input';
 import { Button } from '@/components/Button';
 import { formSchema } from '@/utils/formSchema';
+import form from '@/data/form.json';
 
 import { IFormData } from '@/components/Input/types';
-
-// const schema = yup.object().shape({
-//   name: yup
-//     .string()
-//     .required("Ім'я обов'язкове")
-//     .max(30, 'Максимальна кількість символів - 30')
-//     .matches(/^[\sA-Za-zА-Яа-яҐґЄєІіЇїʼ`-]+$/, "Невірне ім'я"),
-//   email: yup
-//     .string()
-//     .required("E-mail обов'язкове")
-//     .max(63, 'Максимальна кількість символів - 63')
-//     .matches(
-//       /^[A-Za-z0-9]+([._+-][A-Za-z0-9]+)*@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/,
-//       'Невірний e-mail',
-//     ),
-//   message: yup.string(),
-// });
+import { FormInput } from './types';
 
 export const Form: React.FC = () => {
   const methods = useForm<IFormData>({
     resolver: yupResolver(formSchema),
   });
 
+  const formData = form as {
+    inputs: FormInput[];
+  };
+
+  const { inputs } = formData;
+  const {
+    personalDataConsent,
+    sendText,
+    sendedBtnText,
+    errorBtnText,
+    successSubmitText,
+  } = form;
+
   const { errors } = methods.formState;
+
+  const isDesebledCheck = !methods.watch('checkbox');
 
   const isEmpty = (errors: Record<string, any>): boolean => {
     return Object.keys(errors).length === 0;
@@ -41,14 +43,27 @@ export const Form: React.FC = () => {
   let isError = false;
   const isEmptyCheck = isEmpty(errors);
 
-  const [btnText, setBtnText] = useState('Відправити');
+  const [btnText, setBtnText] = useState(sendText);
+  const [isBtnSubmitted, setIsBtnSubmitted] = useState(false);
 
-  const onSubmit = async (data: IFormData) => {
-    console.log(data);
-    setBtnText('Bідправлено');
+  const classname = classNames({
+    'label-ckeck-default': isEmptyCheck,
+    'label-ckeck-error': !isEmptyCheck,
+  });
 
-    console.log(btnText);
+  const onSubmit = () => {
+    setIsBtnSubmitted(true);
+    toast.success(successSubmitText);
+
+    methods.setValue('name', '');
+    methods.setValue('email', '');
+    methods.setValue('message', '');
+    localStorage.removeItem('formData');
   };
+
+  methods.watch(data => {
+    localStorage.setItem('formData', JSON.stringify(data));
+  });
 
   if (!isEmpty(errors)) {
     isError = true;
@@ -56,28 +71,66 @@ export const Form: React.FC = () => {
 
   useEffect(() => {
     if (!isEmptyCheck) {
-      setBtnText('Помилка');
+      setBtnText(errorBtnText);
     }
     if (isEmptyCheck) {
-      setBtnText('Відправити');
+      setBtnText(sendText);
     }
-  }, [errors, isEmptyCheck]);
+    if (isBtnSubmitted) {
+      setBtnText(sendedBtnText);
+    }
+
+    const savedFormData = localStorage.getItem('formData');
+    if (savedFormData !== null) {
+      const result = JSON.parse(savedFormData);
+      methods.setValue('name', result.name);
+      methods.setValue('email', result.email);
+      methods.setValue('message', result.message);
+    }
+  }, [
+    errors,
+    isEmptyCheck,
+    isBtnSubmitted,
+    errorBtnText,
+    sendText,
+    sendedBtnText,
+    methods,
+  ]);
 
   return (
     <FormProvider {...methods}>
       <form
         onSubmit={methods.handleSubmit(onSubmit)}
-        className="p-3 bg-white md:w-1/2 flex flex-col gap-y-6"
+        className="px-3 pt-[37px] pb-7 bg-white md:w-[336px] xl:w-[696px] flex flex-col gap-y-4 md:p-0"
       >
-        <Input name="name" label="Ім'я*" type="text" />
-        <Input name="email" label="E-mail*" type="email" />
-        <Input name="message" label="Повідомлення" type="textarea" />
+        <Toaster position="top-center" reverseOrder={false} />
+        {inputs.map(input => {
+          return (
+            <Input
+              key={input.name}
+              name={input.name}
+              label={input.label}
+              type={input.type}
+            />
+          );
+        })}
+        <div className="relative">
+          <input
+            type="checkbox"
+            {...methods.register('checkbox')}
+            id="checkbox"
+            className="input-check visually-hidden"
+          />
+          <label htmlFor="checkbox" className={classname}>
+            <span>{personalDataConsent}</span>
+          </label>
+        </div>
         <Button
           type="submit"
           onClick={() => {}}
-          isSubmitted={false}
+          isSubmitted={isBtnSubmitted}
           isSubmitError={isError}
-          disabled={false}
+          disabled={isDesebledCheck}
         >
           {btnText}
         </Button>
