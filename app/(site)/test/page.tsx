@@ -5,14 +5,12 @@
 // import { Socials } from '@/components/Socials';
 // import { LinkTelegram } from '@/components/LinkTelegram';
 // import { LinkToFeedback } from '@/components/LinkToFeedback';
-import { FeedbackCard } from '@/components/FeedbackCard';
 
 const page = () => {
   return (
     <>
       <div className="max-w-[384px] w-full mx-auto">
         <p className="mb-[20px]">test page</p>
-        <FeedbackCard />
 
         {/* <Element name="test1" className="requestSection">
           <div className="mt-[50px] h-[1000px] bg-green-500">

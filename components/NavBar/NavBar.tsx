@@ -18,7 +18,7 @@ export const NavBar = () => {
               duration={500}
               delay={500}
               ignoreCancelEvents={false}
-              className="navbar-link hover-pseudo-underline flex justify-between items-center font-fixel text-3xl text-text01 cursor-pointer transition-[color] active:text-text02
+              className="navbar-link hover-pseudo-underline flex justify-between items-center font-fixel text-3xl text-text01 cursor-pointer transition-[color] duration-300 active:text-text02
               xl:text-base xl:font-normal xl:font-mulish xl:text-text02 xl:hover:text-text01"
             >
               <span>{item.text}</span>
