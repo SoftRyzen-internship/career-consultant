@@ -8,13 +8,11 @@ import { FeedbackCard } from '@/components/FeedbackCard';
 import feedbackData from '@/data/feedback.json';
 
 const page = () => {
-  const data1 = feedbackData.feedback[0].user1;
-  const data2 = feedbackData.feedback[0].user2;
-  const data3 = feedbackData.feedback[0].user3;
+  const data = feedbackData.feedback;
 
   return (
     <>
-      <div className="max-w-[384px] w-full mx-auto">
+      <div className="container w-full mx-auto">
         <p className="mb-[20px]">Stepan&apos;s test page</p>
         {/* ---------------------------------------------------Btn--------------------------------------------------- */}
         {/* <Button
@@ -30,9 +28,9 @@ const page = () => {
         </Button> */}
         {/* ---------------------------------------------------NavBar--------------------------------------------------- */}
 
-        {/* <NavBar /> */}
+        {/* <NavBar />
 
-        {/* <Element name="test1" className="requestSection">
+        <Element name="test1" className="requestSection">
           <div className="mt-[50px] h-[1000px] bg-green-500">
             requestSection
           </div>
@@ -48,15 +46,13 @@ const page = () => {
         {/* <FeedbackCard data={data1}/> */}
         {/* ---------------------------------------------------Modal--------------------------------------------------- */}
 
-        <div className="mb-[20px]">
-          <FeedbackCard data={data1} />
-        </div>
-        <div className="mb-[20px]">
-          <FeedbackCard data={data2} />
-        </div>
-        <div className="mb-[20px]">
-          <FeedbackCard data={data3} />
-        </div>
+        {data.map(item => {
+          return (
+            <div key={item.name} className="mb-[20px]">
+              <FeedbackCard data={item} />
+            </div>
+          );
+        })}
       </div>
     </>
   );

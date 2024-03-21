@@ -1,5 +1,21 @@
 import { defineType, defineField } from 'sanity';
 
+const achievementOptions = [
+  {
+    title: 'років на посаді HR менеджера, з них 3 в IT',
+    value: '1',
+  },
+  { title: 'резюме складено', value: '2' },
+  {
+    title: 'консультацій проведено',
+    value: '3',
+  },
+  {
+    title: 'українців знайшли роботу',
+    value: '4',
+  },
+];
+
 export const achievements = defineType({
   name: 'achievements',
   title: 'Досягнення',
@@ -15,19 +31,22 @@ export const achievements = defineType({
       of: [
         {
           type: 'object',
-
           fields: [
-            {
-              title: 'Кількість',
-              name: 'quantity',
-              type: 'number',
-              validation: (Rule: any) => Rule.required(),
-            },
             {
               name: 'description',
               title: 'Опис',
-              type: 'text',
+              type: 'string',
+              options: {
+                list: achievementOptions,
+                layout: 'dropdown',
+              },
               validation: (Rule: any) => Rule.required(),
+            },
+            {
+              title: 'Кількість',
+              name: 'quantity',
+              type: 'string',
+              validation: (Rule: any) => Rule.required().max(10),
             },
           ],
           preview: {
@@ -36,18 +55,32 @@ export const achievements = defineType({
               description: 'description',
             },
             prepare(selection: any) {
+              const descriptionTitle =
+                selection.description &&
+                achievementOptions.flatMap(option =>
+                  option.value === selection.description ? [option.title] : [],
+                );
+
               return {
-                title: `${selection.quantity} ${selection.description} `,
+                title: `${selection.quantity} ${
+                  selection.description
+                    ? `${descriptionTitle}`
+                    : 'No title selected'
+                }`,
               };
             },
           },
         },
       ],
+      options: {
+        sortable: true,
+        modal: { type: 'popover', width: 'auto' },
+      },
       validation: (Rule: any) =>
         Rule.min(4)
-          .error('Ви повинні додати мінімум 4 картки')
+          .error('Кількість карток повинна бути рівна 4')
           .max(4)
-          .error('Ви можете додати максимум 4 картки'),
+          .error('Кількість карток повинна бути рівна 4'),
     }),
   ],
 });
