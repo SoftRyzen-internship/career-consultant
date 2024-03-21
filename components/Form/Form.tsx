@@ -130,7 +130,9 @@ export const Form: React.FC = () => {
             className="input-check visually-hidden"
           />
           <label htmlFor="checkbox" className={classname}>
-            <span>{personalDataConsent}</span>
+            <span className="text-xs font-mulish xl:text-base">
+              {personalDataConsent}
+            </span>
           </label>
         </div>
         <Button

@@ -7,12 +7,12 @@
   "inputs": [
     {
       "name": "name",
-      "label": "Ім'я",
+      "label": "Ім'я*",
       "type": "text"
     },
     {
       "name": "email",
-      "label": "E-mail",
+      "label": "E-mail*",
       "type": "email"
     },
     {
