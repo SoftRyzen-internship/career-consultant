@@ -24,15 +24,6 @@ export const FeedbackCard = ({ data }: ICardData) => {
     setIsModalOpen(!isModalOpen);
   };
 
-  // useEffect(() => {
-  //   const textElement = textRef.current;
-  //   if (textElement) {
-  //     const isTextTruncated =
-  //       textElement.scrollHeight > textElement.clientHeight;
-  //     setShowReadMoreButton(isTextTruncated);
-  //   }
-  // }, [window.innerWidth]);
-
   useEffect(() => {
     const textElement = textRef.current;
 
