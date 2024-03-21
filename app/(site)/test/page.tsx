@@ -5,6 +5,7 @@ import { Form } from '@/components/Form';
 import { NavBar } from '@/components/NavBar/NavBar';
 import { Element } from 'react-scroll';
 import { Socials } from '@/components/Socials';
+import { Section } from '@/components/Section';
 
 const page = () => {
   return (
@@ -38,6 +39,9 @@ const page = () => {
       </div>
       <Form />
       <Socials />
+      <Section isGeneralSection={false} isReviewsSection={true}>
+        <div>Hello</div>
+      </Section>
     </>
   );
 };
