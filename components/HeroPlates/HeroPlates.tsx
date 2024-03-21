@@ -1,34 +1,25 @@
 import React from 'react';
-import HeroPlate from '@/components/HeroPlate/HeroPlate';
-import hero from '@/data/hero.json';
 
-const { plates } = hero;
 type HeroPlatesProps = {
-  id?: string;
-  quantity?: string;
-  description?: string;
+  data: any[];
 };
 
-const HeroPlates: React.FC<HeroPlatesProps> = () => {
+import { HeroPlate } from '../HeroPlate/HeroPlate';
+
+export const HeroPlates: React.FC<HeroPlatesProps> = ({ data }) => {
   const plateClasses = [
-    'xl:w-[270px] xl:h-[152px]',
-    'xl:w-[202px] xl:h-[130px]',
-    'xl:w-[171px] xl:h-[152px]',
-    'xl:w-[209px] xl:h-[152px]',
+    'xl:w-[270px] xl:h-[152px] xl:top-5 xl:left-1',
+    'xl:w-[202px] xl:h-[130px] xl:top-7 xl:left-3',
+    'xl:w-[171px] xl:h-[152px] xl:top-10 xl:left-5',
+    'xl:w-[205px] xl:h-[152px] xl:top-12 xl:left-7',
   ];
   return (
-    <div className=" md:flex md:gap-[16px] xl:flex-col xl:gap-[30px] list-none ">
-      {plates.map((plate, index) => (
-        <li key={plate.id}>
-          <HeroPlate
-            className={plateClasses[index]}
-            quantity={plate.quantity}
-            description={plate.description}
-          />
+    <div className="hidden md:flex md:gap-[16px] xl:flex-col xl:gap-[30px] list-none ">
+      {data?.map((card, index) => (
+        <li key={index}>
+          <HeroPlate className={plateClasses[index]} card={card} />
         </li>
       ))}
     </div>
   );
 };
-
-export default HeroPlates;
