@@ -47,7 +47,7 @@ export const RequestCard = ({ request, className = '' }: IRequestCard) => {
           return (
             <li
               key={item.id}
-              className="ml-3 md:ml-4 xl:ml-8 text-sm xl:text-base xl:font-normal text-text02 font-mulish"
+              className="ml-6 md:ml-7 xl:ml-8 text-sm xl:text-base xl:font-normal text-text02 font-mulish"
             >
               {item.text}
             </li>
