@@ -3,9 +3,9 @@ import React from 'react';
 
 import classNames from 'classnames';
 
-import TelegramIcon from '../../public/icons/telegram.svg';
+import TelegramIcon from '@/public/icons/telegram.svg';
 
-import common from '../../data/common.json';
+import common from '@/data/common.json';
 
 type ILinkTelegram = {
   className?: string;

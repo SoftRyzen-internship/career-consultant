@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 import classNames from 'classnames';
 
-import LogoIcon from '../../public/icons/logo.svg';
+import LogoIcon from '@/public/icons/logo.svg';
 
 type ILogo = {
   className?: string;
