@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
+    "@headlessui/react": "^1.7.18",
     "@portabletext/react": "^3.0.13",
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.34.0",
