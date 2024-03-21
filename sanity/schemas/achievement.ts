@@ -20,7 +20,7 @@ export const achievements = defineType({
             {
               title: 'Кількість',
               name: 'quantity',
-              type: 'number',
+              type: 'string',
               validation: (Rule: any) => Rule.required(),
             },
             {
