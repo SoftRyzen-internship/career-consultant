@@ -12,8 +12,8 @@ export const SectionTitle = ({
   center,
 }: ISectionTitle) => {
   const classname = classNames(className, {
-    'sm:text-3xl font-fixel xl:text-5xl text-left': !center,
-    'sm:text-3xl font-fixel xl:text-5xl text-center': center,
+    'text-3xl font-fixel xl:text-5xl text-left': !center,
+    'text-3xl font-fixel xl:text-5xl text-center': center,
   });
 
   return <h2 className={classname}>{text}</h2>;

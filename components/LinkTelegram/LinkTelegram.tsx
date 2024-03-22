@@ -25,7 +25,7 @@ export const LinkTelegram = ({ className = '' }: ILinkTelegram) => {
       rel="noopener noreferrer nofollow"
     >
       {writeToTelegram}
-      <TelegramIcon className="w-6 h-6" aria-label="Паперовий літачок" />
+      <TelegramIcon className="w-6 h-6" />
     </Link>
   );
 };

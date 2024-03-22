@@ -74,7 +74,7 @@ const page = () => {
           })}
         </ul>
       </div>
-      <WhatChoose />
+      <WhatChoose isGeneralSection={false} />
     </>
   );
 };
