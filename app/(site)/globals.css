@@ -161,6 +161,22 @@
   background-position: center;
 }
 
+.input-check:focus + .check-text::before {
+  @apply bg-inputBg border-inputBorder border-b-inputBorderW;
+}
+.input-check:focus + .check-text-error::before {
+  @apply bg-inputBg;
+}
+
+.input-check:checked:focus + .check-text::before,
+.input-check:checked:focus + .check-text-error::before {
+  @apply bg-accent border-inputBorder border-b-inputBorderW;
+  background-image: url(/icons/check.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
 .label-ckeck-default {
   @apply check-text gap-[18px] cursor-pointer font-mulish md:mb-2  xl:mb-0;
 }
