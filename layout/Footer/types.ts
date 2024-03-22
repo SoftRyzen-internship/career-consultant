@@ -6,6 +6,15 @@ export type Foot = {
 };
 
 type Links = {
-  goit: string;
-  ryzen: string;
+  goit: Goit;
+  ryzen: Ryzen;
+};
+
+type Goit = {
+  href: string;
+  aria: string;
+};
+type Ryzen = {
+  href: string;
+  aria: string;
 };

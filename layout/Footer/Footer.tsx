@@ -17,6 +17,7 @@ type FooterProps = {
 
 export const Footer: React.FC<FooterProps> = ({ footer, sheet }) => {
   const { created, privacy, home, links } = footer;
+  const { goit, ryzen } = links;
   return (
     <footer className="bg-customBackground relative bord py-5 md:py-0 xl:py-6 ">
       <Container>
@@ -27,7 +28,7 @@ export const Footer: React.FC<FooterProps> = ({ footer, sheet }) => {
             <Logo />
 
             <Link
-              className="font-mulish text-xs text-text02 xl:text-[16px] font-medium leading-[1.4] "
+              className="font-mulish text-xs text-text02 xl:text-[16px] font-medium leading-[1.4] relative privacy  transition-all duration-300 hover:text-text01  focus:text-text01 "
               href={sheet === 'main' ? '/privacy' : '/'}
             >
               {sheet === 'main' ? privacy : home}
@@ -42,9 +43,10 @@ export const Footer: React.FC<FooterProps> = ({ footer, sheet }) => {
               <li>
                 <a
                   className="inline-block cursor-pointer text-text03  transition-all duration-300 hover:text-text02 focus:text-text02 "
-                  href={links.goit}
+                  href={goit.href}
                   target="_blank"
                   rel="noopener noreferrer nofollow"
+                  aria-label={goit.aria}
                 >
                   <Goit className="w-[67px] h-[20px] xl:w-[81px] xl:h-[24px] " />
                 </a>
@@ -52,9 +54,10 @@ export const Footer: React.FC<FooterProps> = ({ footer, sheet }) => {
               <li>
                 <a
                   className="inline-block cursor-pointer text-text03  transition-all duration-300 hover:text-text02 focus:text-text02 "
-                  href={links.ryzen}
+                  href={ryzen.href}
                   target="_blank"
                   rel="noopener noreferrer nofollow"
+                  aria-label={ryzen.aria}
                 >
                   <Ryzen className=" w-[135px] h-[20px] xl:w-[161px] xl:h-[24px]" />
                 </a>
