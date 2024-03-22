@@ -12,7 +12,7 @@ export const HeroPlate: React.FC<HeroPlateProps> = ({ card, className }) => {
 
   return (
     <div
-      className={`w-auto h-[126px] sm:h-[106px] border-0 rounded-lg shadow-custom bg-white py-[12px] px-[16px]  md:p-[20px] md:w-[160px] md:h-[141px] xl:py-[24px] xl:px-[32px]   ${className} `}
+      className={`w-auto h-[126px] sm:h-[106px] border-0 rounded-lg  bg-white py-[12px] px-[16px]  md:p-[20px] md:w-[160px] md:h-[141px] xl:py-[24px] xl:px-[32px]   ${className} `}
     >
       <span className="inline-block text-text01 font-fixel font-normal text-[32px] leading-[1] mb-[8px] md:leading-[1.21] xl:text-[48px] xl:leading-[1]  xl:mb-3 ">
         {quantity}
