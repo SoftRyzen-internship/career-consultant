@@ -19,8 +19,8 @@ type Request = {
 };
 
 type IRequestCard = {
-  className?: string;
   request: Request;
+  className?: string;
 };
 
 export const RequestCard = ({ request, className = '' }: IRequestCard) => {
