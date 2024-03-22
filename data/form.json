@@ -1,0 +1,24 @@
+{
+  "personalDataConsent": "Я погоджуюсь на обробку персональних даних",
+  "sendText": "Відправити",
+  "sendedBtnText": "Відправлено",
+  "errorBtnText": "Помилка",
+  "successSubmitText": "Дякую! Я найближчим часом зв'яжусь з вами",
+  "inputs": [
+    {
+      "name": "name",
+      "label": "Ім'я*",
+      "type": "text"
+    },
+    {
+      "name": "email",
+      "label": "E-mail*",
+      "type": "email"
+    },
+    {
+      "name": "message",
+      "label": "Повідомлення",
+      "type": "textarea"
+    }
+  ]
+}

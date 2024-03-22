@@ -14,10 +14,8 @@
   "leaveApplication": "Залишити заявку",
   "moveToFeedback": "feedback",
   "navBar": [
-    {
-      "request": [{ "text": "Запити", "moveTo": "requestSection" }],
-      "reviews": [{ "text": "Послуги", "moveTo": "reviewsSection" }],
-      "feedback": [{ "text": "Відгуки", "moveTo": "feedbackSection" }]
-    }
+    { "text": "Запити", "moveTo": "requestSection" },
+    { "text": "Послуги", "moveTo": "reviewsSection" },
+    { "text": "Відгуки", "moveTo": "feedbackSection" }
   ]
 }
