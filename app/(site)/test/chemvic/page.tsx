@@ -1,7 +1,10 @@
 'use client';
 
 import { Hero } from '@/sections/Hero';
-// import hero from '@/data/hero.json';
+
+import { Footer } from '@/layout/Footer';
+
+import footer from '@/data/footer.json';
 
 const page = () => {
   // const { plates } = hero;
@@ -10,6 +13,7 @@ const page = () => {
       <div className="flex flex-col items-center">
         <Hero />
       </div>
+      <Footer footer={footer} sheet={'main'} />
     </>
   );
 };

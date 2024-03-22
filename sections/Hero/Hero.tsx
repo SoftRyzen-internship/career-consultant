@@ -11,7 +11,7 @@ import { LinkToFeedback } from '@/components/LinkToFeedback';
 export const Hero: React.FC = () => {
   const { title, description, plates } = hero;
   return (
-    <div className="bg-customBackground mt-[50px] mb-[30px] flex flex-col justify-center items-center w-full relative  max-w-[480px] md:hidden">
+    <div className="bg-customBackground mt-[50px] mb-[280px] flex flex-col justify-center items-center w-full relative  max-w-[480px] md:hidden">
       <Image
         width={960}
         height={1102}
