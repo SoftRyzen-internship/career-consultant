@@ -2,13 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
   }
-}
+} */
 
 @layer utilities {
   .text-balance {
@@ -16,8 +16,20 @@
   }
 }
 
-.section {
-  @apply py-[30px] md:py-[40px] xl:py-[50px];
+.privacy::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 1px;
+  background-color: #001d44;
+  bottom: -1px;
+  left: 0;
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
+.privacy:hover::after,
+.privacy:focus::after {
+  opacity: 1;
 }
 
 @layer base {
@@ -29,6 +41,16 @@
 @layer components {
 }
 
+@media only screen and (min-width: 768px) and (max-width: 1279px) {
+  .bord::after {
+    position: absolute;
+    content: '';
+    top: 53px;
+    width: 100%;
+    height: 1px;
+    background-color: #afb4be;
+  }
+}
 .submitted-btn::after {
   content: url('/icons/check.svg');
   display: block;
