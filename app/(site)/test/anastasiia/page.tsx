@@ -3,13 +3,14 @@
 import { Button } from '@/components/Button';
 import { NavBar } from '@/components/NavBar/NavBar';
 import { Element } from 'react-scroll';
+import { Logo } from '@/components/Logo';
 import { Socials } from '@/components/Socials';
 import { LinkTelegram } from '@/components/LinkTelegram';
 import { LinkToFeedback } from '@/components/LinkToFeedback';
-
-import requests from '../../../../data/requests.json';
 import { RequestCard } from '@/components/RequestCard';
 import { WhatChoose } from '@/sections/WhatChoose';
+
+import requests from '@/data/requests.json';
 
 const page = () => {
   return (
@@ -46,6 +47,7 @@ const page = () => {
           </div>
         </Element>
       </div>
+      <Logo />
 
       <Socials />
       <div className="mb-5"></div>

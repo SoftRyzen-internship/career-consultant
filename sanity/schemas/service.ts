@@ -33,7 +33,8 @@ export const service = {
       name: 'price',
       title: 'Ціна',
       type: 'string',
-      validation: (Rule: any) => Rule.required(),
+      validation: (Rule: any) =>
+        Rule.required().error("Ціна є обов'язковим полем"),
     }),
   ],
 };

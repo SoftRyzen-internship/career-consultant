@@ -3,10 +3,10 @@ import React from 'react';
 
 import classNames from 'classnames';
 
-import EmailIcon from '../../public/icons/email.svg';
-import TelegramIcon from '../../public/icons/telegram.svg';
+import EmailIcon from '@/public/icons/email.svg';
+import TelegramIcon from '@/public/icons/telegram.svg';
 
-import common from '../../data/common.json';
+import common from '@/data/common.json';
 
 type ISocials = {
   className?: string;
