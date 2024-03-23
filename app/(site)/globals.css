@@ -218,34 +218,36 @@
   .choose {
     height: 383px;
     background-image: url('../../public/images/choose/illustration-tablet.jpg'),
-      linear-gradient(to right, #fff 50%, #84a0e6 50%, #84a0e6 100%);
-    background-repeat: no-repeat;
-    background-position: calc(50%) 0;
+      linear-gradient(to right, #fff 51%, #84a0e6 51%);
+    background-position:
+      left calc(50% + 197px) top 0,
+      top;
     background-size:
       376px 383px,
-      cover;
+      auto;
   }
 
-  /* @media (min-device-pixel-ratio: 2),
+  @media (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
     .choose {
       background-image: url('../../public/images/choose/illustration-tablet@2x.jpg'),
-        linear-gradient(to bottom, #84a0e6 384px, #fff 384px, #fff 643px);
+        linear-gradient(to right, #fff 51%, #84a0e6 51%);
     }
-  } */
+  }
 }
 
 @media (min-width: 1280px) {
   .choose {
-    height: 643px;
+    height: 510px;
     background-image: url('../../public/images/choose/illustration-desktop.jpg'),
-      linear-gradient(to left, #84a0e6 384px, #fff 384px, #fff 643px);
-    background-repeat: no-repeat;
-    background-position: center top;
+      linear-gradient(to right, #fff 37%, #84a0e6 37%);
+    background-position:
+      left calc(50% + 237px) top 0,
+      top;
     background-size:
-      360px 384px,
-      cover;
+      808px 510px,
+      auto;
   }
 
   @media (min-device-pixel-ratio: 2),
@@ -253,7 +255,26 @@
     (min-resolution: 2dppx) {
     .choose {
       background-image: url('../../public/images/choose/illustration-desktop@2x.jpg'),
-        linear-gradient(to bottom, #84a0e6 384px, #fff 384px, #fff 643px);
+        linear-gradient(to right, #fff 37%, #84a0e6 37%);
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .choose {
+    background-image: url('../../public/images/choose/illustration-desktop.jpg'),
+      linear-gradient(to right, #fff 44%, #84a0e6 44%);
+    background-position:
+      left calc(50% + 317px) top 0,
+      top;
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .choose {
+      background-image: url('../../public/images/choose/illustration-desktop@2x.jpg'),
+        linear-gradient(to right, #fff 44%, #84a0e6 44%);
     }
   }
 }
