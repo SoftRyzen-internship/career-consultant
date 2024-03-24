@@ -7,15 +7,28 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import toast, { Toaster } from 'react-hot-toast';
 import classNames from 'classnames';
 
-import { IFormData } from '@/components/Input/types';
+import { type IFormData } from '@/components/Input/types';
 import { FormInput } from './types';
 
-import { Input } from '../Input/Input';
+import { Input } from '../Input';
 import { Button } from '@/components/Button';
+
 import { formSchema } from '@/utils/formSchema';
 import form from '@/data/form.json';
 
 export const Form: React.FC = () => {
+  const {
+    personalDataConsent,
+    sendText,
+    sentBtnText,
+    errorBtnText,
+    successSubmitText,
+  } = form;
+
+  const [btnText, setBtnText] = useState(sendText);
+  const [isBtnSubmitted, setIsBtnSubmitted] = useState(false);
+  const [isDesebled, setIsDesebled] = useState<boolean | undefined>(true);
+
   const methods = useForm<IFormData>({
     resolver: yupResolver(formSchema),
   });
@@ -25,14 +38,6 @@ export const Form: React.FC = () => {
   };
 
   const { inputs } = formData;
-  const {
-    personalDataConsent,
-    sendText,
-    sendedBtnText,
-    errorBtnText,
-    successSubmitText,
-  } = form;
-
   const { errors } = methods.formState;
 
   const isEmpty = (errors: Record<string, any>): boolean => {
@@ -41,12 +46,6 @@ export const Form: React.FC = () => {
 
   let isError = false;
   const isEmptyCheck = isEmpty(errors);
-
-  const [btnText, setBtnText] = useState(sendText);
-  const [isBtnSubmitted, setIsBtnSubmitted] = useState(false);
-  const [isDesebledCheck, setIsDesebledCheck] = useState<boolean | undefined>(
-    true,
-  );
 
   const classname = classNames({
     'label-ckeck-default': isEmptyCheck,
@@ -57,19 +56,16 @@ export const Form: React.FC = () => {
     setIsBtnSubmitted(true);
     toast.success(successSubmitText);
 
-    methods.setValue('name', '');
-    methods.setValue('email', '');
-    methods.setValue('message', '');
-    methods.setValue('checkbox', false);
+    methods.reset();
     localStorage.removeItem('formData');
 
-    setIsDesebledCheck(false);
+    setIsDesebled(false);
   };
 
   methods.watch(data => {
     localStorage.setItem('formData', JSON.stringify(data));
 
-    setIsDesebledCheck(!data.checkbox);
+    setIsDesebled(!data.checkbox);
   });
 
   if (!isEmpty(errors)) {
@@ -84,7 +80,7 @@ export const Form: React.FC = () => {
       setBtnText(sendText);
     }
     if (isBtnSubmitted) {
-      setBtnText(sendedBtnText);
+      setBtnText(sentBtnText);
     }
 
     const savedFormData = localStorage.getItem('formData');
@@ -101,7 +97,7 @@ export const Form: React.FC = () => {
     isBtnSubmitted,
     errorBtnText,
     sendText,
-    sendedBtnText,
+    sentBtnText,
     methods,
   ]);
 
@@ -140,7 +136,7 @@ export const Form: React.FC = () => {
           onClick={() => {}}
           isSubmitted={isBtnSubmitted}
           isSubmitError={isError}
-          disabled={isDesebledCheck}
+          disabled={isDesebled}
         >
           {btnText}
         </Button>
