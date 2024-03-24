@@ -14,12 +14,10 @@ export const HeroPlates: React.FC<HeroPlatesProps> = ({ data }) => {
     'xl:w-[205px] xl:h-[152px] xl:top-12 xl:left-7',
   ];
   return (
-    <div className="hidden md:flex md:gap-[16px] xl:flex-col xl:gap-[30px] list-none ">
+    <ul className="hidden md:flex md:gap-[16px] xl:flex-col xl:gap-[30px] list-none ">
       {data?.map((card, index) => (
-        <li key={index}>
-          <HeroPlate className={plateClasses[index]} card={card} />
-        </li>
+        <HeroPlate key={card.id} className={plateClasses[index]} card={card} />
       ))}
-    </div>
+    </ul>
   );
 };
