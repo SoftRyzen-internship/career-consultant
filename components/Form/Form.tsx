@@ -7,15 +7,28 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import toast, { Toaster } from 'react-hot-toast';
 import classNames from 'classnames';
 
-import { IFormData } from '@/components/Input/types';
-import { FormInput } from './types';
+import { type IFormData } from '@/components/Input/types';
+import { type FormInput } from '@/components/Form/types';
 
-import { Input } from '../Input/Input';
+import { Input } from '@/components/Input';
 import { Button } from '@/components/Button';
+
 import { formSchema } from '@/utils/formSchema';
 import form from '@/data/form.json';
 
 export const Form: React.FC = () => {
+  const {
+    personalDataConsent,
+    sendText,
+    sentBtnText,
+    errorBtnText,
+    successSubmitText,
+  } = form;
+
+  const [btnText, setBtnText] = useState(sendText);
+  const [isBtnSubmitted, setIsBtnSubmitted] = useState(false);
+  const [isDisabled, setIsDisabled] = useState<boolean | undefined>(true);
+
   const methods = useForm<IFormData>({
     resolver: yupResolver(formSchema),
   });
@@ -25,14 +38,6 @@ export const Form: React.FC = () => {
   };
 
   const { inputs } = formData;
-  const {
-    personalDataConsent,
-    sendText,
-    sendedBtnText,
-    errorBtnText,
-    successSubmitText,
-  } = form;
-
   const { errors } = methods.formState;
 
   const isEmpty = (errors: Record<string, any>): boolean => {
@@ -42,34 +47,25 @@ export const Form: React.FC = () => {
   let isError = false;
   const isEmptyCheck = isEmpty(errors);
 
-  const [btnText, setBtnText] = useState(sendText);
-  const [isBtnSubmitted, setIsBtnSubmitted] = useState(false);
-  const [isDesebledCheck, setIsDesebledCheck] = useState<boolean | undefined>(
-    true,
-  );
-
-  const classname = classNames({
-    'label-ckeck-default': isEmptyCheck,
-    'label-ckeck-error': !isEmptyCheck,
+  const className = classNames({
+    'label-check-default': isEmptyCheck,
+    'label-check-error': !isEmptyCheck,
   });
 
   const onSubmit = () => {
     setIsBtnSubmitted(true);
     toast.success(successSubmitText);
 
-    methods.setValue('name', '');
-    methods.setValue('email', '');
-    methods.setValue('message', '');
-    methods.setValue('checkbox', false);
+    methods.reset();
     localStorage.removeItem('formData');
 
-    setIsDesebledCheck(false);
+    setIsDisabled(false);
   };
 
   methods.watch(data => {
     localStorage.setItem('formData', JSON.stringify(data));
 
-    setIsDesebledCheck(!data.checkbox);
+    setIsDisabled(!data.checkbox);
   });
 
   if (!isEmpty(errors)) {
@@ -84,7 +80,7 @@ export const Form: React.FC = () => {
       setBtnText(sendText);
     }
     if (isBtnSubmitted) {
-      setBtnText(sendedBtnText);
+      setBtnText(sentBtnText);
     }
 
     const savedFormData = localStorage.getItem('formData');
@@ -101,7 +97,7 @@ export const Form: React.FC = () => {
     isBtnSubmitted,
     errorBtnText,
     sendText,
-    sendedBtnText,
+    sentBtnText,
     methods,
   ]);
 
@@ -129,7 +125,7 @@ export const Form: React.FC = () => {
             id="checkbox"
             className="input-check visually-hidden"
           />
-          <label htmlFor="checkbox" className={classname}>
+          <label htmlFor="checkbox" className={className}>
             <span className="text-xs font-mulish xl:text-base text-text02">
               {personalDataConsent}
             </span>
@@ -140,7 +136,7 @@ export const Form: React.FC = () => {
           onClick={() => {}}
           isSubmitted={isBtnSubmitted}
           isSubmitError={isError}
-          disabled={isDesebledCheck}
+          disabled={isDisabled}
         >
           {btnText}
         </Button>

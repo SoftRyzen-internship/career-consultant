@@ -1,7 +1,7 @@
 {
   "personalDataConsent": "Я погоджуюсь на обробку персональних даних",
   "sendText": "Відправити",
-  "sendedBtnText": "Відправлено",
+  "sentBtnText": "Відправлено",
   "errorBtnText": "Помилка",
   "successSubmitText": "Дякую! Я найближчим часом зв'яжусь з вами",
   "inputs": [

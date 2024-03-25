@@ -8,17 +8,13 @@ import { LinkTelegram } from '@/components/LinkTelegram';
 import data from '@/data/whatChoose.json';
 
 export type IWhatChoose = {
-  isGeneralSection: boolean;
   className?: string;
 };
 
 export const WhatChoose = ({ className = '' }: IWhatChoose) => {
   const { title, text } = data;
   return (
-    <Section
-      className={classNames('choose', className)}
-      isGeneralSection={false}
-    >
+    <Section className={classNames('choose', className)}>
       <Container>
         <div className="pb-7 pt-[412px] md:py-10 xl:py-20">
           <SectionTitle
