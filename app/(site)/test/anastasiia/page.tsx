@@ -10,9 +10,11 @@ import { LinkToFeedback } from '@/components/LinkToFeedback';
 import { RequestCard } from '@/components/RequestCard';
 import { WhatChoose } from '@/sections/WhatChoose';
 
-import requests from '@/data/requests.json';
+import requestsList from '@/data/requests.json';
 
 const page = () => {
+  const { requests } = requestsList;
+
   return (
     <>
       <div className="max-w-[300px] w-full mx-auto">
