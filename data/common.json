@@ -17,5 +17,6 @@
     { "text": "Запити", "moveTo": "requestSection" },
     { "text": "Послуги", "moveTo": "reviewsSection" },
     { "text": "Відгуки", "moveTo": "feedbackSection" }
-  ]
+  ],
+  "ariaLabelBurger": "Відкрити мобільне меню"
 }
