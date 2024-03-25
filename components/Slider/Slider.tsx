@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { useEffect, useState } from 'react';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation } from 'swiper/modules';
@@ -15,44 +14,17 @@ type SliderProps = {
 };
 
 import { SliderButtons } from '@/components/SliderButtons';
+import { useShowSliderButtons } from './useShowSliderButtons';
+import { useSliderSettings } from './useSliderSettings';
 
 export const Slider: React.FC<SliderProps> = ({
   data,
   component: Card,
   section,
 }) => {
-  const [slides, setSlides] = useState(1);
-  const [isAutoPlay, setIsAutoPlay] = useState(true);
-  const [space, setSpace] = useState(0);
+  const { isAutoPlay, space, slides } = useSliderSettings(section);
 
-  useEffect(() => {
-    const handleSlidesPerView = () => {
-      if (window.innerWidth < 768) {
-        if (section === 'hero') {
-          setSlides(2);
-          setSpace(12);
-          setIsAutoPlay(true);
-        } else {
-          setSlides(1);
-          setSpace(5);
-          setIsAutoPlay(false);
-        }
-      } else if (window.innerWidth > 767 && window.innerWidth < 1280) {
-        setSlides(2);
-        setIsAutoPlay(false);
-        setSpace(16);
-      } else {
-        setSlides(3);
-        setIsAutoPlay(false);
-        setSpace(32);
-      }
-    };
-    handleSlidesPerView();
-    window.addEventListener('resize', handleSlidesPerView);
-    return () => {
-      window.removeEventListener('resize', handleSlidesPerView);
-    };
-  }, [section]);
+  const letShouldShowSliderButtons = useShowSliderButtons(section, data);
 
   const swiperParams = {
     loop: true,
@@ -85,7 +57,7 @@ export const Slider: React.FC<SliderProps> = ({
         })}
       </Swiper>
 
-      {section !== 'hero' && data.length > 3 && <SliderButtons />}
+      {letShouldShowSliderButtons && <SliderButtons />}
     </div>
   );
 };
