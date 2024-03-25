@@ -8,6 +8,7 @@ import { Socials } from '@/components/Socials';
 import { LinkTelegram } from '@/components/LinkTelegram';
 import { LinkToFeedback } from '@/components/LinkToFeedback';
 import { RequestCard } from '@/components/RequestCard';
+import { WhatChoose } from '@/sections/WhatChoose';
 
 import requests from '@/data/requests.json';
 
@@ -73,6 +74,7 @@ const page = () => {
           })}
         </ul>
       </div>
+      <WhatChoose />
     </>
   );
 };

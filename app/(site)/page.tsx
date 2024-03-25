@@ -1,5 +1,9 @@
-'use client';
+import { WhatChoose } from '@/sections/WhatChoose';
 
 export default function Home() {
-  return <></>;
+  return (
+    <>
+      <WhatChoose />
+    </>
+  );
 }
