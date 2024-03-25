@@ -1,0 +1,15 @@
+{
+  "privacy": "Terms of Service & Privacy Policy",
+  "home": "На Головну",
+  "created": "Створено при підтримці",
+  "links": {
+    "goit": {
+      "href": "https://goit.global/ua/",
+      "aria": "Перехід на сторінку GoIT"
+    },
+    "ryzen": {
+      "href": "https://www.softryzen.com/",
+      "aria": "Перехід на сторінку Softryzen"
+    }
+  }
+}

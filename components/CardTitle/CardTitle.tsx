@@ -9,7 +9,7 @@ export const CardTitle = ({ text, className = '' }: ICardTitle) => {
   return (
     <h3
       className={classNames(
-        'sm:text-xl font-fixel-medium mr-auto xl:text-3xl',
+        'text-xl font-fixel mr-auto xl:text-3xl',
         className,
       )}
     >

@@ -1,18 +1,19 @@
 'use client';
 
+import { Services } from '@/components/ServicesCard/Services';
+
 // import { Form } from '@/components/Form';
 // import { Element } from 'react-scroll';
 // import { Socials } from '@/components/Socials';
 // import { LinkTelegram } from '@/components/LinkTelegram';
 // import { LinkToFeedback } from '@/components/LinkToFeedback';
-import { FeedbackCard } from '@/components/FeedbackCard';
+// import { Section } from '@/components/Section';
 
 const page = () => {
   return (
     <>
       <div className="max-w-[384px] w-full mx-auto">
         <p className="mb-[20px]">test page</p>
-        <FeedbackCard />
 
         {/* <Element name="test1" className="requestSection">
           <div className="mt-[50px] h-[1000px] bg-green-500">
@@ -40,6 +41,14 @@ const page = () => {
         <LinkToFeedback section="mobileMenu" />
         <div className="mb-5"></div>
       </div> */}
+      {/* <Section
+        isTopPadding={true}
+        isBottomPadding={true}
+        className="bg-red-500"
+      >
+        <div>Hello</div>
+      </Section>  */}
+      <Services />
     </>
   );
 };

@@ -1,9 +1,9 @@
-import Example from '@/sections/Example/Example';
+import { WhatChoose } from '@/sections/WhatChoose';
 
 export default function Home() {
   return (
     <>
-      <Example />
+      <WhatChoose />
     </>
   );
 }

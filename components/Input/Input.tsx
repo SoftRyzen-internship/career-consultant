@@ -1,67 +1,49 @@
-import React from 'react';
-import { useFormContext } from 'react-hook-form';
-import classNames from 'classnames';
-
 import Image from 'next/image';
 
-import { IFormData } from './types';
+import React from 'react';
+import { useFormContext } from 'react-hook-form';
+
+import classNames from 'classnames';
+
+import { type IFormData } from '@/components/Input/types';
 
 type InputPropsType = {
   name: keyof IFormData;
   label: string;
-  type?: 'text' | 'email' | 'textarea';
+  type?: 'text' | 'email' | 'textarea' | 'checkbox';
   className?: string;
 };
 
-export const Input: React.FC<InputPropsType> = ({
-  name,
-  label,
-  type,
-  className,
-}) => {
+export const Input: React.FC<InputPropsType> = ({ name, label, type }) => {
   const {
     register,
     formState: { errors },
   } = useFormContext<IFormData>();
 
-  let inputStyles: string;
-
-  if (errors[name]) {
-    inputStyles =
-      'w-full bg-inputDefaultBg rounded-lg py-6 px-5 xl:p-6 text-sm xl:text-base text-text01 focus:caret-accent focus:bg-inputBg focus:border-errorCol border-errorCol focus:outline-none focus:border-inputBorderW border-inputBorderW';
-  } else {
-    inputStyles =
-      'w-full bg-inputDefaultBg rounded-lg py-6 px-5 xl:p-6 text-sm xl:text-base text-text01 focus:caret-accent focus:bg-inputBg focus:border-inputBorder focus:outline-none focus:border-inputBorderW';
-  }
+  const className = classNames({
+    'error-input': errors[name],
+    'default-input': !errors[name],
+    'default-textarea': type === 'textarea',
+    'label-check-default': !errors[name],
+    'label-check-error': errors[name],
+  });
 
   if (type === 'textarea') {
     return (
-      <label className="flex flex-col gap-1 font-mulish">
+      <label className="flex flex-col gap-1 font-mulish mb-2 xl:mb-3">
         <span className="text-xs text-inactiveText xl:text-sm">{label}</span>
-        <textarea
-          id={name}
-          {...register(name)}
-          className={classNames(
-            'w-full bg-inputDefaultBg rounded-lg py-6 px-5 xl:p-6 text-sm xl:text-base text-text01 focus:caret-accent focus:bg-inputBg focus:border-inputBorder focus:outline-none focus:border-inputBorderW resize-none h-[151px]',
-            className,
-          )}
-        />
+        <textarea id={name} {...register(name)} className={className} />
       </label>
     );
   }
 
   return (
-    <label className="flex flex-col gap-1 font-mulish relative">
+    <label className="flex flex-col gap-1 font-mulish relative mb-1.5 xl:mb-2.5">
       <span className="text-xs text-inactiveText xl:text-sm">{label}</span>
-      <input
-        type={type}
-        id={name}
-        {...register(name)}
-        className={classNames(`${inputStyles}`, className)}
-      />
+      <input type={type} id={name} {...register(name)} className={className} />
       {errors[name] && (
         <>
-          <span className="text-xs xl:text-sm text-errorCol text-right">
+          <span className="text-xs xl:text-sm text-errorCol absolute right-0 bottom-[-20px] xl:bottom-[-24px]">
             {errors[name]?.message}
           </span>
           <Image
@@ -69,7 +51,7 @@ export const Input: React.FC<InputPropsType> = ({
             alt="error icon"
             width={32}
             height={32}
-            className="absolute right-[18px] top-10 xl:top-12"
+            className="absolute right-[18px] top-[42px] xl:top-[46px]"
           />
         </>
       )}

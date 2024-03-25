@@ -3,9 +3,9 @@ import React from 'react';
 
 import classNames from 'classnames';
 
-import TelegramIcon from '../../public/icons/telegram.svg';
+import TelegramIcon from '@/public/icons/telegram.svg';
 
-import common from '../../data/common.json';
+import common from '@/data/common.json';
 
 type ILinkTelegram = {
   className?: string;
@@ -25,7 +25,7 @@ export const LinkTelegram = ({ className = '' }: ILinkTelegram) => {
       rel="noopener noreferrer nofollow"
     >
       {writeToTelegram}
-      <TelegramIcon className="w-6 h-6" aria-label="Paper airplane" />
+      <TelegramIcon className="w-6 h-6" />
     </Link>
   );
 };
