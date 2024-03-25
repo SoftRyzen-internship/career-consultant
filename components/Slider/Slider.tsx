@@ -34,9 +34,10 @@ export const Slider: React.FC<SliderProps> = ({
           setIsAutoPlay(true);
         } else {
           setSlides(1);
-          setSpace(0);
+          setSpace(5);
+          setIsAutoPlay(false);
         }
-      } else if (window.innerWidth < 1280) {
+      } else if (window.innerWidth > 767 && window.innerWidth < 1280) {
         setSlides(2);
         setIsAutoPlay(false);
         setSpace(16);
@@ -84,9 +85,7 @@ export const Slider: React.FC<SliderProps> = ({
         })}
       </Swiper>
 
-      {section !== 'hero' && section === 'services' && data.length > 3 && (
-        <SliderButtons />
-      )}
+      {section !== 'hero' && data.length > 3 && <SliderButtons />}
     </div>
   );
 };
