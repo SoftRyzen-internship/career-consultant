@@ -1,7 +1,7 @@
 'use client';
 
 import { Button } from '@/components/Button';
-import { NavBar } from '@/components/NavBar/NavBar';
+// import { NavBar } from '@/components/NavBar/NavBar';
 import { Element } from 'react-scroll';
 import { Logo } from '@/components/Logo';
 import { Socials } from '@/components/Socials';
@@ -31,7 +31,7 @@ const page = () => {
           Read more
         </Button>
 
-        <NavBar />
+        {/* <NavBar /> */}
         <Element name="test1" className="requestSection">
           <div className="mt-[50px] h-[1000px] bg-green-500">
             requestSection
