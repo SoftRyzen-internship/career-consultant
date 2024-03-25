@@ -2,13 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
   }
-}
+} */
 
 @layer utilities {
   .text-balance {
@@ -16,8 +16,34 @@
   }
 }
 
-.section {
-  @apply py-[30px] md:py-[40px] xl:py-[50px];
+/*.visually-hidden used in Form Component*/
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.privacy::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 1px;
+  background-color: #001d44;
+  bottom: -1px;
+  left: 0;
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
+.privacy:hover::after,
+.privacy:focus::after {
+  opacity: 1;
 }
 
 @layer base {
@@ -29,6 +55,16 @@
 @layer components {
 }
 
+@media only screen and (min-width: 768px) and (max-width: 1279px) {
+  .bord::after {
+    position: absolute;
+    content: '';
+    top: 53px;
+    width: 100%;
+    height: 1px;
+    background-color: #afb4be;
+  }
+}
 .submitted-btn::after {
   content: url('/icons/check.svg');
   display: block;
@@ -99,20 +135,6 @@
   @apply w-full bg-inputDefaultBg rounded-lg py-6 px-5 xl:p-6 text-sm xl:text-base text-text01 focus:caret-accent focus:bg-inputBg focus:border-inputBorder focus:outline-none focus:border-inputBorderW resize-none h-[151px] border-inputBorderW border-transparent transition-all duration-300 outline-none;
 }
 
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
-
 .check-text {
   display: flex;
   align-items: center;
@@ -161,12 +183,41 @@
   background-position: center;
 }
 
-.label-ckeck-default {
+.input-check:focus + .check-text::before {
+  @apply bg-inputBg border-inputBorder border-b-inputBorderW;
+}
+.input-check:focus + .check-text-error::before {
+  @apply bg-inputBg;
+}
+
+.input-check:checked:focus + .check-text::before,
+.input-check:checked:focus + .check-text-error::before {
+  @apply bg-accent border-inputBorder border-b-inputBorderW;
+  background-image: url(/icons/check.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.label-check-default {
   @apply check-text gap-[18px] cursor-pointer font-mulish md:mb-2  xl:mb-0;
 }
 
-.label-ckeck-error {
+.label-check-error {
   @apply check-text-error gap-[18px] cursor-pointer font-mulish md:mb-2  xl:mb-0;
 }
 
 /*-----Form styles end-------*/
+
+.services-card li::marker {
+  @apply text-text02;
+}
+
+.services-card li {
+  margin-top: 0;
+  padding-left: 0;
+}
+
+.font-normal-400 {
+  font-weight: 400 !important;
+}

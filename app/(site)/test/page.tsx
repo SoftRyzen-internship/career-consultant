@@ -1,6 +1,6 @@
 'use client';
 
-import { Services } from '@/components/ServicesCard/Servises';
+import { Services } from '@/components/ServicesCard/Services';
 
 // import { Form } from '@/components/Form';
 // import { Element } from 'react-scroll';
@@ -42,12 +42,12 @@ const page = () => {
         <div className="mb-5"></div>
       </div> */}
       {/* <Section
-        isGeneralSection={false}
-        isReviewsSection={true}
+        isTopPadding={true}
+        isBottomPadding={true}
         className="bg-red-500"
       >
         <div>Hello</div>
-      </Section> */}
+      </Section>  */}
       <Services />
     </>
   );
