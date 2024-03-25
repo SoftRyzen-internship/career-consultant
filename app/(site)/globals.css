@@ -97,7 +97,8 @@
   transition: background-color 0.3s ease-in-out;
 }
 
-.hover-pseudo-underline:hover::before {
+.hover-pseudo-underline:hover::before,
+.hover-pseudo-underline:focus::before {
   background-color: #001d44;
 }
 

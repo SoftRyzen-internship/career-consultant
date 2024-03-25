@@ -19,10 +19,10 @@ const config: Config = {
       container: {
         center: true,
         padding: {
-          DEFAULT: '0.75rem',
-          sm: '0.75rem',
-          md: '2.5rem',
-          xl: '2rem',
+          DEFAULT: '12px',
+          sm: '12px',
+          md: '40px',
+          xl: '32px',
         },
       },
       fontFamily: {
