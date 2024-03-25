@@ -50,7 +50,7 @@ export const Hero: React.FC = () => {
             <h1 className="inline-block font-fixel font-bold text-[40px] leading-[0.95] text-text01 text-left mb-3 ">
               {title}
             </h1>
-            <p className="inline-block font-mulish text-sm text-text02 text-justify mb-9 ">
+            <p className=" font-mulish text-sm text-pretty text-text02  mb-9 ">
               {description1}
               <span className="text-text01">{name}</span>
               {description2}
@@ -64,9 +64,9 @@ export const Hero: React.FC = () => {
       </div>
 
       <Container>
-        <div className=" hidden md:flex md:flex-row justify-between md:items-start xl:items-end">
-          <div className="md:w-[336px] md:pt-4 xl:w-[638px] ">
-            <h1 className="inline-block font-fixel font-bold text-[40px] leading-[1] text-text01 text-left md:mb-5 xl:text-[78px] xl:mb-[38px] ">
+        <div className=" hidden md:flex md:flex-row justify-between md:items-start xl:items-center">
+          <div className="md:w-[336px] md:pt-5  xl:w-[638px] ">
+            <h1 className="inline-block font-fixel font-bold text-[40px] leading-[0.95] text-text01 text-left md:mb-5 xl:text-[78px] xl:mb-[38px] ">
               {title}
             </h1>
             <p className="inline-block font-mulish text-sm text-text02 md:mb-[252px] xl:text-base xl:text-pretty xl:mb-[154px] xl:w-[488px] ">
@@ -77,7 +77,7 @@ export const Hero: React.FC = () => {
 
             <LinkToFeedback section={'hero'} />
           </div>
-          <div className="relative">
+          <div className="relative xl:mr-[47px]">
             <Image
               width={isTablet ? 320 : 400}
               height={isTablet ? 336 : 566}
