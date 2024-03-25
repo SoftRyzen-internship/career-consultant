@@ -1,10 +1,9 @@
 import React from 'react';
+import { HeroPlate } from '../HeroPlate';
 
 type HeroPlatesProps = {
   data: any[];
 };
-
-import { HeroPlate } from '../HeroPlate/HeroPlate';
 
 export const HeroPlates: React.FC<HeroPlatesProps> = ({ data }) => {
   const plateClasses = [

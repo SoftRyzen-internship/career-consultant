@@ -14,7 +14,7 @@ type SliderProps = {
   section: 'hero' | 'requests' | 'services' | 'reviews';
 };
 
-import { SliderButtons } from '../SliderButtons';
+import { SliderButtons } from '@/components/SliderButtons';
 
 export const Slider: React.FC<SliderProps> = ({
   data,
