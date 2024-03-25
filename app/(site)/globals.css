@@ -209,6 +209,75 @@
 
 /*-----Form styles end-------*/
 
+/*-----Choose styles end-------*/
+.choose {
+  height: 642px;
+  background-image: url('../../public/images/choose/illustration-mobile.jpg'),
+    linear-gradient(to bottom, #84a0e6 384px, #fff 384px, #fff 642px);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size:
+    360px 384px,
+    cover;
+}
+
+@media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .choose {
+    background-image: url('../../public/images/choose/illustration-mobile@2x.jpg'),
+      linear-gradient(to bottom, #84a0e6 384px, #fff 384px, #fff 643px);
+  }
+}
+
+@media (min-width: 768px) {
+  .choose {
+    height: 383px;
+    background-image: url('../../public/images/choose/illustration-tablet.jpg'),
+      linear-gradient(to right, #fff 51%, #84a0e6 51%);
+    background-position:
+      left calc(51% + 191px) top 0,
+      top;
+    background-size:
+      376px 383px,
+      auto;
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .choose {
+      background-image: url('../../public/images/choose/illustration-tablet@2x.jpg'),
+        linear-gradient(to right, #fff 51%, #84a0e6 51%);
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  .choose {
+    height: 510px;
+    background-image: url('../../public/images/choose/illustration-desktop.jpg'),
+      linear-gradient(to right, #fff 43%, #84a0e6 43%);
+    background-position:
+      left calc(43% + 347px) top 0,
+      top;
+    background-size:
+      808px 510px,
+      auto;
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .choose {
+      background-image: url('../../public/images/choose/illustration-desktop@2x.jpg'),
+        linear-gradient(to right, #fff 43%, #84a0e6 43%);
+    }
+  }
+}
+
+/*-----Choose styles end-------*/
+
 .services-card li::marker {
   @apply text-text02;
 }
