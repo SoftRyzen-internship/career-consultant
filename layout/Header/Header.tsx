@@ -1,4 +1,5 @@
 import { Container } from '@/components/Container';
+import { Logo } from '@/components/Logo';
 
 type IHeader = {
   className: string;
@@ -7,7 +8,9 @@ type IHeader = {
 export const Header = ({ className }: IHeader) => {
   return (
     <header className={className}>
-      <Container>It is header</Container>
+      <Container>
+        <Logo />
+      </Container>
     </header>
   );
 };
