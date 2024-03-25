@@ -30,7 +30,7 @@
   overflow: hidden;
 }
 
-.privacy::after {
+.policy::after {
   position: absolute;
   content: '';
   width: 100%;
@@ -41,8 +41,8 @@
   opacity: 0;
   transition: opacity 300ms ease-in-out;
 }
-.privacy:hover::after,
-.privacy:focus::after {
+.policy:hover::after,
+.policy:focus::after {
   opacity: 1;
 }
 

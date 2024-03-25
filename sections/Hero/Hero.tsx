@@ -4,6 +4,8 @@ import Image from 'next/image';
 
 import React, { useEffect, useState } from 'react';
 
+import { AdminData } from './types';
+
 import { Container } from '@/components/Container';
 import { Slider } from '@/components/Slider';
 import { HeroPlate } from '@/components/HeroPlate';
@@ -12,8 +14,17 @@ import { HeroPlates } from '@/components/HeroPlates';
 
 import hero from '@/data/hero.json';
 
-export const Hero: React.FC = () => {
-  const { title, description1, description2, name, plates } = hero;
+type HeroProps = {
+  adminDatas: AdminData;
+};
+
+export const Hero: React.FC<HeroProps> = ({ adminDatas }) => {
+  const { title, description1, description2, name, localData } = hero;
+
+  const plates = localData.map(data => {
+    const adminData = adminDatas.find(item => item.descriptionId === data.id);
+    return { ...data, ...adminData };
+  });
 
   const [isTablet, setIsTablet] = useState(true);
 

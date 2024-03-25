@@ -1,5 +1,5 @@
 export type Foot = {
-  privacy: string;
+  policy: string;
   home: string;
   created: string;
   links: Links;
