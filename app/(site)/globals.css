@@ -16,6 +16,20 @@
   }
 }
 
+/*.visually-hidden used in Form Component*/
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 .privacy::after {
   position: absolute;
   content: '';
@@ -121,20 +135,6 @@
   @apply w-full bg-inputDefaultBg rounded-lg py-6 px-5 xl:p-6 text-sm xl:text-base text-text01 focus:caret-accent focus:bg-inputBg focus:border-inputBorder focus:outline-none focus:border-inputBorderW resize-none h-[151px] border-inputBorderW border-transparent transition-all duration-300 outline-none;
 }
 
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
-
 .check-text {
   display: flex;
   align-items: center;
@@ -183,12 +183,97 @@
   background-position: center;
 }
 
-.label-ckeck-default {
+.input-check:focus + .check-text::before {
+  @apply bg-inputBg border-inputBorder border-b-inputBorderW;
+}
+.input-check:focus + .check-text-error::before {
+  @apply bg-inputBg;
+}
+
+.input-check:checked:focus + .check-text::before,
+.input-check:checked:focus + .check-text-error::before {
+  @apply bg-accent border-inputBorder border-b-inputBorderW;
+  background-image: url(/icons/check.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.label-check-default {
   @apply check-text gap-[18px] cursor-pointer font-mulish md:mb-2  xl:mb-0;
 }
 
-.label-ckeck-error {
+.label-check-error {
   @apply check-text-error gap-[18px] cursor-pointer font-mulish md:mb-2  xl:mb-0;
 }
 
 /*-----Form styles end-------*/
+
+/*-----Choose styles end-------*/
+.choose {
+  height: 642px;
+  background-image: url('../../public/images/choose/illustration-mobile.jpg'),
+    linear-gradient(to bottom, #84a0e6 384px, #fff 384px, #fff 642px);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size:
+    360px 384px,
+    cover;
+}
+
+@media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .choose {
+    background-image: url('../../public/images/choose/illustration-mobile@2x.jpg'),
+      linear-gradient(to bottom, #84a0e6 384px, #fff 384px, #fff 643px);
+  }
+}
+
+@media (min-width: 768px) {
+  .choose {
+    height: 383px;
+    background-image: url('../../public/images/choose/illustration-tablet.jpg'),
+      linear-gradient(to right, #fff 51%, #84a0e6 51%);
+    background-position:
+      left calc(51% + 191px) top 0,
+      top;
+    background-size:
+      376px 383px,
+      auto;
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .choose {
+      background-image: url('../../public/images/choose/illustration-tablet@2x.jpg'),
+        linear-gradient(to right, #fff 51%, #84a0e6 51%);
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  .choose {
+    height: 510px;
+    background-image: url('../../public/images/choose/illustration-desktop.jpg'),
+      linear-gradient(to right, #fff 43%, #84a0e6 43%);
+    background-position:
+      left calc(43% + 347px) top 0,
+      top;
+    background-size:
+      808px 510px,
+      auto;
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .choose {
+      background-image: url('../../public/images/choose/illustration-desktop@2x.jpg'),
+        linear-gradient(to right, #fff 43%, #84a0e6 43%);
+    }
+  }
+}
+
+/*-----Choose styles end-------*/
