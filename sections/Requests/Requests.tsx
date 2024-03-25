@@ -5,6 +5,7 @@ import { Container } from '@/components/Container';
 import { SectionTitle } from '@/components/SectionTitle';
 
 import data from '@/data/requests.json';
+// import { Slider } from '@/components/Slider';
 
 export type IRequests = {
   className?: string;
@@ -13,13 +14,18 @@ export type IRequests = {
 export const Requests = ({ className = '' }: IRequests) => {
   const { title } = data;
   return (
-    <Section className={classNames('', className)}>
+    <Section
+      className={classNames('', className)}
+      isBottomPadding={true}
+      isTopPadding={true}
+    >
       <Container>
         <SectionTitle
           text={title}
-          center={true}
-          className="mb-4 md:mb-6 xl:mb-7 md:text-left md:w-[248px] xl:w-[292px]"
+          center={false}
+          className="mb-7 xl:mb-[60px]"
         />
+        {/* <Slider /> */}
       </Container>
     </Section>
   );
