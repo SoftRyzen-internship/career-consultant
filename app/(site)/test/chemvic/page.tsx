@@ -10,7 +10,7 @@ import { Section } from '@/components/Section';
 const page = () => {
   return (
     <>
-      <Section isGeneralSection={false} isHerosection>
+      <Section isHerosection>
         <Hero />
       </Section>
       <Footer footer={footer} sheet={'main'} />
