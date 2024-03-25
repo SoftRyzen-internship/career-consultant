@@ -24,8 +24,8 @@ export const Input: React.FC<InputPropsType> = ({ name, label, type }) => {
     'error-input': errors[name],
     'default-input': !errors[name],
     'default-textarea': type === 'textarea',
-    'label-ckeck-default': !errors[name],
-    'label-ckeck-error': errors[name],
+    'label-check-default': !errors[name],
+    'label-check-error': errors[name],
   });
 
   if (type === 'textarea') {
