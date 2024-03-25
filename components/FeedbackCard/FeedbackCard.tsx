@@ -1,7 +1,9 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 
 import { Button } from '@/components/Button';
 import { Modal } from '@/components/Modal';
+
+import { useReadMoreButton } from '@/hooks/useReadMoreButton';
 
 import jsonData from '@/data/common.json';
 
@@ -14,35 +16,15 @@ export type ICardData = {
 };
 
 export const FeedbackCard = ({ data }: ICardData) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [showReadMoreButton, setShowReadMoreButton] = useState(false);
-  const textRef = useRef<HTMLParagraphElement | null>(null);
-
   const readMoreText = jsonData.buttons[0].readMore;
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const { isShownReadMoreBtn, textRef } = useReadMoreButton(data.text);
 
   const handleToggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
-
-  useEffect(() => {
-    const textElement = textRef.current;
-
-    const calculateAndSetTruncation = () => {
-      if (textElement) {
-        const isTextTruncated =
-          textElement.scrollHeight > textElement.clientHeight;
-        setShowReadMoreButton(isTextTruncated);
-      }
-    };
-
-    calculateAndSetTruncation();
-
-    window.addEventListener('resize', calculateAndSetTruncation);
-
-    return () => {
-      window.removeEventListener('resize', calculateAndSetTruncation);
-    };
-  }, []);
 
   return (
     <>
@@ -63,7 +45,8 @@ export const FeedbackCard = ({ data }: ICardData) => {
             {data.text}
           </p>
         </div>
-        {showReadMoreButton && (
+
+        {isShownReadMoreBtn && (
           <Button type="button" onClick={() => handleToggleModal()}>
             {readMoreText}
           </Button>
