@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 
-import { CardTitle } from '../CardTitle';
+import { CardTitle } from '@/components/CardTitle';
 
 import classNames from 'classnames';
 
