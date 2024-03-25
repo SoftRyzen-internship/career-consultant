@@ -5,7 +5,7 @@ import { useFormContext } from 'react-hook-form';
 
 import classNames from 'classnames';
 
-import { IFormData } from './types';
+import { type IFormData } from '@/components/Input/types';
 
 type InputPropsType = {
   name: keyof IFormData;
@@ -20,7 +20,7 @@ export const Input: React.FC<InputPropsType> = ({ name, label, type }) => {
     formState: { errors },
   } = useFormContext<IFormData>();
 
-  const classname = classNames({
+  const className = classNames({
     'error-input': errors[name],
     'default-input': !errors[name],
     'default-textarea': type === 'textarea',
@@ -32,7 +32,7 @@ export const Input: React.FC<InputPropsType> = ({ name, label, type }) => {
     return (
       <label className="flex flex-col gap-1 font-mulish mb-2 xl:mb-3">
         <span className="text-xs text-inactiveText xl:text-sm">{label}</span>
-        <textarea id={name} {...register(name)} className={classname} />
+        <textarea id={name} {...register(name)} className={className} />
       </label>
     );
   }
@@ -40,7 +40,7 @@ export const Input: React.FC<InputPropsType> = ({ name, label, type }) => {
   return (
     <label className="flex flex-col gap-1 font-mulish relative mb-1.5 xl:mb-2.5">
       <span className="text-xs text-inactiveText xl:text-sm">{label}</span>
-      <input type={type} id={name} {...register(name)} className={classname} />
+      <input type={type} id={name} {...register(name)} className={className} />
       {errors[name] && (
         <>
           <span className="text-xs xl:text-sm text-errorCol absolute right-0 bottom-[-20px] xl:bottom-[-24px]">

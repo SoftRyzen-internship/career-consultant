@@ -199,11 +199,11 @@
   background-position: center;
 }
 
-.label-ckeck-default {
+.label-check-default {
   @apply check-text gap-[18px] cursor-pointer font-mulish md:mb-2  xl:mb-0;
 }
 
-.label-ckeck-error {
+.label-check-error {
   @apply check-text-error gap-[18px] cursor-pointer font-mulish md:mb-2  xl:mb-0;
 }
 

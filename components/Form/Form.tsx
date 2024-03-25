@@ -8,9 +8,9 @@ import toast, { Toaster } from 'react-hot-toast';
 import classNames from 'classnames';
 
 import { type IFormData } from '@/components/Input/types';
-import { FormInput } from './types';
+import { type FormInput } from '@/components/Form/types';
 
-import { Input } from '../Input';
+import { Input } from '@/components/Input';
 import { Button } from '@/components/Button';
 
 import { formSchema } from '@/utils/formSchema';
@@ -27,7 +27,7 @@ export const Form: React.FC = () => {
 
   const [btnText, setBtnText] = useState(sendText);
   const [isBtnSubmitted, setIsBtnSubmitted] = useState(false);
-  const [isDesebled, setIsDesebled] = useState<boolean | undefined>(true);
+  const [isDisabled, setIsDisabled] = useState<boolean | undefined>(true);
 
   const methods = useForm<IFormData>({
     resolver: yupResolver(formSchema),
@@ -47,9 +47,9 @@ export const Form: React.FC = () => {
   let isError = false;
   const isEmptyCheck = isEmpty(errors);
 
-  const classname = classNames({
-    'label-ckeck-default': isEmptyCheck,
-    'label-ckeck-error': !isEmptyCheck,
+  const className = classNames({
+    'label-check-default': isEmptyCheck,
+    'label-check-error': !isEmptyCheck,
   });
 
   const onSubmit = () => {
@@ -59,13 +59,13 @@ export const Form: React.FC = () => {
     methods.reset();
     localStorage.removeItem('formData');
 
-    setIsDesebled(false);
+    setIsDisabled(false);
   };
 
   methods.watch(data => {
     localStorage.setItem('formData', JSON.stringify(data));
 
-    setIsDesebled(!data.checkbox);
+    setIsDisabled(!data.checkbox);
   });
 
   if (!isEmpty(errors)) {
@@ -125,7 +125,7 @@ export const Form: React.FC = () => {
             id="checkbox"
             className="input-check visually-hidden"
           />
-          <label htmlFor="checkbox" className={classname}>
+          <label htmlFor="checkbox" className={className}>
             <span className="text-xs font-mulish xl:text-base text-text02">
               {personalDataConsent}
             </span>
@@ -136,7 +136,7 @@ export const Form: React.FC = () => {
           onClick={() => {}}
           isSubmitted={isBtnSubmitted}
           isSubmitError={isError}
-          disabled={isDesebled}
+          disabled={isDisabled}
         >
           {btnText}
         </Button>
