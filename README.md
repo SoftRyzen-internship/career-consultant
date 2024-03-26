@@ -2,18 +2,15 @@
 
 **[LIVE PAGE](https://github.com/SoftRyzen-internship/career-consultant)**
 
-<img width="100%" src="./public/images/readme/readme-title.jpg" alt="microservices"/>
+<img width="100%" src="./public/images/readme/readme-title.jpg" alt="main page"/>
 
 <p align="center">
   <a href="#introduction">Introduction</a> •
   <a href="#features">Features</a> •
   <a href="#components-api">Components API</a> •
   <a href="#credits">Credits</a> •
-  <a href="#components-api">Components API</a>
+  <a href="#getting-started">Getting started</a>
 </p>
-
-- [Introduction](#introduction)
-- [Credits](#credits)
 
 ## Introduction
 
@@ -44,6 +41,31 @@ fluid (stretchable). Used mobile-first approach.
 - **Reviews**:There is a slider with navigation buttons. Data can be edited
   using the Sanity admin panel.
 - **Feedback**: Contains links to social networks and a feedback form.
+
+<details open>
+<summary>
+ Preview
+</summary> <br />
+
+<p align="center">
+    <img width="49%" src="./public/images/readme/readme-hero.jpg" alt="hero section"/>
+&nbsp;
+    <img width="49%" src="./public/images/readme/readme-request.jpg" alt="request section"/>
+</p>
+
+<p align="center">
+    <img width="49%" src="./public/images/readme/readme-services.jpg" alt="hero section"/>
+&nbsp;
+    <img width="49%" src="./public/images/readme/readme-whatchoose.jpg" alt="what to choose section"/>
+</p> 
+    
+<p align="center">
+    <img width="49%" src="./public/images/readme/readme-feedback.jpg" alt="reviews section"/>
+&nbsp;
+    <img width="49%" src="./public/images/readme/readme-feedbackform.jpg" alt="feedback section"/>
+</p>
+    
+</details>
 
 ## Components API
 
@@ -109,8 +131,6 @@ fluid (stretchable). Used mobile-first approach.
 | `section`   | `requests` / `hero` / `services` / `reviews` | required, set specific options                                |
 
 ## Credits
-
-## [Credits](#credits)
 
 This software uses the following open source packages:
 
