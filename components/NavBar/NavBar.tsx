@@ -3,7 +3,7 @@ import jsonData from '@/data/common.json';
 import RightArrow from '@/public/icons/right-arrow-link.svg';
 
 type INavBar = {
-  onClick: () => void;
+  onClick?: () => void;
 };
 
 export const NavBar = ({ onClick }: INavBar) => {

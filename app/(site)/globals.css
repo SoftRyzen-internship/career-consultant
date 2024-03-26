@@ -279,6 +279,19 @@
 
 /*-----Choose styles end-------*/
 
+.services-card li::marker {
+  @apply text-text02;
+}
+
+.services-card li {
+  margin-top: 0;
+  padding-left: 0;
+}
+
+.font-normal-400 {
+  font-weight: 400 !important;
+}
+
 .success_error-icon {
   width: 64px;
   height: 64px;
