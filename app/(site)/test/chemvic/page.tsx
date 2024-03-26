@@ -1,7 +1,6 @@
 import { fetchAchievements } from '@/sanity/requests/fetchAchievements';
 
 import { Hero } from '@/sections/Hero';
-import { Section } from '@/components/Section';
 import { Footer } from '@/layout/Footer';
 
 import footer from '@/data/footer.json';
@@ -11,9 +10,8 @@ const page = async () => {
 
   return (
     <>
-      <Section isHerosection>
-        <Hero adminDatas={adminDatas} />
-      </Section>
+      <Hero adminDatas={adminDatas} />
+
       <Footer footer={footer} sheet={'main'} />
     </>
   );
