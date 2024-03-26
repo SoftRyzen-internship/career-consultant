@@ -7,13 +7,13 @@ import { Logo } from '@/components/Logo';
 import { Socials } from '@/components/Socials';
 import { LinkTelegram } from '@/components/LinkTelegram';
 import { LinkToFeedback } from '@/components/LinkToFeedback';
-import { RequestCard } from '@/components/RequestCard';
+// import { RequestCard } from '@/components/RequestCard';
 import { WhatChoose } from '@/sections/WhatChoose';
 
-import requestsList from '@/data/requests.json';
+// import requestsList from '@/data/requests.json';
 
 const page = () => {
-  const { requests } = requestsList;
+  // const { requests } = requestsList;
 
   return (
     <>
@@ -64,7 +64,7 @@ const page = () => {
         <div className="mb-5"></div>
         <LinkToFeedback section="mobileMenu" />
         <div className="mb-5"></div>
-        <ul>
+        {/* <ul>
           {requests.map(request => {
             return (
               <RequestCard
@@ -74,7 +74,7 @@ const page = () => {
               />
             );
           })}
-        </ul>
+        </ul> */}
       </div>
       <WhatChoose />
     </>

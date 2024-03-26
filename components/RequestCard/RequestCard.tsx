@@ -19,15 +19,12 @@ type Request = {
 };
 
 type IRequestCard = {
-  request?: Request;
+  card: Request;
   className?: string;
 };
 
-export const RequestCard = ({ request, className = '' }: IRequestCard) => {
-  if (!request) {
-    return null;
-  }
-  const { id, icon, alt, title, list } = request;
+export const RequestCard = ({ card, className = '' }: IRequestCard) => {
+  const { id, icon, alt, title, list } = card;
 
   return (
     <div
