@@ -278,3 +278,24 @@
 }
 
 /*-----Choose styles end-------*/
+
+.success_error-icon {
+  width: 64px;
+  height: 64px;
+  @media screen and (min-width: 768px) {
+    width: 75px;
+    height: 75px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.line-height-115 {
+  line-height: 1.15 !important;
+}
+
+.line-height-140 {
+  line-height: 1.4 !important;
+}

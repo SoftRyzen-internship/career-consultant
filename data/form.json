@@ -3,7 +3,10 @@
   "sendText": "Відправити",
   "sentBtnText": "Відправлено",
   "errorBtnText": "Помилка",
-  "successSubmitText": "Дякую! Я найближчим часом зв'яжусь з вами",
+  "successSubmitText": "Ваша заявка успішно відправлена!",
+  "successSubmitDescriptionText": "Ми зв'яжемося з вами найближчим часом.",
+  "errorSubmitText": "Щось пішло не так...",
+  "errorSubmitDescriptionText": "Ми не змогли отримати Вашу заявку. Будь ласка, спробуйте ще раз.",
   "inputs": [
     {
       "name": "name",

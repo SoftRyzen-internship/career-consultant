@@ -29,7 +29,6 @@
     "react-dom": "^18",
     "react-hook-form": "^7.51.1",
     "react-scroll": "^1.9.0",
-    "react-hot-toast": "^2.4.1",
     "react-scroll": "^1.9.0",
     "sanity": "^3.34.0",
     "swiper": "^11.0.7",
