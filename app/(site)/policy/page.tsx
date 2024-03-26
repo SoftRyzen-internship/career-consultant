@@ -8,11 +8,16 @@ import { Section } from '@/components/Section';
 
 import metaInfo from '@/data/meta/policy.json';
 
-const { title, description } = metaInfo;
+const { title, slug, openGraph } = metaInfo;
+
+const baseUrl = `${process.env.NEXT_PUBLIC_BASE_URL}${slug}`;
 
 export const metadata: Metadata = {
   title,
-  description,
+  alternates: {
+    canonical: baseUrl,
+  },
+  openGraph: { ...openGraph, url: `${baseUrl}` },
 };
 
 const page = async () => {

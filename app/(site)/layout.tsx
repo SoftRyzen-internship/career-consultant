@@ -9,31 +9,31 @@ import metaInfo from '@/data/meta/home.json';
 
 import './globals.css';
 
-// const baseUrl = '';
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
 const {
   title,
   description,
   keywords,
-  // manifest,
+  manifest,
   twitter,
-  // openGraph,
-  // icons,
-  // robots,
+  openGraph,
+  icons,
+  robots,
 } = metaInfo;
 
 export const metadata: Metadata = {
   title,
   description,
-  // alternates: {
-  //   canonical: baseUrl,
-  // },
-  // manifest,
+  alternates: {
+    canonical: baseUrl,
+  },
+  manifest,
   keywords,
   twitter,
-  // openGraph: { ...openGraph, url: `${baseUrl}` },
-  // icons,
-  // robots,
+  openGraph: { ...openGraph, url: `${baseUrl}` },
+  icons,
+  robots,
 };
 
 const mulish = Mulish({
