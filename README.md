@@ -20,9 +20,10 @@ support.
 
 ## Features
 
-The layout is responsive and cross-browser compatible - mobile starts from
-360px, tablet from 768px, desktop from 1280px. The layout from 360px to 480px is
-fluid (stretchable). Used mobile-first approach.
+Website consists from 2 pages: Main & Privacy Policy. </br>The layout is
+responsive and cross-browser compatible - mobile starts from 360px, tablet from
+768px, desktop from 1280px. The layout from 360px to 480px is fluid
+(stretchable). Used mobile-first approach.
 
 ### Sections
 
@@ -42,9 +43,9 @@ fluid (stretchable). Used mobile-first approach.
   using the Sanity admin panel.
 - **Feedback**: Contains links to social networks and a feedback form.
 
-<details open>
+<details>
 <summary>
- Preview
+ Sections preview
 </summary> <br />
 
 <p align="center">
