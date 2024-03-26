@@ -53,7 +53,7 @@ export const Slider: React.FC<SliderProps> = ({
             </SwiperSlide>
           );
         })}
-        {section !== 'hero' && data.length > 3 && <SliderButtons />}
+        {section !== 'hero' && data.length >= 3 && <SliderButtons />}
       </Swiper>
     </div>
   );
