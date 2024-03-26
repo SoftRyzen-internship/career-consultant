@@ -16,8 +16,8 @@
     "test-all": "npm run check-format && npm run check-lint && npm run check-types && npm run build"
   },
   "dependencies": {
-    "@hookform/resolvers": "^3.3.4",
     "@headlessui/react": "^1.7.18",
+    "@hookform/resolvers": "^3.3.4",
     "@portabletext/react": "^3.0.13",
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.34.0",
@@ -28,7 +28,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-hook-form": "^7.51.1",
-    "react-scroll": "^1.9.0",
+    "react-responsive": "^10.0.0",
     "react-scroll": "^1.9.0",
     "sanity": "^3.34.0",
     "swiper": "^11.0.7",
