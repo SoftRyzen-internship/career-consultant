@@ -27,10 +27,10 @@ export const RequestCard = ({ card, className = '' }: IRequestCard) => {
   const { id, icon, alt, title, list } = card;
 
   return (
-    <li
+    <div
       key={id}
       className={classNames(
-        'px-3 pb-5 pt-4 md:px-4 md:pb-8 md:pt-6 xl:px-8 xl:pt-8 xl:pb-10 w-full sm:w-[456px] md:w-[336px] xl:w-[384px] h-auto border-solid border-[0.50px] border-strokeCol rounded-lg bg-white',
+        ' px-3 pb-5 pt-4 md:px-4 md:pb-8 md:pt-6 xl:px-8 xl:pt-8 xl:pb-10 w-full sm:w-[456px] md:w-[336px] xl:w-[384px] h-full border-solid border-[0.50px] border-strokeCol rounded-lg bg-white',
         className,
       )}
     >
@@ -54,6 +54,6 @@ export const RequestCard = ({ card, className = '' }: IRequestCard) => {
           );
         })}
       </ol>
-    </li>
+    </div>
   );
 };

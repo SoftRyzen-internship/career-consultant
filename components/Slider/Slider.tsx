@@ -45,7 +45,7 @@ export const Slider: React.FC<SliderProps> = ({
 
   return (
     <div className="flex flex-col justify-center  items-center gap-[16px] md:gap-[24px] xl:flex-col-reverse xl:gap-[48px]  ">
-      <Swiper {...swiperParams} className="w-full  ">
+      <Swiper {...swiperParams} className="w-full h-auto ">
         {data?.map((card, index) => {
           return (
             <SwiperSlide key={index}>

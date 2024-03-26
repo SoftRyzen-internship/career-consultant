@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 export const useSliderSettings = (section: string) => {
   const [slides, setSlides] = useState(1);
-  const [isAutoPlay, setIsAutoPlay] = useState(false);
+  const [isAutoPlay, setIsAutoPlay] = useState(true);
   const [space, setSpace] = useState(0);
 
   useEffect(() => {
