@@ -291,3 +291,9 @@
 .font-normal-400 {
   font-weight: 400 !important;
 }
+
+/*-----Swiper styles start-------*/
+.swiper .swiper-slide {
+  height: auto;
+}
+/*-----Swiper styles end-------*/
