@@ -1,0 +1,67 @@
+{
+  "title": "Кар'єрне консультування",
+  "description": "Сайт кар'єрного консультанта Юлії Степаненко",
+  "keywords": "кар'єра, кар'єрне консультування, кар'єрний консультант",
+  "manifest": "/meta/site.webmanifest",
+  "twitter": {
+    "title": "Кар'єрне консультування",
+    "card": "summary_large_image",
+    "description": "Сайт кар'єрного консультанта Юлії Степаненко",
+    "images": [
+      {
+        "url": "/meta/ogp/og-image.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "Кар'єрне консультування"
+      }
+    ]
+  },
+  "openGraph": {
+    "title": "Кар'єрне консультування",
+    "description": "Сайт кар'єрного консультанта Юлії Степаненко",
+    "siteName": "Кар'єрне консультування",
+    "locale": "uk_UA",
+    "type": "website",
+    "images": [
+      {
+        "url": "/meta/ogp/og-image.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "Кар'єрне консультування"
+      }
+    ]
+  },
+  "icons": {
+    "icon": [
+      {
+        "url": ""
+      },
+      {
+        "url": "",
+        "sizes": "",
+        "type": ""
+      },
+      {
+        "url": "",
+        "sizes": "",
+        "type": ""
+      },
+      {
+        "url": "",
+        "sizes": "",
+        "type": ""
+      }
+    ],
+    "shortcut": "",
+    "apple": "",
+    "other": {
+      "rel": "",
+      "url": ""
+    }
+  },
+  "robots": {
+    "index": true,
+    "follow": true,
+    "nocache": true
+  }
+}

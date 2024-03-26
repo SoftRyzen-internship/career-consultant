@@ -1,8 +1,19 @@
+import { Metadata } from 'next';
+
 import { PortableText } from '@portabletext/react';
 
 import { fetchPolicy } from '@/sanity/requests/fetchPolicy';
 
 import { Section } from '@/components/Section';
+
+import metaInfo from '@/data/meta/policy.json';
+
+const { title, description } = metaInfo;
+
+export const metadata: Metadata = {
+  title,
+  description,
+};
 
 const page = async () => {
   const policy = await fetchPolicy();
