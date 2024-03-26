@@ -18,5 +18,6 @@
     { "text": "Послуги", "moveTo": "reviewsSection" },
     { "text": "Відгуки", "moveTo": "feedbackSection" }
   ],
-  "ariaLabelLogo": "Логотип"
+  "ariaLabelLogo": "Логотип",
+  "ariaLabelBurger": "Відкрити мобільне меню"
 }
