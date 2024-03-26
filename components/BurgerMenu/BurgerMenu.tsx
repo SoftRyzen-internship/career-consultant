@@ -9,12 +9,16 @@ import { LinkToFeedback } from '@/components/LinkToFeedback';
 
 import CloseIcon from '@/public/icons/close.svg';
 
+import dataJson from '@/data/common.json';
+
 type IMenu = {
   isOpen: boolean;
   onClose: () => void;
 };
 
 export const BurgerMenu = ({ isOpen, onClose }: IMenu) => {
+  const { ariaLabelClose } = dataJson;
+
   return (
     <Transition.Root show={isOpen} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={onClose}>
@@ -51,7 +55,7 @@ export const BurgerMenu = ({ isOpen, onClose }: IMenu) => {
                         <button
                           type="button"
                           onClick={onClose}
-                          aria-label="Close menu"
+                          aria-label={ariaLabelClose}
                           className="md:ml-auto"
                         >
                           <CloseIcon className="w-[24px] h-[24p] stroke-accent stroke-2 hover:stroke-accentPressed focus:stroke-accentPressed transition-[stroke] duration-300" />
