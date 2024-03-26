@@ -1,13 +1,14 @@
 'use client';
 
 import { Button } from '@/components/Button';
-import { NavBar } from '@/components/NavBar/NavBar';
+// import { NavBar } from '@/components/NavBar/NavBar';
 import { Element } from 'react-scroll';
 import { Logo } from '@/components/Logo';
 import { Socials } from '@/components/Socials';
 import { LinkTelegram } from '@/components/LinkTelegram';
 import { LinkToFeedback } from '@/components/LinkToFeedback';
 import { RequestCard } from '@/components/RequestCard';
+import { WhatChoose } from '@/sections/WhatChoose';
 
 import requests from '@/data/requests.json';
 
@@ -28,7 +29,7 @@ const page = () => {
           Read more
         </Button>
 
-        <NavBar />
+        {/* <NavBar /> */}
         <Element name="test1" className="requestSection">
           <div className="mt-[50px] h-[1000px] bg-green-500">
             requestSection
@@ -73,6 +74,7 @@ const page = () => {
           })}
         </ul>
       </div>
+      <WhatChoose />
     </>
   );
 };

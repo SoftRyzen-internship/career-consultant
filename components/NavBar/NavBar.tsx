@@ -2,7 +2,11 @@ import { Link } from 'react-scroll';
 import jsonData from '@/data/common.json';
 import RightArrow from '@/public/icons/right-arrow-link.svg';
 
-export const NavBar = () => {
+type INavBar = {
+  onClick?: () => void;
+};
+
+export const NavBar = ({ onClick }: INavBar) => {
   const data = jsonData.navBar;
 
   return (
@@ -18,6 +22,7 @@ export const NavBar = () => {
               duration={500}
               delay={500}
               ignoreCancelEvents={false}
+              onClick={onClick}
               className="navbar-link hover-pseudo-underline flex justify-between items-center font-fixel text-3xl text-text01 cursor-pointer transition-[color] duration-300 active:text-accent
               xl:text-base xl:font-normal xl:font-mulish xl:text-text02 xl:hover:text-text01"
             >
