@@ -59,6 +59,7 @@ export const FormPopUp = ({
                   type="button"
                   className="block text-[#000000] ml-auto hover:text-[#000C1D]"
                   onClick={closeModal}
+                  aria-label="Закрити"
                 >
                   <CloseIcon
                     width={24}

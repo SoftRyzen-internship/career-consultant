@@ -25,6 +25,7 @@ export const Form: React.FC = () => {
   const [isDisabled, setIsDisabled] = useState<boolean | undefined>(true);
   const [isOpen, setIsOpen] = useState(false);
   const [isApiError, setIsApiError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const methods = useForm<IFormData>({
     resolver: yupResolver(formSchema),
@@ -41,7 +42,6 @@ export const Form: React.FC = () => {
     return Object.keys(errors).length === 0;
   };
 
-  let isError = false;
   const isEmptyCheck = isEmpty(errors);
 
   const className = classNames({
@@ -59,18 +59,25 @@ export const Form: React.FC = () => {
 
   const onSubmit: SubmitHandler<IFormData> = async data => {
     try {
+      setIsLoading(true);
       const message = `Ім'я: ${data.name} %0AEmail: ${data.email} %0A${data.message ? `Повідомлення: ${data.message}` : ''}
       `;
       await sendToTelegramMessage(message);
+
       methods.reset();
       setIsBtnSubmitted(true);
       localStorage.removeItem('formData');
-      setIsDisabled(false);
+      setIsDisabled(true);
+      setIsLoading(false);
+      openModal();
     } catch (error) {
       setIsApiError(true);
+      setIsLoading(false);
+      openModal();
+    } finally {
+      setIsLoading(false);
+      setBtnText(sendText);
     }
-
-    openModal();
   };
 
   methods.watch(data => {
@@ -79,19 +86,9 @@ export const Form: React.FC = () => {
     setIsDisabled(!data.checkbox);
   });
 
-  if (!isEmpty(errors)) {
-    isError = true;
-  }
-
   useEffect(() => {
-    if (!isEmptyCheck) {
-      setBtnText(errorBtnText);
-    }
-    if (isEmptyCheck) {
-      setBtnText(sendText);
-    }
-    if (isBtnSubmitted) {
-      setBtnText(sentBtnText);
+    if (isLoading) {
+      setBtnText('Відправляємо...');
     }
 
     const savedFormData = localStorage.getItem('formData');
@@ -110,6 +107,7 @@ export const Form: React.FC = () => {
     sendText,
     sentBtnText,
     methods,
+    isLoading,
   ]);
 
   return (
@@ -145,8 +143,8 @@ export const Form: React.FC = () => {
           <Button
             type="submit"
             onClick={() => {}}
-            isSubmitted={isBtnSubmitted}
-            isSubmitError={isError}
+            isSubmitted={false}
+            isSubmitError={false}
             disabled={isDisabled}
           >
             {btnText}
