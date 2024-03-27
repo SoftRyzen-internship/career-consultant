@@ -38,7 +38,11 @@ export const Requests = ({ className = '' }: IRequests) => {
         {isDesktop ? (
           <RequestsList requestsList={requests} />
         ) : (
-          <Slider section="requests" data={requests} component={RequestCard} />
+          <Slider
+            section={'requests'}
+            data={requests}
+            component={RequestCard}
+          />
         )}
       </Container>
     </Section>
