@@ -6,13 +6,9 @@ import { BurgerMenu } from '@/components/BurgerMenu/BurgerMenu';
 // import { NavBar } from '@/components/NavBar/NavBar';
 import { Element } from 'react-scroll';
 
-import { FeedbackCard } from '@/components/FeedbackCard';
-import feedbackData from '@/data/feedback.json';
 import { useState } from 'react';
 
 const Page = () => {
-  const data = feedbackData.feedback;
-
   const [isBurgerOpen, setIsBurgerOpen] = useState(false);
   const onClose = () => setIsBurgerOpen(false);
 
@@ -57,15 +53,6 @@ const Page = () => {
         {/* ---------------------------------------------------FeedbackCard--------------------------------------------------- */}
 
         {/* <FeedbackCard data={data1}/> */}
-        {/* ---------------------------------------------------Modal--------------------------------------------------- */}
-
-        {data.map(item => {
-          return (
-            <div key={item.name} className="mb-[20px]">
-              <FeedbackCard data={item} />
-            </div>
-          );
-        })}
 
         {/* ---------------------------------------------------BurgerMenu--------------------------------------------------- */}
         <p>
