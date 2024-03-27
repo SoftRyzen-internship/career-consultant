@@ -1,8 +1,46 @@
+'use client';
+import React, { useState, useEffect } from 'react';
+import classNames from 'classnames';
+import { useMediaQuery } from 'react-responsive';
+
 import Arrow from '@/public/icons/left-arrow.svg';
 
-export const SliderButtons = () => {
+type SlidesButtonsProps = {
+  slidesCount: number;
+};
+
+export const SliderButtons: React.FC<SlidesButtonsProps> = ({
+  slidesCount,
+}) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
+
+  const isDesktop = useMediaQuery({ minDeviceWidth: 1280 });
+  const isTablet = useMediaQuery({ minDeviceWidth: 768, maxDeviceWidth: 1279 });
+  const isMobile = useMediaQuery({ maxDeviceWidth: 767 });
+
+  const btnsClassName = classNames({
+    flex:
+      isLoaded &&
+      (slidesCount > 3 ||
+        (isMobile && slidesCount === 2) ||
+        (isTablet && slidesCount === 3)),
+    hidden:
+      isLoaded &&
+      ((isDesktop && slidesCount <= 3) ||
+        (isTablet && slidesCount <= 2) ||
+        (isTablet && slidesCount <= 1)),
+  });
   return (
-    <div className="   flex gap-[12px] md:gap-[16px] xl:gap-[20px] xl:self-end">
+    <div
+      className={classNames(
+        'flex gap-[12px] md:gap-[16px] xl:absolute xl:top-[-108px] xl:right-0',
+        btnsClassName,
+      )}
+    >
       <button
         aria-label="Попередня картка"
         type="button"
