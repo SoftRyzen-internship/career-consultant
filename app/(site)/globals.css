@@ -22,7 +22,7 @@
   overflow: hidden;
 }
 
-.privacy::after {
+.policy::after {
   position: absolute;
   content: '';
   width: 100%;
@@ -33,14 +33,14 @@
   opacity: 0;
   transition: opacity 300ms ease-in-out;
 }
-.privacy:hover::after,
-.privacy:focus::after {
+.policy:hover::after,
+.policy:focus::after {
   opacity: 1;
 }
 
 @layer base {
   .submit-btn-base {
-    @apply py-[20px] px-[32px] w-full text-white text-[18px] leading-[1.25] font-bold rounded-[20px] shadow-custom;
+    @apply py-[20px] px-[32px] w-full text-white text-[18px] leading-[1.25] font-bold rounded-[20px];
   }
 }
 
