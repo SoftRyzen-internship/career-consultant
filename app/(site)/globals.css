@@ -48,7 +48,7 @@
 
 @layer base {
   .submit-btn-base {
-    @apply py-[20px] px-[32px] w-full text-white text-[18px] leading-[1.25] font-bold rounded-[20px] shadow-custom;
+    @apply py-[20px] px-[32px] w-full text-white text-[18px] leading-[1.25] font-bold rounded-[20px];
   }
 }
 
