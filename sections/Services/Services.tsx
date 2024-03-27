@@ -1,14 +1,15 @@
-import React from 'react';
+'use client';
 
-import { fetchServices } from '@/sanity/requests/fetchServices';
+import React from 'react';
 
 import { Section } from '@/components/Section';
 import { Container } from '@/components/Container';
 import { SectionTitle } from '@/components/SectionTitle';
-
-import servicesLocal from '@/data/services.json';
 import { Slider } from '@/components/Slider';
 import { ServicesCard } from '@/components/ServicesCard';
+
+import servicesLocal from '@/data/services.json';
+import { fetchServices } from '@/sanity/requests/fetchServices';
 
 export const Services: React.FC = async () => {
   const services = await fetchServices();
@@ -16,10 +17,7 @@ export const Services: React.FC = async () => {
   const { title } = servicesLocal;
   return (
     <Section isChooseOrFeedbackSection>
-      <div
-        id="services"
-        className="bg-customBackground flex flex-col justify-center"
-      >
+      <div className="bg-customBackground flex flex-col justify-center">
         <Container>
           <SectionTitle
             text={title}
