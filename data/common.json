@@ -14,9 +14,9 @@
   "leaveApplication": "Залишити заявку",
   "moveToFeedback": "feedback",
   "navBar": [
-    { "text": "Запити", "moveTo": "requestSection" },
-    { "text": "Послуги", "moveTo": "reviewsSection" },
-    { "text": "Відгуки", "moveTo": "feedbackSection" }
+    { "text": "Запити", "moveTo": "request" },
+    { "text": "Послуги", "moveTo": "services" },
+    { "text": "Відгуки", "moveTo": "reviews" }
   ],
   "ariaLabelLogo": "Логотип",
   "ariaLabelBurger": "Відкрити мобільне меню",
