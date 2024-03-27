@@ -12,15 +12,9 @@ export async function Reviews() {
   const reviews = await fetchReviews();
 
   return (
-    <Section
-      isChooseOrFeedbackSection={true}
-      className="py-[60px] md:py-[60px] xl:py-[80px]"
-    >
-      <Container className="xl:relative">
-        <SectionTitle
-          text={title}
-          className="mb-[28px] xl:absolute xl:top-0 xl:left-[32px]"
-        />
+    <Section isTopPadding={true} isBottomPadding={true}>
+      <Container>
+        <SectionTitle text={title} className="mb-[28px] xl:mb-[60px]" />
         <Slider section={'reviews'} component={FeedbackCard} data={reviews} />
       </Container>
     </Section>
