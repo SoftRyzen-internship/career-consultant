@@ -2,9 +2,8 @@
 
 import React, { useEffect, useState } from 'react';
 
-import { useForm, FormProvider } from 'react-hook-form';
+import { useForm, FormProvider, SubmitHandler } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import toast, { Toaster } from 'react-hot-toast';
 import classNames from 'classnames';
 
 import { type IFormData } from '@/components/Input/types';
@@ -15,19 +14,18 @@ import { Button } from '@/components/Button';
 
 import { formSchema } from '@/utils/formSchema';
 import form from '@/data/form.json';
+import { sendToTelegramMessage } from '@/api/sendToTelegramMessage';
+import { FormPopUp } from '@/components/FormPopUp';
 
 export const Form: React.FC = () => {
-  const {
-    personalDataConsent,
-    sendText,
-    sentBtnText,
-    errorBtnText,
-    successSubmitText,
-  } = form;
+  const { personalDataConsent, sendText, sentBtnText, errorBtnText } = form;
 
   const [btnText, setBtnText] = useState(sendText);
   const [isBtnSubmitted, setIsBtnSubmitted] = useState(false);
   const [isDisabled, setIsDisabled] = useState<boolean | undefined>(true);
+  const [isOpen, setIsOpen] = useState(false);
+  const [isApiError, setIsApiError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const methods = useForm<IFormData>({
     resolver: yupResolver(formSchema),
@@ -44,7 +42,6 @@ export const Form: React.FC = () => {
     return Object.keys(errors).length === 0;
   };
 
-  let isError = false;
   const isEmptyCheck = isEmpty(errors);
 
   const className = classNames({
@@ -52,14 +49,35 @@ export const Form: React.FC = () => {
     'label-check-error': !isEmptyCheck,
   });
 
-  const onSubmit = () => {
-    setIsBtnSubmitted(true);
-    toast.success(successSubmitText);
+  function closeModal() {
+    setIsOpen(false);
+  }
 
-    methods.reset();
-    localStorage.removeItem('formData');
+  function openModal() {
+    setIsOpen(true);
+  }
 
-    setIsDisabled(false);
+  const onSubmit: SubmitHandler<IFormData> = async data => {
+    try {
+      setIsLoading(true);
+      const message = `Ім'я: ${data.name} %0AEmail: ${data.email} %0A${data.message ? `Повідомлення: ${data.message}` : ''}
+      `;
+      await sendToTelegramMessage(message);
+
+      methods.reset();
+      setIsBtnSubmitted(true);
+      localStorage.removeItem('formData');
+      setIsDisabled(true);
+      setIsLoading(false);
+      openModal();
+    } catch (error) {
+      setIsApiError(true);
+      setIsLoading(false);
+      openModal();
+    } finally {
+      setIsLoading(false);
+      setBtnText(sendText);
+    }
   };
 
   methods.watch(data => {
@@ -68,19 +86,9 @@ export const Form: React.FC = () => {
     setIsDisabled(!data.checkbox);
   });
 
-  if (!isEmpty(errors)) {
-    isError = true;
-  }
-
   useEffect(() => {
-    if (!isEmptyCheck) {
-      setBtnText(errorBtnText);
-    }
-    if (isEmptyCheck) {
-      setBtnText(sendText);
-    }
-    if (isBtnSubmitted) {
-      setBtnText(sentBtnText);
+    if (isLoading) {
+      setBtnText('Відправляємо...');
     }
 
     const savedFormData = localStorage.getItem('formData');
@@ -99,48 +107,56 @@ export const Form: React.FC = () => {
     sendText,
     sentBtnText,
     methods,
+    isLoading,
   ]);
 
   return (
-    <FormProvider {...methods}>
-      <form
-        onSubmit={methods.handleSubmit(onSubmit)}
-        className="px-3 pt-[37px] pb-7 bg-white md:w-[336px] xl:w-[696px] flex flex-col gap-y-4 md:p-0"
-      >
-        <Toaster position="top-center" reverseOrder={false} />
-        {inputs.map(input => {
-          return (
-            <Input
-              key={input.name}
-              name={input.name}
-              label={input.label}
-              type={input.type}
-            />
-          );
-        })}
-        <div className="relative">
-          <input
-            type="checkbox"
-            {...methods.register('checkbox')}
-            id="checkbox"
-            className="input-check visually-hidden"
-          />
-          <label htmlFor="checkbox" className={className}>
-            <span className="text-xs font-mulish xl:text-base text-text02">
-              {personalDataConsent}
-            </span>
-          </label>
-        </div>
-        <Button
-          type="submit"
-          onClick={() => {}}
-          isSubmitted={isBtnSubmitted}
-          isSubmitError={isError}
-          disabled={isDisabled}
+    <>
+      <FormProvider {...methods}>
+        <form
+          onSubmit={methods.handleSubmit(onSubmit)}
+          className="px-3 pt-[37px] pb-7 bg-white md:w-[336px] xl:w-[696px] flex flex-col gap-y-4 md:p-0"
         >
-          {btnText}
-        </Button>
-      </form>
-    </FormProvider>
+          {inputs.map(input => {
+            return (
+              <Input
+                key={input.name}
+                name={input.name}
+                label={input.label}
+                type={input.type}
+              />
+            );
+          })}
+          <div className="relative">
+            <input
+              type="checkbox"
+              {...methods.register('checkbox')}
+              id="checkbox"
+              className="input-check visually-hidden"
+            />
+            <label htmlFor="checkbox" className={className}>
+              <span className="text-xs font-mulish xl:text-base text-text02">
+                {personalDataConsent}
+              </span>
+            </label>
+          </div>
+          <Button
+            type="submit"
+            onClick={() => {}}
+            isSubmitted={false}
+            isSubmitError={false}
+            disabled={isDisabled}
+          >
+            {btnText}
+          </Button>
+        </form>
+      </FormProvider>
+      <FormPopUp
+        isOpen={isOpen}
+        closeModal={closeModal}
+        isBtnSubmitted={isBtnSubmitted}
+        isApiError={isApiError}
+      />
+    </>
   );
 };
