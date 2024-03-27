@@ -82,7 +82,9 @@ export default function RootLayout({
       >
         <Header className="fixed w-full h-10 md:h-[68px] xl:h-20 z-10 bg-white font-fixel" />
 
-        <main className="flex min-h-screen flex-col">{children}</main>
+        <main className="flex min-h-screen flex-col pt-[40px] md:pt-[68px] xl:pt-[80px]">
+          {children}
+        </main>
       </body>
     </html>
   );
