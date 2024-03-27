@@ -65,11 +65,7 @@ const page = () => {
         <ul>
           {requests.map(request => {
             return (
-              <RequestCard
-                key={request.id}
-                request={request}
-                className="mb-5"
-              />
+              <RequestCard key={request.id} card={request} className="mb-5" />
             );
           })}
         </ul>
