@@ -1,7 +1,5 @@
 'use client';
 
-// import { Services } from '@/components/ServicesCard/Services';
-
 import { Form } from '@/components/Form';
 // import { Element } from 'react-scroll';
 // import { Socials } from '@/components/Socials';
@@ -9,10 +7,12 @@ import { Form } from '@/components/Form';
 // import { LinkToFeedback } from '@/components/LinkToFeedback';
 // import { Section } from '@/components/Section';
 
+// import card from '@/data/requests.json';
+
 const page = () => {
   return (
     <>
-      <div className="max-w-[384px] w-full mx-auto">
+      <div className="max-w-[1216px] pt-[100px] w-full mx-auto">
         <p className="mb-[20px]">test page</p>
 
         {/* <Element name="test1" className="requestSection">
