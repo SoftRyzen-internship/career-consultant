@@ -47,7 +47,7 @@ export const Input: React.FC<InputPropsType> = ({ name, label, type }) => {
             {errors[name]?.message}
           </span>
           <Image
-            src="/icons/error.svg"
+            src="icons/error.svg"
             alt="error icon"
             width={32}
             height={32}
