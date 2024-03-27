@@ -1,6 +1,6 @@
 # Career consultant
 
-**[LIVE PAGE](https://github.com/SoftRyzen-internship/career-consultant)**
+**[LIVE PAGE](https://career-consultant.vercel.app/)**
 
 <img width="100%" src="./public/images/readme/readme-title.jpg" alt="main page"/>
 
@@ -69,6 +69,8 @@ responsive and cross-browser compatible - mobile starts from 360px, tablet from
 </details>
 
 ## Components API
+
+Here you may find a list with the most common components:
 
 - #### Button
 
@@ -151,7 +153,7 @@ This software uses the following open source packages:
 - **Clone the repository to local machine**
 
 ```bash
-git@github.com:SoftRyzen-internship/career-consultant.git
+https://github.com/SoftRyzen-internship/career-consultant.git
 ```
 
 - **Install dependencies** via npm:

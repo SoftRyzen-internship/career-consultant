@@ -20,7 +20,6 @@ export const NavBar = ({ onClick }: INavBar) => {
               smooth={true}
               offset={50}
               duration={500}
-              delay={500}
               ignoreCancelEvents={false}
               onClick={onClick}
               className="navbar-link hover-pseudo-underline flex justify-between items-center font-fixel text-3xl text-text01 cursor-pointer transition-[color] duration-300 active:text-accent
