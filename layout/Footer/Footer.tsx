@@ -16,7 +16,7 @@ type FooterProps = {
 };
 
 export const Footer: React.FC<FooterProps> = ({ footer, sheet }) => {
-  const { created, privacy, home, links } = footer;
+  const { created, policy, home, links } = footer;
   const { goit, ryzen } = links;
   return (
     <footer className="bg-customBackground relative bord py-5 md:py-0 xl:py-6 ">
@@ -28,10 +28,10 @@ export const Footer: React.FC<FooterProps> = ({ footer, sheet }) => {
             <Logo />
 
             <Link
-              className="font-mulish text-xs text-text02 xl:text-[16px] font-medium leading-[1.4] relative privacy  transition-all duration-300 hover:text-text01  focus:text-text01 "
-              href={sheet === 'main' ? '/privacy' : '/'}
+              className="font-mulish text-xs text-text02 xl:text-[16px] font-medium leading-[1.4] relative policy  transition-all duration-300 hover:text-text01  focus:text-text01 "
+              href={sheet === 'main' ? '/policy' : '/'}
             >
-              {sheet === 'main' ? privacy : home}
+              {sheet === 'main' ? policy : home}
             </Link>
           </div>
           <div className="flex flex-col items-center gap-[15px] md:flex-row md:py-[16px] justify-center md:items-start xl:gap-[32px]">
