@@ -197,7 +197,7 @@
 
 /*-----Form styles end-------*/
 
-/*-----Choose styles end-------*/
+/*-----Choose styles start-------*/
 .choose {
   height: 642px;
   background-image: url('../../public/images/choose/illustration-mobile.jpg'),
@@ -278,6 +278,12 @@
 .font-normal-400 {
   font-weight: 400 !important;
 }
+
+/*-----Swiper styles start-------*/
+.swiper .swiper-slide {
+  height: auto;
+}
+/*-----Swiper styles end-------*/
 
 .success_error-icon {
   width: 64px;

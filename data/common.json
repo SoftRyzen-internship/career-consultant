@@ -19,5 +19,6 @@
     { "text": "Відгуки", "moveTo": "reviews" }
   ],
   "ariaLabelLogo": "Логотип",
-  "ariaLabelBurger": "Відкрити мобільне меню"
+  "ariaLabelBurger": "Відкрити мобільне меню",
+  "ariaLabelClose": "Закрити мобільне меню"
 }
