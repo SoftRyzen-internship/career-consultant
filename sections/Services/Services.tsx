@@ -1,7 +1,5 @@
 'use client';
 
-import React from 'react';
-
 import { Section } from '@/components/Section';
 import { Container } from '@/components/Container';
 import { SectionTitle } from '@/components/SectionTitle';
@@ -11,7 +9,7 @@ import { ServicesCard } from '@/components/ServicesCard';
 import servicesLocal from '@/data/services.json';
 import { fetchServices } from '@/sanity/requests/fetchServices';
 
-export const Services: React.FC = async () => {
+export const Services = async () => {
   const services = await fetchServices();
 
   const { title } = servicesLocal;
