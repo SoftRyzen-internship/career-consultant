@@ -48,8 +48,8 @@ export const Slider: React.FC<SliderProps> = ({
       <Swiper {...swiperParams} className="w-full">
         {data?.map((card, index) => {
           return (
-            <SwiperSlide key={index} className=" h-auto ">
-              <Card card={card} className="" />
+            <SwiperSlide key={index}>
+              <Card card={card} />
             </SwiperSlide>
           );
         })}

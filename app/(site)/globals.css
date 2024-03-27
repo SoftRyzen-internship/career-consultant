@@ -29,7 +29,9 @@
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-
+.swiper .swiper-slide {
+  height: auto;
+}
 .policy::after {
   position: absolute;
   content: '';
