@@ -16,6 +16,7 @@ type SliderProps = {
 
 import { SliderButtons } from '@/components/SliderButtons';
 import { useSliderSettings } from './useSliderSettings';
+// import { useShowSliderButtons } from './useShowSliderButtons';
 
 export const Slider: React.FC<SliderProps> = ({
   data,
@@ -23,6 +24,8 @@ export const Slider: React.FC<SliderProps> = ({
   section,
 }) => {
   const { isAutoPlay, space, slides } = useSliderSettings(section);
+
+  // let letShowSliderButtons = useShowSliderButtons(section, data);
 
   const swiperParams = {
     loop: data.length > slides,
@@ -53,8 +56,9 @@ export const Slider: React.FC<SliderProps> = ({
             </SwiperSlide>
           );
         })}
-        {section !== 'hero' && data.length >= 3 && <SliderButtons />}
       </Swiper>
+      {/* {letShowSliderButtons && <SliderButtons />} */}
+      {section !== 'hero' && data.length >= 3 && <SliderButtons />}
     </div>
   );
 };
