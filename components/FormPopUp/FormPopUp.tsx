@@ -90,7 +90,7 @@ export const FormPopUp = ({
                         {errorSubmitText}
                       </p>
                     </div>
-                    <p className="font-mulish text-xs md:text-sm text-text02 text-center w-[276px] md:w-[314px] md:mx-auto line-height-140">
+                    <p className="font-mulish text-xs md:text-sm text-text02 text-center w-[276px] md:w-[314px] mx-auto line-height-140">
                       {errorSubmitDescriptionText}
                     </p>
                   </div>
