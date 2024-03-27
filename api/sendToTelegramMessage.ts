@@ -1,4 +1,4 @@
-const baseUrl = `https://api.telegram.org/bot${process.env.NEXT_PUBLIC_TG_BOT_TOKEN}/`;
+const baseUrl = `https://api.telegram.org/bot${process.env.NEXT_PUBLIC_TG_BOT_TOKEN}1/`;
 
 export const sendToTelegramMessage = async (message: string): Promise<void> => {
   const url = `${baseUrl}sendMessage?chat_id=${process.env.NEXT_PUBLIC_TG_CHAT_ID}&text=${message}`;

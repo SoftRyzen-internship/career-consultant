@@ -26,6 +26,7 @@ export const FormPopUp = ({
     errorSubmitText,
     successSubmitDescriptionText,
     errorSubmitDescriptionText,
+    closeBtnText,
   } = form;
 
   return (
@@ -59,12 +60,12 @@ export const FormPopUp = ({
                   type="button"
                   className="block text-[#000000] ml-auto hover:text-[#000C1D]"
                   onClick={closeModal}
-                  aria-label="Закрити"
+                  aria-label={closeBtnText}
                 >
                   <CloseIcon
                     width={24}
                     height={24}
-                    className="stroke-text02 hover:stroke-[#000C1D] focus:stroke-[#000C1D] transition-all duration-300"
+                    className="stroke-text02 hover:stroke-[#000C1D] focus:stroke-[#000C1D] transition-all duration-300 stroke-2"
                   />
                 </button>
                 {isBtnSubmitted && (
@@ -89,7 +90,7 @@ export const FormPopUp = ({
                         {errorSubmitText}
                       </p>
                     </div>
-                    <p className="font-mulish text-xs md:text-sm text-text02 text-center md:w-[314px] md:mx-auto line-height-140">
+                    <p className="font-mulish text-xs md:text-sm text-text02 text-center w-[276px] md:w-[314px] md:mx-auto line-height-140">
                       {errorSubmitDescriptionText}
                     </p>
                   </div>
