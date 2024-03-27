@@ -10,23 +10,21 @@ import servicesLocal from '@/data/services.json';
 import { Slider } from '@/components/Slider';
 import { ServicesCard } from '@/components/ServicesCard';
 
-// type ServicesProps = {
-//   servicesDatas: IServices;
-// };
-
 export const Services: React.FC = async () => {
   const services = await fetchServices();
-  console.log(services);
 
   const { title } = servicesLocal;
   return (
     <Section isChooseOrFeedbackSection>
-      <div className="bg-customBackground ">
+      <div
+        id="services"
+        className="bg-customBackground flex flex-col justify-center"
+      >
         <Container>
           <SectionTitle
             text={title}
-            center={true}
-            className="mb-4 md:mb-6 xl:mb-7 md:text-left md:w-[248px] xl:w-[292px]"
+            center={false}
+            className="mb-7  xl:mb-[60px] "
           />
           <Slider
             data={services}

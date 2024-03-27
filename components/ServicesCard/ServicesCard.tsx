@@ -17,7 +17,7 @@ export const ServicesCard = ({ card }: IServiceCardProps) => {
       {card && (
         <li
           key={card._id}
-          className="px-3 pt-4 pb-5 md:py-6 md:px-4 xl:p-8 bg-white rounded-lg w-[336px] sm:w-[456px] md:w-[336px] xl:w-[384px] mx-auto h-[442px] flex flex-col justify-between mb-5 sm:h-[400px] md:h-[454px] xl:h-[533px] border-[0.5px] border-inputBorder"
+          className="px-3 pt-4 pb-5 md:py-6 md:px-4 xl:p-8 bg-white rounded-lg w-full sm:w-[456px] md:w-[336px] xl:w-[384px] mx-auto h-[442px] flex flex-col justify-between mb-5 sm:h-[400px] md:h-[454px] xl:h-[533px] border-[0.5px] border-inputBorder"
         >
           <div>
             <CardTitle text={card.title} />
