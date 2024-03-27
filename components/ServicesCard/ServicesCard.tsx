@@ -22,7 +22,7 @@ export const ServicesCard = ({ service }: IServiceCardProps) => {
           <div>
             <CardTitle text={service.title} />
             {service.duration && (
-              <p className="inline-flex gap-1 py-2 pl-3 pr-4 rounded-[20px] bg-inputBg mt-7">
+              <p className="inline-flex gap-1 py-2 pl-3 pr-4 rounded-[20px] bg-inputBg mt-5">
                 <Image
                   src="icons/alarm.svg"
                   width={20}

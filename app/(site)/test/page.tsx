@@ -1,8 +1,8 @@
 'use client';
 
-import { Services } from '@/components/ServicesCard/Services';
+// import { Services } from '@/components/ServicesCard/Services';
 
-// import { Form } from '@/components/Form';
+import { Form } from '@/components/Form';
 // import { Element } from 'react-scroll';
 // import { Socials } from '@/components/Socials';
 // import { LinkTelegram } from '@/components/LinkTelegram';
@@ -27,7 +27,7 @@ const page = () => {
           <div className="h-[1000px] bg-blue-600">feedbackSection</div>
         </Element> */}
       </div>
-      {/* <Form /> */}
+      <Form />
       {/* <Socials /> */}
       {/* <div className="px-6">
         <LinkTelegram />
@@ -48,7 +48,7 @@ const page = () => {
       >
         <div>Hello</div>
       </Section>  */}
-      <Services />
+      {/* <Services /> */}
     </>
   );
 };
