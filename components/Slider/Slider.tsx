@@ -47,7 +47,7 @@ export const Slider: React.FC<SliderProps> = ({
   };
 
   return (
-    <div className="flex flex-col justify-center  items-center gap-[16px] md:gap-[24px] xl:flex-col-reverse xl:gap-[48px]  ">
+    <div className="flex flex-col justify-center  items-center gap-[16px] md:gap-[24px] relative xl:flex-col-reverse xl:gap-[48px]  ">
       <Swiper {...swiperParams} className="w-full">
         {data?.map((card, index) => {
           return (
@@ -57,8 +57,7 @@ export const Slider: React.FC<SliderProps> = ({
           );
         })}
       </Swiper>
-      {/* {letShowSliderButtons && <SliderButtons />} */}
-      {section !== 'hero' && data.length >= 3 && <SliderButtons />}
+      <SliderButtons slidesCount={data?.length} />
     </div>
   );
 };

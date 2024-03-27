@@ -1,18 +1,13 @@
 'use client';
 
-import { RequestCard } from '@/components/RequestCard';
-
-// import { Services } from '@/components/ServicesCard/Services';
-import { Slider } from '@/components/Slider';
-
-// import { Form } from '@/components/Form';
+import { Form } from '@/components/Form';
 // import { Element } from 'react-scroll';
 // import { Socials } from '@/components/Socials';
 // import { LinkTelegram } from '@/components/LinkTelegram';
 // import { LinkToFeedback } from '@/components/LinkToFeedback';
 // import { Section } from '@/components/Section';
 
-import card from '@/data/requests.json';
+// import card from '@/data/requests.json';
 
 const page = () => {
   return (
@@ -32,7 +27,7 @@ const page = () => {
           <div className="h-[1000px] bg-blue-600">feedbackSection</div>
         </Element> */}
       </div>
-      {/* <Form /> */}
+      <Form />
       {/* <Socials /> */}
       {/* <div className="px-6">
         <LinkTelegram />
@@ -54,7 +49,6 @@ const page = () => {
         <div>Hello</div>
       </Section>  */}
       {/* <Services /> */}
-      <Slider data={card} component={RequestCard} section={'requests'} />
     </>
   );
 };
