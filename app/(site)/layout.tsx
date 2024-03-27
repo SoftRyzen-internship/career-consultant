@@ -9,7 +9,7 @@ import metaInfo from '@/data/meta/home.json';
 
 import './globals.css';
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL as string;
 
 const {
   title,

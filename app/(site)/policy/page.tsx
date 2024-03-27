@@ -10,7 +10,7 @@ import metaInfo from '@/data/meta/policy.json';
 
 const { title, slug, openGraph } = metaInfo;
 
-const baseUrl = `${process.env.NEXT_PUBLIC_BASE_URL}${slug}`;
+const baseUrl = `${process.env.NEXT_PUBLIC_BASE_URL}${slug}/` as string;
 
 export const metadata: Metadata = {
   title,
