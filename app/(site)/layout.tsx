@@ -4,8 +4,10 @@ import { Mulish } from 'next/font/google';
 import localFont from 'next/font/local';
 
 import { Header } from '@/layout/Header';
+import { Footer } from '@/layout/Footer';
 
 import metaInfo from '@/data/meta/home.json';
+import footer from '@/data/footer.json';
 
 import './globals.css';
 
@@ -85,6 +87,7 @@ export default function RootLayout({
         <main className="flex min-h-screen flex-col pt-[40px] md:pt-[68px] xl:pt-[80px]">
           {children}
         </main>
+        <Footer footer={footer} sheet={'main'} />
       </body>
     </html>
   );
