@@ -11,11 +11,11 @@ import { type FormInput } from '@/components/Form/types';
 
 import { Input } from '@/components/Input';
 import { Button } from '@/components/Button';
+import { FormPopUp } from '@/components/FormPopUp';
 
 import { formSchema } from '@/utils/formSchema';
 import form from '@/data/form.json';
 import { sendToTelegramMessage } from '@/api/sendToTelegramMessage';
-import { FormPopUp } from '@/components/FormPopUp';
 
 export const Form: React.FC = () => {
   const { personalDataConsent, sendText, sentBtnText, errorBtnText } = form;
