@@ -1,4 +1,5 @@
 'use client';
+
 import React from 'react';
 
 import classNames from 'classnames';
@@ -21,7 +22,6 @@ export const Requests = ({ className = '' }: IRequests) => {
   return (
     <Section
       className={classNames('', className)}
-      isBottomPadding={true}
       isTopPadding={true}
       sectionId="requests"
     >
@@ -32,7 +32,7 @@ export const Requests = ({ className = '' }: IRequests) => {
           className="mb-7 xl:mb-[60px]"
         />
 
-        <Slider section="requests" data={requests} component={RequestCard} />
+        <Slider section={'requests'} data={requests} component={RequestCard} />
       </Container>
     </Section>
   );
