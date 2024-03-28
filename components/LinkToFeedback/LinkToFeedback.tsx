@@ -1,7 +1,12 @@
+'use client';
+
+import { usePathname } from 'next/navigation';
+
 import React from 'react';
 
 import classNames from 'classnames';
-import { Link } from 'react-scroll';
+import { Link as ScrollLink } from 'react-scroll';
+import Link from 'next/link';
 
 import common from '@/data/common.json';
 
@@ -13,6 +18,7 @@ type ILinkToFeedback = {
 
 export const LinkToFeedback = ({ section, onClick }: ILinkToFeedback) => {
   const { order, leaveApplication, moveToFeedback } = common;
+  const pathname = usePathname();
 
   const className = classNames({
     'px-5 py-3 max-w-[199px] hidden xl:flex': section === 'header',
@@ -24,17 +30,25 @@ export const LinkToFeedback = ({ section, onClick }: ILinkToFeedback) => {
   });
 
   return (
-    <Link
-      className={className}
-      to={moveToFeedback}
-      href="/"
-      smooth={true}
-      offset={-50}
-      duration={500}
-      delay={500}
-      onClick={onClick}
-    >
-      {section === 'services' ? order : leaveApplication}
-    </Link>
+    <>
+      {pathname === '/policy' ? (
+        <Link className={className} href="/#feedback" onClick={onClick}>
+          {section === 'services' ? order : leaveApplication}
+        </Link>
+      ) : (
+        <ScrollLink
+          className={className}
+          to={moveToFeedback}
+          href="/"
+          smooth={true}
+          offset={-50}
+          duration={500}
+          delay={500}
+          onClick={onClick}
+        >
+          {section === 'services' ? order : leaveApplication}
+        </ScrollLink>
+      )}
+    </>
   );
 };
