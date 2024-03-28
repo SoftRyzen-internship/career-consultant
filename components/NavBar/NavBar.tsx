@@ -18,7 +18,7 @@ export const NavBar = ({ onClick }: INavBar) => {
               to={item.moveTo}
               href="/"
               smooth={true}
-              offset={50}
+              offset={item.offset}
               duration={500}
               ignoreCancelEvents={false}
               onClick={onClick}

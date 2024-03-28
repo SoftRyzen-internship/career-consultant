@@ -12,7 +12,7 @@ export const Services = async () => {
 
   const { title } = servicesLocal;
   return (
-    <Section isChooseOrFeedbackSection>
+    <Section sectionId="services" isChooseOrFeedbackSection>
       <div className="bg-customBackground flex flex-col justify-center">
         <Container>
           <SectionTitle
