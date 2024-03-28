@@ -1,5 +1,4 @@
 'use client';
-import Image from 'next/image';
 
 import { PortableText } from '@portabletext/react';
 
@@ -7,6 +6,8 @@ import { type IService } from '@/components/ServicesCard/types';
 
 import { CardTitle } from '@/components/CardTitle';
 import { LinkToFeedback } from '@/components/LinkToFeedback';
+
+import AlarmIcon from '@/public/icons/alarm.svg';
 
 type IServiceCardProps = {
   card: IService;
@@ -24,12 +25,7 @@ export const ServicesCard = ({ card }: IServiceCardProps) => {
             <CardTitle text={card.title} />
             {card.duration && (
               <p className="inline-flex gap-1 py-2 pl-3 pr-4 rounded-[20px] bg-inputBg mt-5">
-                <Image
-                  src="icons/alarm.svg"
-                  width={20}
-                  height={20}
-                  alt="alarm icon"
-                />
+                <AlarmIcon width={20} height={20} />
                 <span className="font-mulish text-sm text-accent ">
                   {card.duration}
                 </span>
