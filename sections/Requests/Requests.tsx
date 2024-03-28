@@ -23,6 +23,7 @@ export const Requests = ({ className = '' }: IRequests) => {
       className={classNames('', className)}
       isBottomPadding={true}
       isTopPadding={true}
+      sectionId="requests"
     >
       <Container>
         <SectionTitle
