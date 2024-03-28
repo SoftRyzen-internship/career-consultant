@@ -87,7 +87,7 @@ export default function RootLayout({
         <main className="flex min-h-screen flex-col pt-[40px] md:pt-[68px] xl:pt-[80px]">
           {children}
         </main>
-        <Footer footer={footer} sheet={'main'} />
+        <Footer footer={footer} />
       </body>
     </html>
   );
