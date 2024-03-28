@@ -57,8 +57,6 @@ export const Form: React.FC = () => {
     setIsOpen(true);
   }
 
-  // const [isSuccess, setIsSuccess] = useState(false);
-
   const onSubmit: SubmitHandler<IFormData> = async data => {
     try {
       setIsLoading(true);
