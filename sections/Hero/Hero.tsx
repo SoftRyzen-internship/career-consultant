@@ -6,7 +6,7 @@ import React, { useEffect, useState } from 'react';
 
 import MediaQuery from 'react-responsive';
 
-import { AdminDataAll } from './types';
+import { AdminData, AdminDataAll } from './types';
 
 import { Container } from '@/components/Container';
 import { Slider } from '@/components/Slider';
@@ -16,21 +16,27 @@ import { HeroPlates } from '@/components/HeroPlates';
 import { Section } from '@/components/Section';
 
 import hero from '@/data/hero.json';
+import { fetchAchievements } from '@/sanity/requests/fetchAchievements';
 
-type HeroProps = {
-  adminDatas: AdminDataAll;
-};
-
-export const Hero: React.FC<HeroProps> = ({ adminDatas }) => {
+export const Hero: React.FC = () => {
   const { title, description1, description2, name, localData } = hero;
   const [isLoaded, setIsLoaded] = useState(false);
+  const [adminDatas, setAdminDatas] = useState<AdminDataAll | null>(null);
 
   useEffect(() => {
-    setIsLoaded(true);
+    const fetchAdminDatas = async () => {
+      const data = await fetchAchievements();
+      setAdminDatas(data);
+      setIsLoaded(true);
+    };
+
+    fetchAdminDatas();
   }, []);
 
   const plates = localData.map(data => {
-    const adminData = adminDatas.find(item => item.descriptionId === data.id);
+    const adminData = adminDatas?.find(
+      (item: AdminData) => item.descriptionId === data.id,
+    );
     return { ...data, ...adminData };
   });
 

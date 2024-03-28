@@ -4,6 +4,7 @@ import classNames from 'classnames';
 
 type ISection = {
   children: ReactNode;
+  sectionId?: string;
   className?: string;
   isHerosection?: boolean;
   isTopPadding?: boolean;
@@ -18,6 +19,7 @@ export const Section = ({
   isTopPadding,
   isBottomPadding,
   isChooseOrFeedbackSection,
+  sectionId,
 }: ISection) => {
   const classname = classNames(
     {
@@ -29,5 +31,9 @@ export const Section = ({
     className,
   );
 
-  return <section className={classname}>{children}</section>;
+  return (
+    <section className={classname} id={sectionId}>
+      {children}
+    </section>
+  );
 };

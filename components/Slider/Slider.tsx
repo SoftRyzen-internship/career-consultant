@@ -29,8 +29,8 @@ export const Slider: React.FC<SliderProps> = ({
     centeredSlides: false,
     modules: [Navigation, Autoplay],
     navigation: {
-      nextEl: '.button-next',
-      prevEl: '.button-prev',
+      nextEl: `.button-next-${section}`,
+      prevEl: `.button-prev-${section}`,
     },
     autoplay: isAutoPlay
       ? {
@@ -54,7 +54,9 @@ export const Slider: React.FC<SliderProps> = ({
           );
         })}
       </Swiper>
-      <SliderButtons slidesCount={data?.length} />
+      {section !== 'hero' && (
+        <SliderButtons section={section} slidesCount={data?.length} />
+      )}
     </div>
   );
 };
