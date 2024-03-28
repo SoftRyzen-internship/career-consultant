@@ -11,11 +11,11 @@ import { type FormInput } from '@/components/Form/types';
 
 import { Input } from '@/components/Input';
 import { Button } from '@/components/Button';
+import { FormPopUp } from '@/components/FormPopUp';
 
 import { formSchema } from '@/utils/formSchema';
 import form from '@/data/form.json';
 import { sendToTelegramMessage } from '@/api/sendToTelegramMessage';
-import { FormPopUp } from '@/components/FormPopUp';
 
 export const Form: React.FC = () => {
   const { personalDataConsent, sendText, sentBtnText, errorBtnText } = form;
@@ -115,7 +115,7 @@ export const Form: React.FC = () => {
       <FormProvider {...methods}>
         <form
           onSubmit={methods.handleSubmit(onSubmit)}
-          className="px-3 pt-[37px] pb-7 bg-white md:w-[336px] xl:w-[696px] flex flex-col gap-y-4 md:p-0"
+          className="pt-[37px] pb-7 bg-white md:w-[336px] xl:w-[696px] flex flex-col gap-y-4 md:p-0"
         >
           {inputs.map(input => {
             return (
