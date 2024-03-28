@@ -20,13 +20,18 @@ export const Requests = ({ className = '' }: IRequests) => {
   const { title, requests } = dataJson;
 
   return (
-    <Section className={classNames('', className)} isTopPadding={true}>
+    <Section
+      className={classNames('', className)}
+      isTopPadding={true}
+      sectionId="requests"
+    >
       <Container>
         <SectionTitle
           text={title}
           center={false}
           className="mb-7 xl:mb-[60px]"
         />
+
         <Slider section={'requests'} data={requests} component={RequestCard} />
       </Container>
     </Section>

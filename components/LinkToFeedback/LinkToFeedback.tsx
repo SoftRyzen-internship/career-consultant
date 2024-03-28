@@ -9,9 +9,10 @@ import common from '@/data/common.json';
 type ILinkToFeedback = {
   section: 'header' | 'hero' | 'services' | 'mobileMenu';
   className?: string;
+  onClick?: () => void;
 };
 
-export const LinkToFeedback = ({ section }: ILinkToFeedback) => {
+export const LinkToFeedback = ({ section, onClick }: ILinkToFeedback) => {
   const { order, leaveApplication, moveToFeedback } = common;
   const isTablet = useMediaQuery({
     query: '(min-width: 768px)',
@@ -46,6 +47,7 @@ export const LinkToFeedback = ({ section }: ILinkToFeedback) => {
       offset={offset}
       duration={500}
       delay={500}
+      onClick={onClick}
     >
       {section === 'services' ? order : leaveApplication}
     </Link>
