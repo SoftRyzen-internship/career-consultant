@@ -1,41 +1,33 @@
-import Link from 'next/link';
-
 import React from 'react';
 
 import { Foot } from './types';
 
 import { Container } from '@/components/Container';
 import { Logo } from '@/components/Logo';
+import { FooterLink } from '@/components/FooterLink';
+import { FooterWrapper } from '@/components/FooterWrapper';
 
 import Goit from '@/public/icons/go-it.svg';
 import Ryzen from '@/public/icons/softryzen.svg';
 
 type FooterProps = {
   footer: Foot;
-  sheet: 'main' | 'policy';
 };
 
-export const Footer: React.FC<FooterProps> = ({ footer, sheet }) => {
-  const { created, privacy, home, links } = footer;
+export const Footer: React.FC<FooterProps> = ({ footer }) => {
+  const { created, links } = footer;
   const { goit, ryzen } = links;
   return (
-    <footer className="bg-customBackground relative bord py-5 md:py-0 xl:py-6 ">
+    <footer className="bg-customBackground relative bord ">
       <Container>
-        <nav className="flex flex-col items-center gap-[28px] md:gap-0 xl:flex-row justify-between">
-          <div
-            className={`flex flex-col  gap-[28px] items-center md:w-full md:py-[16px] md:flex-row justify-between ${sheet === 'main' ? 'xl:w-[565px]' : 'xl:w-[488px]'}`}
-          >
+        <div className="flex flex-col items-center gap-[28px] py-[13px] md:py-0  xl:py-[24px] md:gap-0 xl:flex-row justify-between ">
+          <FooterWrapper>
             <Logo />
 
-            <Link
-              className="font-mulish text-xs text-text02 xl:text-[16px] font-medium leading-[1.4] relative privacy  transition-all duration-300 hover:text-text01  focus:text-text01 "
-              href={sheet === 'main' ? '/privacy' : '/'}
-            >
-              {sheet === 'main' ? privacy : home}
-            </Link>
-          </div>
-          <div className="flex flex-col items-center gap-[15px] md:flex-row md:py-[16px] justify-center md:items-start xl:gap-[32px]">
-            <p className="inline-block font-mulish text-xs text-text02 xl:text-[16px] font-medium leading-[1.4]">
+            <FooterLink />
+          </FooterWrapper>
+          <div className="flex flex-col justify-center  items-center gap-[15px] md:flex-row md:items-start md:h-[55px] md:py-[16px] xl:h-[24px]   xl:py-0  xl:gap-[32px]">
+            <p className="inline-block font-mulish text-xs  xl:py-0 text-text02 xl:text-[16px] font-medium leading-[1.4]">
               {created}
             </p>
 
@@ -64,7 +56,7 @@ export const Footer: React.FC<FooterProps> = ({ footer, sheet }) => {
               </li>
             </ul>
           </div>
-        </nav>
+        </div>
       </Container>
     </footer>
   );

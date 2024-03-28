@@ -1,20 +1,16 @@
 export type Foot = {
-  privacy: string;
+  policy: string;
   home: string;
   created: string;
   links: Links;
 };
 
 type Links = {
-  goit: Goit;
-  ryzen: Ryzen;
+  goit: Link;
+  ryzen: Link;
 };
 
-type Goit = {
-  href: string;
-  aria: string;
-};
-type Ryzen = {
+type Link = {
   href: string;
   aria: string;
 };

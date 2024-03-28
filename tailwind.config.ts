@@ -48,6 +48,7 @@ const config: Config = {
         inputBorder: '#AAB8DD',
         imgBg: '#84A0E6',
         inputDefaultBg: '#F6F7F9',
+        backdropCol: 'rgba(0, 0, 0, 0.50)',
       },
       boxShadow: {
         custom: ' 0px 0px 24px 0px rgba(2, 12, 41, 0.10)',
@@ -131,8 +132,6 @@ const config: Config = {
         'py-15': '60px 0 60px 0',
         'py-25': '100px 0 100px 0',
       },
-
-      backgroundImage: {},
     },
   },
   plugins: [require('@tailwindcss/typography')],
