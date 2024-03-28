@@ -27,7 +27,7 @@ export const Hero = async () => {
     <Section isHerosection>
       <div className="bg-customBackground  mx-auto flex flex-col justify-center items-center w-full max-w-[480px] md:hidden">
         <Container>
-          <div className="w-full rounded-t-[10px] mb-7">
+          <div className="w-full overflow-hidden bg-transparent rounded-[10px] mb-7">
             <HeroImages
               maxWidth={767}
               width={456}
