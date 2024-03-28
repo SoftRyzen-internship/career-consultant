@@ -20,22 +20,25 @@ export const SliderButtons: React.FC<SlidesButtonsProps> = ({
     setIsLoaded(true);
   }, []);
 
-  const isDesktop = useMediaQuery({ minDeviceWidth: 1280 });
-  const isTablet = useMediaQuery({ minDeviceWidth: 768, maxDeviceWidth: 1279 });
-  const isMobile = useMediaQuery({ maxDeviceWidth: 767 });
+  const isDesktop = useMediaQuery({
+    query: '(min-width: 1280px)',
+  });
+  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1279 });
+  const isMobile = useMediaQuery({
+    query: '(max-width: 767px)',
+  });
 
   const btnsClassName = classNames({
     flex:
-      isLoaded &&
-      (slidesCount > 3 ||
-        (isMobile && slidesCount === 2) ||
-        (isTablet && slidesCount === 3)),
+      (isLoaded && slidesCount > 3) ||
+      (isMobile && slidesCount === 2) ||
+      (isTablet && slidesCount === 3),
     hidden:
-      isLoaded &&
-      ((isDesktop && slidesCount <= 3) ||
-        (isTablet && slidesCount <= 2) ||
-        (isTablet && slidesCount <= 1)),
+      (isLoaded && isDesktop && slidesCount <= 3) ||
+      (isTablet && slidesCount <= 2) ||
+      (isTablet && slidesCount <= 1),
   });
+
   return (
     <div
       className={classNames(
