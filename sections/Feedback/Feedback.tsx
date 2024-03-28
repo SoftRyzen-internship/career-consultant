@@ -7,7 +7,6 @@ import { Socials } from '@/components/Socials';
 import { Form } from '@/components/Form';
 
 import data from '@/data/feedbackSection.json';
-import common from '@/data/common.json';
 
 export type IFeedback = {
   className?: string;
@@ -15,13 +14,10 @@ export type IFeedback = {
 
 export const Feedback = ({ className = '' }: IFeedback) => {
   const { title, text } = data;
-  const { moveToFeedback } = common;
-
   return (
     <Section
       className={classNames('bg-white', className)}
       isChooseOrFeedbackSection
-      sectionId={moveToFeedback}
     >
       <Container className="md:flex justify-between">
         <div className="xl:pt-[26px]">

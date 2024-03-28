@@ -78,7 +78,7 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang="uk">
+    <html lang="en">
       <body
         className={`${fixelDisplay.variable} ${mulish.variable} bg-customBackground box-border`}
       >
