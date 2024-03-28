@@ -45,7 +45,7 @@ export const Modal = ({ data, open, onClose }: IModal) => {
                 className="relative py-[32px] px-[24px] max-w-[456px] w-full h-auto rounded-[8px] bg-white
               md:max-w-[540px] xl:p-[36px] xl:max-w-[800px] border-[0.5px] border-solid border-[#AAB8DD]"
               >
-                <ModalCard data={data} />
+                <ModalCard card={data} />
 
                 <button
                   type="button"
