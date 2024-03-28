@@ -20,7 +20,7 @@ export const Footer: React.FC<FooterProps> = ({ footer }) => {
   return (
     <footer className="bg-customBackground relative bord ">
       <Container>
-        <div className="flex flex-col items-center gap-[28px] py-[13px] md:py-0  xl:py-[24px] md:gap-0 xl:flex-row justify-between ">
+        <div className="flex flex-col items-center gap-[28px] py-[20px] md:py-0  xl:py-[24px] md:gap-0 xl:flex-row justify-between ">
           <FooterWrapper>
             <Logo />
 
