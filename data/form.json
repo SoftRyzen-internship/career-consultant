@@ -7,7 +7,7 @@
   "successSubmitDescriptionText": "Ми зв'яжемося з вами найближчим часом.",
   "errorSubmitText": "Щось пішло не так...",
   "errorSubmitDescriptionText": "Ми не змогли отримати Вашу заявку. Будь ласка, спробуйте ще раз.",
-  "closeBtnText": "кнопка закриття модального вікна",
+  "closeBtnText": "Закрити модальне вікно",
   "inputs": [
     {
       "name": "name",

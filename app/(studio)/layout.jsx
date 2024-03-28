@@ -1,8 +1,8 @@
 import React from 'react';
 
 export const metadata = {
-  title: 'Gift адміністратор',
-  description: 'Gift панель адміністратора',
+  title: 'Career Consultant адміністратор',
+  description: 'Career Consultant панель адміністратора',
 };
 
 export default function RootLayout({ children }) {

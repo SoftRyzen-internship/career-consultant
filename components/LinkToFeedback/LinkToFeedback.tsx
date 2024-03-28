@@ -2,16 +2,32 @@ import React from 'react';
 
 import classNames from 'classnames';
 import { Link } from 'react-scroll';
+import { useMediaQuery } from 'react-responsive';
 
 import common from '@/data/common.json';
 
 type ILinkToFeedback = {
   section: 'header' | 'hero' | 'services' | 'mobileMenu';
   className?: string;
+  onClick?: () => void;
 };
 
-export const LinkToFeedback = ({ section }: ILinkToFeedback) => {
+export const LinkToFeedback = ({ section, onClick }: ILinkToFeedback) => {
   const { order, leaveApplication, moveToFeedback } = common;
+  const isTablet = useMediaQuery({
+    query: '(min-width: 768px)',
+  });
+  const isDesktop = useMediaQuery({
+    query: '(min-width: 1280px)',
+  });
+
+  let offset = -12;
+
+  if (isTablet) {
+    offset = -28;
+  } else if (isDesktop) {
+    offset = 0;
+  }
 
   const className = classNames({
     'px-5 py-3 max-w-[199px] hidden xl:flex': section === 'header',
@@ -28,9 +44,10 @@ export const LinkToFeedback = ({ section }: ILinkToFeedback) => {
       to={moveToFeedback}
       href="/"
       smooth={true}
-      offset={-50}
+      offset={offset}
       duration={500}
       delay={500}
+      onClick={onClick}
     >
       {section === 'services' ? order : leaveApplication}
     </Link>

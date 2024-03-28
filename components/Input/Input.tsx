@@ -51,7 +51,7 @@ export const Input: React.FC<InputPropsType> = ({ name, label, type }) => {
             alt="error icon"
             width={32}
             height={32}
-            className="absolute right-[18px] top-[42px] xl:top-[46px]"
+            className="absolute right-[18px] top-[44px] md:top-[43px] xl:top-[48px]"
           />
         </>
       )}
