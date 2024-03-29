@@ -1,18 +1,20 @@
 'use client';
 
-import { AdminData } from './types';
+import { useState, useEffect } from 'react';
 
 import { Container } from '@/components/Container';
+import { Section } from '@/components/Section';
 import { Slider } from '@/components/Slider';
 import { HeroPlate } from '@/components/HeroPlate';
 import { LinkToFeedback } from '@/components/LinkToFeedback';
 import { HeroPlates } from '@/components/HeroPlates';
-import { Section } from '@/components/Section';
 import { HeroImages } from '@/components/HeroImages';
 
-import hero from '@/data/hero.json';
 import { fetchAchievements } from '@/sanity/requests/fetchAchievements';
-import { useState, useEffect } from 'react';
+
+import hero from '@/data/hero.json';
+
+import { AdminData } from './types';
 
 export const Hero = () => {
   const { title, description1, description2, name, localData } = hero;
