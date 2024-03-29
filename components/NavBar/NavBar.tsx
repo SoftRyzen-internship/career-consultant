@@ -3,9 +3,9 @@
 import { usePathname } from 'next/navigation';
 
 import { Link as ScrollLink } from 'react-scroll';
+import Link from 'next/link';
 import jsonData from '@/data/common.json';
 import RightArrow from '@/public/icons/right-arrow-link.svg';
-import Link from 'next/link';
 
 type INavBar = {
   onClick?: () => void;
@@ -35,8 +35,8 @@ export const NavBar = ({ onClick }: INavBar) => {
                 to={item.moveTo}
                 href="/"
                 smooth={true}
-                offset={item.offset}
-                spy={true}
+                offset={-10}
+                // spy={true}
                 duration={500}
                 ignoreCancelEvents={false}
                 onClick={onClick}

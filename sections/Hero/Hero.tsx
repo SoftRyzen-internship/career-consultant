@@ -1,4 +1,5 @@
 'use client';
+
 import { AdminData } from './types';
 
 import { Container } from '@/components/Container';
@@ -11,17 +12,38 @@ import { HeroImages } from '@/components/HeroImages';
 
 import hero from '@/data/hero.json';
 import { fetchAchievements } from '@/sanity/requests/fetchAchievements';
+import { useState, useEffect } from 'react';
 
-export const Hero = async () => {
+export const Hero = () => {
   const { title, description1, description2, name, localData } = hero;
-  const adminDatas = await fetchAchievements();
 
-  const plates = localData.map(data => {
-    const adminData = adminDatas?.find(
-      (item: AdminData) => item.descriptionId === data.id,
-    );
-    return { ...data, ...adminData };
-  });
+  const [adminDatas, setAdminDatas] = useState<AdminData[]>([]);
+  const [plates, setPlates] = useState<(typeof localData)[number][]>([]);
+
+  useEffect(() => {
+    const fetchAdminDatas = async () => {
+      const data = await fetchAchievements();
+      setAdminDatas(data);
+      return data;
+    };
+
+    fetchAdminDatas();
+  }, []);
+
+  useEffect(() => {
+    if (!adminDatas) {
+      return;
+    }
+
+    const plates = localData?.map(data => {
+      const adminData = adminDatas?.find(
+        (item: AdminData) => item.descriptionId === data.id,
+      );
+      return { ...data, ...adminData };
+    });
+
+    setPlates(plates);
+  }, [localData, adminDatas]);
 
   return (
     <Section isHerosection>
