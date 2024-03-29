@@ -19,12 +19,12 @@ export const ServicesCard = ({ card }: IServiceCardProps) => {
       {card && (
         <div
           key={card._id}
-          className="px-3 pt-4 pb-5 md:py-6 md:px-4 xl:p-8 bg-white rounded-lg w-full sm:w-[456px] md:w-[336px] xl:w-[384px] mx-auto h-[442px] flex flex-col justify-between mb-5 sm:h-[400px] md:h-[454px] xl:h-[533px] border-[0.5px] border-inputBorder"
+          className="px-3 pt-4 pb-5 md:py-6 md:px-4 xl:p-8 bg-white rounded-lg w-full sm:w-[456px] md:w-[336px] xl:w-[384px] mx-auto h-[442px] flex flex-col justify-between sm:h-[400px] md:h-[454px] xl:h-[533px] border-[0.5px] border-inputBorder"
         >
           <div>
             <CardTitle text={card.title} />
             {card.duration && (
-              <p className="inline-flex gap-1 py-2 pl-3 pr-4 rounded-[20px] bg-inputBg mt-5">
+              <p className="inline-flex gap-2 py-2 pl-3 pr-4 rounded-[20px] bg-inputBg mt-5">
                 <AlarmIcon width={20} height={20} />
                 <span className="font-mulish text-sm text-accent ">
                   {card.duration}
