@@ -1,10 +1,11 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
-
-import { Link as ScrollLink } from 'react-scroll';
 import Link from 'next/link';
+import { Link as ScrollLink } from 'react-scroll';
+
 import jsonData from '@/data/common.json';
+
 import RightArrow from '@/public/icons/right-arrow-link.svg';
 
 type INavBar = {
@@ -36,7 +37,7 @@ export const NavBar = ({ onClick }: INavBar) => {
                 href="/"
                 smooth={true}
                 offset={-10}
-                // spy={true}
+                spy={true}
                 duration={500}
                 ignoreCancelEvents={false}
                 onClick={onClick}

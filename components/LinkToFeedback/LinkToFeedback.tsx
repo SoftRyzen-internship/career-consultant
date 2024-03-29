@@ -1,11 +1,9 @@
 'use client';
 
-import React from 'react';
-
+import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 import { Link as ScrollLink } from 'react-scroll';
 import { useMediaQuery } from 'react-responsive';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import classNames from 'classnames';
 
 import common from '@/data/common.json';
