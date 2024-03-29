@@ -3,8 +3,6 @@ import React from 'react';
 
 import { CardTitle } from '@/components/CardTitle';
 
-import classNames from 'classnames';
-
 type Description = {
   id: number;
   text: string;
@@ -20,19 +18,15 @@ type Request = {
 
 type IRequestCard = {
   card: Request;
-  className?: string;
 };
 
-export const RequestCard = ({ card, className = '' }: IRequestCard) => {
+export const RequestCard = ({ card }: IRequestCard) => {
   const { id, icon, alt, title, list } = card;
 
   return (
     <div
       key={id}
-      className={classNames(
-        'cursor-grab xl:cursor-default px-3 pb-5 pt-4 md:px-4 md:pb-8 md:pt-6 xl:px-8 xl:pt-8 xl:pb-10 w-full sm:w-[456px] md:w-[336px] xl:w-[384px] h-full border-solid border-[0.50px] border-strokeCol rounded-lg bg-white',
-        className,
-      )}
+      className="px-3 pb-5 pt-4 md:px-4 md:pb-8 md:pt-6 xl:px-8 xl:pt-8 xl:pb-10 w-full sm:w-[456px] md:w-[336px] xl:w-[384px] h-full border-solid border-[0.50px] border-strokeCol rounded-lg bg-white"
     >
       <Image
         src={icon}
