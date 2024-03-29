@@ -1,27 +1,51 @@
 'use client';
-import { AdminData } from './types';
+
+import { useState, useEffect } from 'react';
 
 import { Container } from '@/components/Container';
+import { Section } from '@/components/Section';
 import { Slider } from '@/components/Slider';
 import { HeroPlate } from '@/components/HeroPlate';
 import { LinkToFeedback } from '@/components/LinkToFeedback';
 import { HeroPlates } from '@/components/HeroPlates';
-import { Section } from '@/components/Section';
 import { HeroImages } from '@/components/HeroImages';
 
-import hero from '@/data/hero.json';
 import { fetchAchievements } from '@/sanity/requests/fetchAchievements';
 
-export const Hero = async () => {
-  const { title, description1, description2, name, localData } = hero;
-  const adminDatas = await fetchAchievements();
+import hero from '@/data/hero.json';
 
-  const plates = localData.map(data => {
-    const adminData = adminDatas?.find(
-      (item: AdminData) => item.descriptionId === data.id,
-    );
-    return { ...data, ...adminData };
-  });
+import { AdminData } from './types';
+
+export const Hero = () => {
+  const { title, description1, description2, name, localData } = hero;
+
+  const [adminDatas, setAdminDatas] = useState<AdminData[]>([]);
+  const [plates, setPlates] = useState<(typeof localData)[number][]>([]);
+
+  useEffect(() => {
+    const fetchAdminDatas = async () => {
+      const data = await fetchAchievements();
+      setAdminDatas(data);
+      return data;
+    };
+
+    fetchAdminDatas();
+  }, []);
+
+  useEffect(() => {
+    if (!adminDatas) {
+      return;
+    }
+
+    const plates = localData?.map(data => {
+      const adminData = adminDatas?.find(
+        (item: AdminData) => item.descriptionId === data.id,
+      );
+      return { ...data, ...adminData };
+    });
+
+    setPlates(plates);
+  }, [localData, adminDatas]);
 
   return (
     <Section isHerosection>

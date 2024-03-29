@@ -25,7 +25,7 @@ export const Slider: React.FC<SliderProps> = ({
   const { isAutoPlay, space, slides } = useSliderSettings(section);
 
   const swiperParams = {
-    loop: data.length > slides,
+    loop: data?.length > slides,
     centeredSlides: false,
     modules: [Navigation, Autoplay],
     navigation: {

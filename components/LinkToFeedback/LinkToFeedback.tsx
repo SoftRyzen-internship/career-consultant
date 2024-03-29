@@ -1,8 +1,10 @@
-import React from 'react';
+'use client';
 
-import classNames from 'classnames';
-import { Link } from 'react-scroll';
+import { usePathname } from 'next/navigation';
+import Link from 'next/link';
+import { Link as ScrollLink } from 'react-scroll';
 import { useMediaQuery } from 'react-responsive';
+import classNames from 'classnames';
 
 import common from '@/data/common.json';
 
@@ -14,6 +16,9 @@ type ILinkToFeedback = {
 
 export const LinkToFeedback = ({ section, onClick }: ILinkToFeedback) => {
   const { order, leaveApplication, moveToFeedback } = common;
+
+  const pathname = usePathname();
+
   const isTablet = useMediaQuery({
     query: '(min-width: 768px)',
   });
@@ -21,7 +26,7 @@ export const LinkToFeedback = ({ section, onClick }: ILinkToFeedback) => {
     query: '(min-width: 1280px)',
   });
 
-  let offset = -12;
+  let offset = -20;
 
   if (isTablet) {
     offset = -28;
@@ -39,17 +44,25 @@ export const LinkToFeedback = ({ section, onClick }: ILinkToFeedback) => {
   });
 
   return (
-    <Link
-      className={className}
-      to={moveToFeedback}
-      href="/"
-      smooth={true}
-      offset={offset}
-      duration={500}
-      delay={500}
-      onClick={onClick}
-    >
-      {section === 'services' ? order : leaveApplication}
-    </Link>
+    <>
+      {pathname === '/policy' ? (
+        <Link className={className} href="/#feedback" onClick={onClick}>
+          {section === 'services' ? order : leaveApplication}
+        </Link>
+      ) : (
+        <ScrollLink
+          className={className}
+          to={moveToFeedback}
+          href="/"
+          smooth={true}
+          spy={true}
+          offset={offset}
+          duration={500}
+          onClick={onClick}
+        >
+          {section === 'services' ? order : leaveApplication}
+        </ScrollLink>
+      )}
+    </>
   );
 };
