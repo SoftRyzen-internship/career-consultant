@@ -64,13 +64,21 @@ export const Form: React.FC = () => {
       `;
       await sendToTelegramMessage(message);
 
-      methods.reset();
+      methods.reset({
+        name: '',
+        email: '',
+        message: '',
+        checkbox: false,
+      });
+
       setIsBtnSubmitted(true);
+      setIsApiError(false);
       localStorage.removeItem('formData');
       setIsDisabled(true);
       setIsLoading(false);
       openModal();
     } catch (error) {
+      setIsBtnSubmitted(false);
       setIsApiError(true);
       setIsLoading(false);
       openModal();
@@ -115,7 +123,7 @@ export const Form: React.FC = () => {
       <FormProvider {...methods}>
         <form
           onSubmit={methods.handleSubmit(onSubmit)}
-          className="pt-[37px] pb-7 bg-white md:w-[336px] xl:w-[696px] flex flex-col gap-y-4 md:p-0"
+          className="pt-[37px]  bg-white md:w-[336px] xl:w-[696px] flex flex-col gap-y-4 md:p-0"
         >
           {inputs.map(input => {
             return (

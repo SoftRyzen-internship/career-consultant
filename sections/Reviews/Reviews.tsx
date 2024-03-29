@@ -12,7 +12,7 @@ export async function Reviews() {
   const reviews = await fetchReviews();
 
   return (
-    <Section isTopPadding={true} isBottomPadding={true}>
+    <Section isTopPadding={true} isBottomPadding={true} sectionId="reviews">
       <Container>
         <SectionTitle text={title} className="mb-[28px] xl:mb-[60px]" />
         <Slider section={'reviews'} component={FeedbackCard} data={reviews} />

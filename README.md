@@ -105,6 +105,7 @@ Here you may find a list with the most common components:
 | ----------- | --------------------------------------------- | ------------------------------------- |
 | `section`   | `header` / `hero` / `services` / `mobileMenu` | required, set styles for each section |
 | `className` | `string`                                      | optional, additional styles           |
+| `onClick`   | `function`                                    | optional, add effect on click event   |
 
 - #### Section
 
@@ -116,6 +117,7 @@ Here you may find a list with the most common components:
 | `isTopPadding`              | `boolean`   | optional, set specific styles    |
 | `isBottomPadding`           | `boolean`   | optional, set specific styles    |
 | `isChooseOrFeedbackSection` | `boolean`   | optional, set specific styles    |
+| `sectionId`                 | `string`    | optional, set section id         |
 
 - #### SectionTitle
 

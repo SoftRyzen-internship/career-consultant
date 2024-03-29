@@ -31,7 +31,7 @@ export const BurgerMenu = ({ isOpen, onClose }: IMenu) => {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+          <div className="fixed inset-0 bg-black bg-opacity-50 transition-opacity" />
         </Transition.Child>
 
         <div className="fixed inset-0 overflow-hidden">
@@ -65,9 +65,9 @@ export const BurgerMenu = ({ isOpen, onClose }: IMenu) => {
                       <NavBar onClick={onClose} />
                     </div>
                     <div>
-                      <Socials className="mb-[40px]" />
+                      <Socials className="mb-[20px] md:mb-[40px]" />
 
-                      <LinkToFeedback section="mobileMenu" />
+                      <LinkToFeedback section="mobileMenu" onClick={onClose} />
                     </div>
                   </div>
                 </Dialog.Panel>
