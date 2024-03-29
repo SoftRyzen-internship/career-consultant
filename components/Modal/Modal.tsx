@@ -53,7 +53,7 @@ export const Modal = ({ data, open, onClose }: IModal) => {
                   aria-label="close modal window"
                   className="absolute top-[16px] right-[16px]"
                 >
-                  <CloseIcon className="w-[24px] h-[24p] stroke-text02 stroke-2 hover:stroke-[#000C1D] focus:stroke-[#000C1D] transition-[stroke] duration-300" />
+                  <CloseIcon className="w-[24px] h-[24px] stroke-text02 stroke-2 hover:stroke-[#000C1D] focus:stroke-[#000C1D] transition-[stroke] duration-300" />
                 </button>
               </Dialog.Panel>
             </Transition.Child>
