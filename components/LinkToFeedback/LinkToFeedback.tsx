@@ -46,7 +46,7 @@ export const LinkToFeedback = ({ section, onClick }: ILinkToFeedback) => {
   return (
     <>
       {pathname === '/policy' ? (
-        <Link className={className} href="/#feedback" onClick={onClick}>
+        <Link className={className} href="/#feedbackId" onClick={onClick}>
           {section === 'services' ? order : leaveApplication}
         </Link>
       ) : (
