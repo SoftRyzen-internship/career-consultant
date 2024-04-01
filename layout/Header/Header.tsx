@@ -11,6 +11,7 @@ import { LinkToFeedback } from '@/components/LinkToFeedback';
 import Burger from '@/public/icons/burger.svg';
 
 import dataJson from '@/data/common.json';
+import { useResizeMenu } from '@/hooks/useResizeMenu';
 
 type IHeader = {
   className: string;
@@ -20,6 +21,8 @@ export const Header = ({ className }: IHeader) => {
   const { ariaLabelBurger } = dataJson;
   const [isBurgerOpen, setIsBurgerOpen] = useState(false);
   const onClose = () => setIsBurgerOpen(false);
+
+  useResizeMenu(onClose);
 
   return (
     <header className={className}>

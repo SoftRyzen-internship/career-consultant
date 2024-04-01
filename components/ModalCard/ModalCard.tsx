@@ -7,11 +7,13 @@ export const ModalCard = ({ card }: ICardData) => {
         {card.name}
       </p>
 
-      <p className="mb-[28px] text-start text-xs text-text02 md:text-sm xl:mb-[28px] xl:text-base xl:font-normal">
+      <p className="mb-[28px] text-start text-sm text-text02 md:text-sm xl:mb-[28px] xl:text-base xl:font-normal">
         {card.position}
       </p>
 
-      <p className="text-start text-sm text-text02">{card.text}</p>
+      <p className="text-start text-sm text-text02 xl:text-base xl:font-normal">
+        {card.text}
+      </p>
     </div>
   );
 };
