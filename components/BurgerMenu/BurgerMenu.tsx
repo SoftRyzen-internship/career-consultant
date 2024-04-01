@@ -50,7 +50,7 @@ export const BurgerMenu = ({ isOpen, onClose }: IMenu) => {
                   <div className="px-[20px] pb-[16px] mx-auto flex flex-col justify-between max-w-[480px] h-full md:px-[40px] md:pb-[40px] md:max-w-full">
                     <div>
                       <div className="py-[8px] mb-[62px] flex justify-between items-center  md:py-[22px] md:mb-[40px]">
-                        <Logo className="md:hidden" />
+                        <Logo className="md:hidden" onClick={onClose} />
 
                         <button
                           type="button"
