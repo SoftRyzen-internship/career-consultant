@@ -67,7 +67,7 @@ export const Hero = () => {
     <Section isHerosection>
       <div className="bg-customBackground  mx-auto flex flex-col justify-center items-center w-full max-w-[480px] md:hidden">
         <Container>
-          <div className="w-full overflow-hidden rounded-[10px] mb-7">
+          <div className="w-full bg-customBackground  overflow-hidden rounded-[10px] mb-7">
             <Image
               width={480}
               height={551}
@@ -82,7 +82,7 @@ export const Hero = () => {
           <h1 className="inline-block font-fixel font-bold text-[40px] leading-[0.95] text-text01 text-left mb-[12px] ">
             {title}
           </h1>
-          <p className=" font-mulish text-sm text-pretty text-text02  mb-[36px] ">
+          <p className=" font-mulish text-sm text-pretty text-text02 xl:text-[18px] xl:leading-[1.5] xl:font-normal  mb-[36px] ">
             {description1}
             <span className="text-text01">{name}</span>
             {description2}
