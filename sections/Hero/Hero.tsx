@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 
 import { useState, useEffect } from 'react';
 
@@ -8,7 +9,6 @@ import { Slider } from '@/components/Slider';
 import { HeroPlate } from '@/components/HeroPlate';
 import { LinkToFeedback } from '@/components/LinkToFeedback';
 import { HeroPlates } from '@/components/HeroPlates';
-import { HeroImages } from '@/components/HeroImages';
 
 import { fetchAchievements } from '@/sanity/requests/fetchAchievements';
 
@@ -21,6 +21,7 @@ export const Hero = () => {
 
   const [adminDatas, setAdminDatas] = useState<AdminData[]>([]);
   const [plates, setPlates] = useState<(typeof localData)[number][]>([]);
+  const [isTablet, setIsTablet] = useState(true);
 
   useEffect(() => {
     const fetchAdminDatas = async () => {
@@ -47,17 +48,34 @@ export const Hero = () => {
     setPlates(plates);
   }, [localData, adminDatas]);
 
+  useEffect(() => {
+    const handleDisplayWidth = () => {
+      if (window.innerWidth > 767 && window.innerWidth < 1280) {
+        setIsTablet(true);
+      } else {
+        setIsTablet(false);
+      }
+    };
+    handleDisplayWidth();
+    window.addEventListener('resize', handleDisplayWidth);
+    return () => {
+      window.removeEventListener('resize', handleDisplayWidth);
+    };
+  }, []);
+
   return (
     <Section isHerosection>
       <div className="bg-customBackground  mx-auto flex flex-col justify-center items-center w-full max-w-[480px] md:hidden">
         <Container>
           <div className="w-full overflow-hidden rounded-[10px] mb-7">
-            <HeroImages
-              maxWidth={767}
-              width={456}
-              height={333}
-              src={'/images/hero/Hero-mobile@2x.jpg'}
-              blur={'/images/hero/Hero-mobile.jpg'}
+            <Image
+              width={480}
+              height={551}
+              alt="Юлія Степаненко"
+              src="/images/hero/Hero-mobile@2x.jpg"
+              priority={true}
+              placeholder="blur"
+              blurDataURL="/images/hero/Hero-mobile.jpg"
             />
           </div>
 
@@ -93,21 +111,24 @@ export const Hero = () => {
           </div>
 
           <div className="relative xl:mr-[47px]">
-            <HeroImages
-              minWidth={768}
-              maxWidth={1279}
-              width={320}
-              height={336}
-              src={'/images/hero/Hero-tablet@2x.png'}
-              blur={'/images/hero/Hero-tablet.png'}
+            <Image
+              width={isTablet ? 320 : 400}
+              height={isTablet ? 336 : 566}
+              alt="Юлія Степаненко"
+              src={
+                isTablet
+                  ? '/images/hero/Hero-tablet@2x.png'
+                  : '/images/hero/Hero-desktop@2x.png'
+              }
+              priority={true}
+              placeholder="blur"
+              blurDataURL={
+                isTablet
+                  ? '/images/hero/Hero-tablet.png'
+                  : '/images/hero/Hero-desktop.png'
+              }
             />
-            <HeroImages
-              minWidth={1280}
-              width={400}
-              height={566}
-              src={'/images/hero/Hero-desktop@2x.png'}
-              blur={'/images/hero/Hero-desktop.png'}
-            />
+
             <HeroPlates data={plates} />
           </div>
         </div>

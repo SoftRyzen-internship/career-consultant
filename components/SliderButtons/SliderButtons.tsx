@@ -40,28 +40,30 @@ export const SliderButtons: React.FC<SlidesButtonsProps> = ({
   });
 
   return (
-    isLoaded && (
-      <div
-        className={classNames(
-          'flex gap-[12px] md:gap-[16px] xl:absolute xl:top-[-108px] xl:right-0',
-          btnsClassName,
-        )}
-      >
-        <button
-          aria-label="Попередня картка"
-          type="button"
-          className={`button-prev-${section} inline-flex justify-center items-center rounded-full border-0 cursor-pointer w-[60px] h-[60px] bg-swiperBtn text-accent  transition-colors duration-300 hover:bg-swiperBtnHover focus:bg-swiperBtnHover`}
+    <>
+      {isLoaded && (
+        <div
+          className={classNames(
+            'flex gap-[12px] md:gap-[16px] xl:absolute xl:top-[-108px] xl:right-0',
+            btnsClassName,
+          )}
         >
-          <Arrow width={32} height={32} />
-        </button>
-        <button
-          aria-label="Наступна картка"
-          type="button"
-          className={`button-next-${section} inline-flex justify-center items-center rounded-full border-0 cursor-pointer w-[60px] h-[60px] bg-swiperBtn text-accent  transition-colors duration-300 hover:bg-swiperBtnHover focus:bg-swiperBtnHover`}
-        >
-          <Arrow className="rotate-180" width={32} height={32} />
-        </button>
-      </div>
-    )
+          <button
+            aria-label="Попередня картка"
+            type="button"
+            className={`button-prev-${section} inline-flex justify-center items-center rounded-full border-0 cursor-pointer w-[60px] h-[60px] bg-swiperBtn text-accent  transition-colors duration-300 hover:bg-swiperBtnHover focus:bg-swiperBtnHover`}
+          >
+            <Arrow width={32} height={32} />
+          </button>
+          <button
+            aria-label="Наступна картка"
+            type="button"
+            className={`button-next-${section} inline-flex justify-center items-center rounded-full border-0 cursor-pointer w-[60px] h-[60px] bg-swiperBtn text-accent  transition-colors duration-300 hover:bg-swiperBtnHover focus:bg-swiperBtnHover`}
+          >
+            <Arrow className="rotate-180" width={32} height={32} />
+          </button>
+        </div>
+      )}
+    </>
   );
 };
