@@ -22,7 +22,7 @@ export const Slider: React.FC<SliderProps> = ({
   component: Card,
   section,
 }) => {
-  const { isAutoPlay, space, slides } = useSliderSettings(section);
+  const { slides } = useSliderSettings(section);
 
   const swiperParams = {
     loop: data?.length > slides,
@@ -32,14 +32,27 @@ export const Slider: React.FC<SliderProps> = ({
       nextEl: `.button-next-${section}`,
       prevEl: `.button-prev-${section}`,
     },
-    autoplay: isAutoPlay
-      ? {
-          delay: 5000,
-          disableOnInteraction: false,
-        }
-      : false,
-    slidesPerView: slides,
-    spaceBetween: space,
+    autoplay:
+      section === 'hero'
+        ? {
+            delay: 5000,
+            disableOnInteraction: false,
+          }
+        : false,
+    slidesPerView: section === 'hero' ? 2 : 1,
+    spaceBetween: 12,
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 16,
+      },
+
+      1280: {
+        slidesPerView: 3,
+        spaceBetween: 32,
+      },
+    },
+
     lazyPreloadPrevNext: 1,
   };
 
