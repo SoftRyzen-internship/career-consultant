@@ -30,16 +30,20 @@ export const Input: React.FC<InputPropsType> = ({ name, label, type }) => {
 
   if (type === 'textarea') {
     return (
-      <label className="flex flex-col gap-1 font-mulish mb-2 xl:mb-3">
-        <span className="text-xs text-inactiveText xl:text-sm">{label}</span>
+      <label className="flex flex-col gap-1 font-mulish ">
+        <span className="text-xs text-inactiveText xl:text-sm xl:font-medium xl:leading-[1.4]">
+          {label}
+        </span>
         <textarea id={name} {...register(name)} className={className} />
       </label>
     );
   }
 
   return (
-    <label className="flex flex-col gap-1 font-mulish relative mb-1.5 xl:mb-2.5">
-      <span className="text-xs text-inactiveText xl:text-sm">{label}</span>
+    <label className="flex flex-col gap-1 font-mulish relative">
+      <span className="text-xs text-inactiveText xl:text-sm xl:font-medium xl:leading-[1.4]">
+        {label}
+      </span>
       <input type={type} id={name} {...register(name)} className={className} />
       {errors[name] && (
         <>
@@ -51,7 +55,7 @@ export const Input: React.FC<InputPropsType> = ({ name, label, type }) => {
             alt="error icon"
             width={32}
             height={32}
-            className="absolute right-[18px] top-[44px] md:top-[43px] xl:top-[48px]"
+            className="absolute right-[18px] top-[43px] md:top-[44px] xl:top-[51px]"
           />
         </>
       )}

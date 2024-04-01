@@ -26,7 +26,7 @@ export const ServicesCard = ({ card }: IServiceCardProps) => {
             {card.duration && (
               <p className="inline-flex gap-2 py-2 pl-3 pr-4 rounded-[20px] bg-inputBg mt-5">
                 <AlarmIcon width={20} height={20} />
-                <span className="font-mulish text-sm text-accent ">
+                <span className="font-mulish text-sm text-accent font-medium leading-[1.4]">
                   {card.duration}
                 </span>
               </p>
@@ -37,7 +37,9 @@ export const ServicesCard = ({ card }: IServiceCardProps) => {
             </div>
           </div>
           <div className="flex justify-between items-center">
-            <p className="font-fixel text-3xl text-accent">{card.price}</p>
+            <p className="font-fixel text-3xl text-accent font-medium leading-[1.15]">
+              {card.price}
+            </p>
             <LinkToFeedback section={'services'} />
           </div>
         </div>
