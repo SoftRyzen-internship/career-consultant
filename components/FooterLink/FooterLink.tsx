@@ -11,7 +11,7 @@ export const FooterLink = () => {
 
   return (
     <Link
-      className="font-mulish text-xs text-text02 xl:text-[16px] font-normal leading-[1.4] relative policy  transition-all duration-300 hover:text-text01  focus:text-text01 "
+      className="font-mulish text-xs text-text02 xl:text-[16px] xl:font-medium xl:leading-[1.4] relative policy  transition-all duration-300 hover:text-text01  focus:text-text01 "
       href={pathname === '/' ? '/policy' : '/'}
     >
       {pathname === '/' ? policy : home}

@@ -27,7 +27,7 @@ export const Footer: React.FC<FooterProps> = ({ footer }) => {
             <FooterLink />
           </FooterWrapper>
           <div className="flex flex-col justify-center  items-center gap-[15px] md:flex-row md:items-start md:h-[55px] md:py-[16px] xl:h-[24px]   xl:py-0  xl:gap-[32px]">
-            <p className="inline-block font-mulish text-xs  xl:py-0 text-text02 xl:text-[16px] font-normal leading-[1.4]">
+            <p className="inline-block font-mulish text-xs  xl:py-0 text-text02 xl:text-[16px] xl:font-medium xl:leading-[1.4]">
               {created}
             </p>
 
