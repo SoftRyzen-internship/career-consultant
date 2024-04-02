@@ -26,15 +26,23 @@ export const policy = defineType({
                     validation: Rule =>
                       Rule.uri({
                         scheme: ['http', 'https', 'mailto', 'tel'],
-                      }),
+                      }).error('Невірне посилання'),
                   },
                   {
                     name: 'target',
                     type: 'string',
                     title: 'Target',
                     options: {
-                      list: ['_blank'],
+                      list: [{ title: '_blank', value: '_blank' }],
+                      layout: 'radio',
                     },
+                    validation: Rule =>
+                      Rule.custom(value => {
+                        if (value !== '_blank') {
+                          return 'Оберіть _blank';
+                        }
+                        return true;
+                      }),
                   },
                 ],
               },
