@@ -288,11 +288,17 @@
 .success_error-icon {
   width: 64px;
   height: 64px;
-  @media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 768px) {
+  .success_error-icon {
     width: 75px;
     height: 75px;
   }
-  @media screen and (min-width: 1280px) {
+}
+
+@media screen and (min-width: 1280px) {
+  .success_error-icon {
     width: 100px;
     height: 100px;
   }

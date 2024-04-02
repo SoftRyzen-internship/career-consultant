@@ -58,7 +58,7 @@ export const BurgerMenu = ({ isOpen, onClose }: IMenu) => {
                           aria-label={ariaLabelClose}
                           className="md:ml-auto"
                         >
-                          <CloseIcon className="w-[24px] h-[24p] stroke-accent stroke-2 hover:stroke-accentPressed focus:stroke-accentPressed transition-[stroke] duration-300" />
+                          <CloseIcon className="w-[24px] h-[24px] stroke-accent stroke-2 hover:stroke-accentPressed focus:stroke-accentPressed transition-[stroke] duration-300" />
                         </button>
                       </div>
 
