@@ -82,7 +82,7 @@ export const Hero = () => {
           <h1 className="inline-block font-fixel font-bold text-[40px] leading-[0.95] text-text01 text-left mb-[12px] ">
             {title}
           </h1>
-          <p className=" font-mulish text-sm text-pretty text-text02 xl:text-[18px] xl:leading-[1.5] xl:font-normal  mb-[36px] ">
+          <p className=" font-mulish text-sm text-pretty text-text02 xl:font-normal  xl:text-[18px] xl:leading-[1.5]  mb-[36px] ">
             {description1}
             <span className="text-text01">{name}</span>
             {description2}
@@ -101,7 +101,7 @@ export const Hero = () => {
             <h1 className="inline-block font-fixel font-bold text-[40px] leading-[0.95] text-text01 text-left md:mb-5 xl:text-[78px] xl:mb-[38px] ">
               {title}
             </h1>
-            <p className="inline-block font-mulish text-sm text-text02 md:mb-[252px] xl:text-base xl:text-pretty xl:mb-[154px] xl:w-[488px] ">
+            <p className="inline-block font-mulish text-sm text-text02 md:mb-[252px] xl:font-normal  xl:text-[18px] xl:leading-[1.5]  xl:text-pretty xl:mb-[154px] xl:w-[465px] ">
               {description1}
               <span className="text-text01">{name}</span>
               {description2}
