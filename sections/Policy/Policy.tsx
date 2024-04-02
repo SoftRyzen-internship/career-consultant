@@ -3,6 +3,7 @@ import { PortableTextBlock } from 'sanity';
 
 import { Container } from '@/components/Container';
 import { Section } from '@/components/Section';
+import { CustomComponents } from '@/components/CustomComponents/CustomComponents';
 
 type IPolicy = {
   data: PortableTextBlock[];
@@ -16,7 +17,7 @@ export const Policy = ({ data }: IPolicy) => {
           Політика конфіденційності та захисту персональних даних
         </h1>
         <div className="prose max-w-none  [&>p:nth-child(5)]:mb-5  [&>p:nth-child(19)]:mb-0 prose-h2:mt-0 prose-h2:text-lg prose-h2:font-mulish prose-h2:font-medium prose-h2:text-text01 prose-h2:mb-6 prose-p:text-text02 prose-p:font-mulish prose-p:text-sm prose-p:mb-8  prose-ul:m-0  prose-li:m-0 prose-ul:text-text02 prose-li:text-sm prose-li:marker:text-text02 prose-a:font-mulish prose-a:text-text02 prose-a:text-sm md:prose-p:mb-12 xl:prose-h2:mb-7 xl:prose-p:mb-[60px] xl:prose-h2:text-2xl xl:prose-p:text-[18px] xl:prose-p:leading-[1.5] ">
-          <PortableText value={data} />
+          <PortableText value={data} components={CustomComponents} />
         </div>
       </Container>
     </Section>
