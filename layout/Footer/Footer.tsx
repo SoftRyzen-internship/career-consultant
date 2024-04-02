@@ -18,9 +18,9 @@ export const Footer: React.FC<FooterProps> = ({ footer }) => {
   const { created, links } = footer;
   const { goit, ryzen } = links;
   return (
-    <footer className="bg-customBackground relative bord ">
+    <footer className="bg-customBackground relative bord py-[20px] md:py-0  xl:py-[24px]">
       <Container>
-        <div className="flex flex-col items-center gap-[28px] py-[20px] md:py-0  xl:py-[24px] md:gap-0 xl:flex-row justify-between ">
+        <div className="flex flex-col items-center gap-[28px]  md:gap-0 xl:flex-row justify-between ">
           <FooterWrapper>
             <Logo />
 
