@@ -3,7 +3,7 @@ import { PortableTextBlock } from 'sanity';
 
 import { Container } from '@/components/Container';
 import { Section } from '@/components/Section';
-import { CustomComponents } from '@/components/CustomComponents/CustomComponents';
+import { CustomComponents } from '@/components/CustomComponents';
 
 type IPolicy = {
   data: PortableTextBlock[];

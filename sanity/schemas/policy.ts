@@ -33,7 +33,7 @@ export const policy = defineType({
                     type: 'string',
                     title: 'Target',
                     options: {
-                      list: ['_blank', '_self', '_parent', '_top'],
+                      list: ['_blank'],
                     },
                   },
                 ],
