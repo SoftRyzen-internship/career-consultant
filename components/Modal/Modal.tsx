@@ -4,6 +4,8 @@ import { Dialog, Transition } from '@headlessui/react';
 import { ModalCard } from '@/components/ModalCard';
 import CloseIcon from '@/public/icons/close.svg';
 
+import dataJson from '@/data/feedback.json';
+
 type IModal = {
   open: boolean;
   data: {
@@ -15,6 +17,8 @@ type IModal = {
 };
 
 export const Modal = ({ data, open, onClose }: IModal) => {
+  const { ariaLabelClose } = dataJson;
+
   return (
     <Transition.Root show={open} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={onClose}>
@@ -50,7 +54,7 @@ export const Modal = ({ data, open, onClose }: IModal) => {
                 <button
                   type="button"
                   onClick={onClose}
-                  aria-label="close modal window"
+                  aria-label={ariaLabelClose}
                   className="absolute top-[16px] right-[16px]"
                 >
                   <CloseIcon className="w-[24px] h-[24px] stroke-text02 stroke-2 hover:stroke-[#000C1D] focus:stroke-[#000C1D] transition-[stroke] duration-300" />
