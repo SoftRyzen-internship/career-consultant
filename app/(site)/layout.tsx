@@ -25,6 +25,7 @@ const {
 } = metaInfo;
 
 export const metadata: Metadata = {
+  metadataBase: new URL(baseUrl),
   title,
   description,
   alternates: {
