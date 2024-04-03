@@ -22,6 +22,7 @@ export const Hero = () => {
   const [adminDatas, setAdminDatas] = useState<AdminData[]>([]);
   const [plates, setPlates] = useState<(typeof localData)[number][]>([]);
   const [isTablet, setIsTablet] = useState(true);
+  const [isHydrated, setIsHydrated] = useState(false);
 
   useEffect(() => {
     const fetchAdminDatas = async () => {
@@ -31,6 +32,7 @@ export const Hero = () => {
     };
 
     fetchAdminDatas();
+    setIsHydrated(true);
   }, []);
 
   useEffect(() => {
@@ -65,9 +67,9 @@ export const Hero = () => {
 
   return (
     <Section isHerosection>
-      <div className="bg-customBackground  mx-auto flex flex-col justify-center items-center w-full max-w-[480px] md:hidden">
+      <div className="bg-customBackground  mx-auto flex flex-col justify-center items-center w-full max-w-[480px] md:hidden ">
         <Container>
-          <div className="w-full bg-customBackground  overflow-hidden rounded-[10px] mb-7">
+          <div className="w-full bg-customBackground  overflow-hidden rounded-[10px] mb-7 md:hidden ">
             <Image
               width={480}
               height={551}
@@ -87,8 +89,14 @@ export const Hero = () => {
             <span className="text-text01">{name}</span>
             {description2}
           </p>
-          <div className="flex flex-col gap-[36px] ">
-            <Slider data={plates} component={HeroPlate} section={'hero'} />
+
+          <div className="flex flex-col gap-[36px]">
+            <Slider
+              data={plates}
+              component={HeroPlate}
+              section={'hero'}
+              className="max-md:h-[106px]"
+            />
 
             <LinkToFeedback section={'hero'} />
           </div>
@@ -96,7 +104,7 @@ export const Hero = () => {
       </div>
 
       <Container>
-        <div className=" hidden md:flex md:flex-row justify-between md:items-start xl:items-center ">
+        <div className=" hidden md:flex md:flex-row justify-between md:items-start xl:items-center xl:h-[566px]">
           <div className="md:w-[336px] md:pt-5  xl:w-[638px] ">
             <h1 className="inline-block font-fixel font-bold text-[40px] leading-[0.95] text-text01 text-left md:mb-5 xl:text-[78px] xl:mb-[38px] ">
               {title}
@@ -110,27 +118,29 @@ export const Hero = () => {
             <LinkToFeedback section={'hero'} />
           </div>
 
-          <div className="relative xl:mr-[47px]">
-            <Image
-              width={isTablet ? 320 : 400}
-              height={isTablet ? 336 : 566}
-              alt="Юлія Степаненко"
-              src={
-                isTablet
-                  ? '/images/hero/Hero-tablet@2x.png'
-                  : '/images/hero/Hero-desktop@2x.png'
-              }
-              priority={true}
-              placeholder="blur"
-              blurDataURL={
-                isTablet
-                  ? '/images/hero/Hero-tablet.png'
-                  : '/images/hero/Hero-desktop.png'
-              }
-            />
+          {isHydrated && (
+            <div className="relative xl:mr-[47px] ">
+              <Image
+                width={isTablet ? 320 : 400}
+                height={isTablet ? 336 : 566}
+                alt="Юлія Степаненко"
+                src={
+                  isTablet
+                    ? '/images/hero/Hero-tablet@2x.png'
+                    : '/images/hero/Hero-desktop@2x.png'
+                }
+                priority={true}
+                placeholder="blur"
+                blurDataURL={
+                  isTablet
+                    ? '/images/hero/Hero-tablet.png'
+                    : '/images/hero/Hero-desktop.png'
+                }
+              />
 
-            <HeroPlates data={plates} />
-          </div>
+              <HeroPlates data={plates} />
+            </div>
+          )}
         </div>
       </Container>
     </Section>
