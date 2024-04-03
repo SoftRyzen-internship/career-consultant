@@ -55,13 +55,13 @@ responsive and cross-browser compatible - mobile starts from 360px, tablet from
 </p>
 
 <p align="center">
-    <img width="49%" src="./public/images/readme/readme-services.jpg" alt="hero section"/>
+    <img width="49%" src="./public/images/readme/readme-feedback.jpg" alt="reviews section"/>
 &nbsp;
     <img width="49%" src="./public/images/readme/readme-whatchoose.jpg" alt="what to choose section"/>
-</p> 
-    
+</p>
+
 <p align="center">
-    <img width="49%" src="./public/images/readme/readme-feedback.jpg" alt="reviews section"/>
+    <img width="49%" src="./public/images/readme/readme-services.jpg" alt="services section"/>
 &nbsp;
     <img width="49%" src="./public/images/readme/readme-feedbackform.jpg" alt="feedback section"/>
 </p>

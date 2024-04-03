@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
 
 import { Container } from '@/components/Container';
 import { Logo } from '@/components/Logo';
@@ -19,7 +20,12 @@ type IHeader = {
 export const Header = ({ className }: IHeader) => {
   const { ariaLabelBurger } = dataJson;
   const [isBurgerOpen, setIsBurgerOpen] = useState(false);
+
   const onClose = () => setIsBurgerOpen(false);
+
+  const isDesktop = useMediaQuery({
+    query: '(min-width: 1280px)',
+  });
 
   return (
     <header className={className}>
@@ -37,7 +43,7 @@ export const Header = ({ className }: IHeader) => {
         >
           <Burger className="w-6 h-6" />
         </button>
-        <BurgerMenu isOpen={isBurgerOpen} onClose={onClose} />
+        {!isDesktop && <BurgerMenu isOpen={isBurgerOpen} onClose={onClose} />}
       </Container>
     </header>
   );

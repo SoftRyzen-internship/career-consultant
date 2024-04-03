@@ -50,7 +50,7 @@ export const BurgerMenu = ({ isOpen, onClose }: IMenu) => {
                   <div className="px-[20px] pb-[16px] mx-auto flex flex-col justify-between max-w-[480px] h-full md:px-[40px] md:pb-[40px] md:max-w-full">
                     <div>
                       <div className="py-[8px] mb-[62px] flex justify-between items-center  md:py-[22px] md:mb-[40px]">
-                        <Logo className="md:hidden" />
+                        <Logo className="md:hidden" onClick={onClose} />
 
                         <button
                           type="button"
@@ -58,7 +58,7 @@ export const BurgerMenu = ({ isOpen, onClose }: IMenu) => {
                           aria-label={ariaLabelClose}
                           className="md:ml-auto"
                         >
-                          <CloseIcon className="w-[24px] h-[24p] stroke-accent stroke-2 hover:stroke-accentPressed focus:stroke-accentPressed transition-[stroke] duration-300" />
+                          <CloseIcon className="w-[24px] h-[24px] stroke-accent stroke-2 hover:stroke-accentPressed focus:stroke-accentPressed transition-[stroke] duration-300" />
                         </button>
                       </div>
 

@@ -123,19 +123,21 @@ export const Form: React.FC = () => {
       <FormProvider {...methods}>
         <form
           onSubmit={methods.handleSubmit(onSubmit)}
-          className="pt-[37px]  bg-white md:w-[336px] xl:w-[696px] flex flex-col gap-y-4 md:p-0"
+          className="pt-[37px]  bg-white md:w-[336px] xl:w-[696px] flex flex-col  md:p-0"
         >
-          {inputs.map(input => {
-            return (
-              <Input
-                key={input.name}
-                name={input.name}
-                label={input.label}
-                type={input.type}
-              />
-            );
-          })}
-          <div className="relative">
+          <div className="flex flex-col gap-[22px] mb-6 xl:gap-[26px] xl:mb-7">
+            {inputs.map(input => {
+              return (
+                <Input
+                  key={input.name}
+                  name={input.name}
+                  label={input.label}
+                  type={input.type}
+                />
+              );
+            })}
+          </div>
+          <div className="relative mb-4 sm:mb-5">
             <input
               type="checkbox"
               {...methods.register('checkbox')}
