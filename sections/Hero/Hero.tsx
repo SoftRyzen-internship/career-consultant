@@ -86,7 +86,7 @@ export const Hero = () => {
                 data={plates}
                 component={HeroPlate}
                 section={'hero'}
-                className="max-md:h-[106px]"
+                className="h-[126px] sm:h-[106px]"
               />
             )}
 
