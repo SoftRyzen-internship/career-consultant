@@ -21,7 +21,7 @@ export const Hero = () => {
 
   const [adminDatas, setAdminDatas] = useState<AdminData[]>([]);
   const [plates, setPlates] = useState<(typeof localData)[number][]>([]);
-  const [isTablet, setIsTablet] = useState(true);
+  // const [isTablet, setIsTablet] = useState(false);
 
   useEffect(() => {
     const fetchAdminDatas = async () => {
@@ -48,20 +48,20 @@ export const Hero = () => {
     setPlates(plates);
   }, [localData, adminDatas]);
 
-  useEffect(() => {
-    const handleDisplayWidth = () => {
-      if (window.innerWidth > 767 && window.innerWidth < 1280) {
-        setIsTablet(true);
-      } else {
-        setIsTablet(false);
-      }
-    };
-    handleDisplayWidth();
-    window.addEventListener('resize', handleDisplayWidth);
-    return () => {
-      window.removeEventListener('resize', handleDisplayWidth);
-    };
-  }, []);
+  // useEffect(() => {
+  //   const handleDisplayWidth = () => {
+  //     if (window.innerWidth > 767 && window.innerWidth < 1280) {
+  //       setIsTablet(true);
+  //     } else {
+  //       setIsTablet(false);
+  //     }
+  //   };
+  //   handleDisplayWidth();
+  //   window.addEventListener('resize', handleDisplayWidth);
+  //   return () => {
+  //     window.removeEventListener('resize', handleDisplayWidth);
+  //   };
+  // }, []);
 
   return (
     <Section isHerosection>
@@ -71,6 +71,7 @@ export const Hero = () => {
             <Image
               width={480}
               height={551}
+              // layout="responsive"
               alt="Юлія Степаненко"
               src="/images/hero/Hero-mobile@2x.jpg"
               priority={true}
@@ -111,7 +112,7 @@ export const Hero = () => {
           </div>
 
           <div className="relative xl:mr-[47px]">
-            <Image
+            {/* <Image
               width={isTablet ? 320 : 400}
               height={isTablet ? 336 : 566}
               alt="Юлія Степаненко"
@@ -127,7 +128,29 @@ export const Hero = () => {
                   ? '/images/hero/Hero-tablet.png'
                   : '/images/hero/Hero-desktop.png'
               }
-            />
+            /> */}
+            <div className="hidden md:block xl:hidden">
+              <Image
+                width={320}
+                height={336}
+                alt="Юлія Степаненко"
+                src={'/images/hero/Hero-tablet@2x.png'}
+                priority={true}
+                placeholder="blur"
+                blurDataURL={'/images/hero/Hero-tablet.png'}
+              />
+            </div>
+            <div className="hidden xl:block">
+              <Image
+                width={400}
+                height={566}
+                alt="Юлія Степаненко"
+                src={'/images/hero/Hero-desktop@2x.png'}
+                priority={true}
+                placeholder="blur"
+                blurDataURL={'/images/hero/Hero-desktop.png'}
+              />
+            </div>
 
             <HeroPlates data={plates} />
           </div>
