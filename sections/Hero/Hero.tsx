@@ -9,6 +9,7 @@ import { Slider } from '@/components/Slider';
 import { HeroPlate } from '@/components/HeroPlate';
 import { LinkToFeedback } from '@/components/LinkToFeedback';
 import { HeroPlates } from '@/components/HeroPlates';
+import { Spinner } from '@/components/Spinner';
 
 import { fetchAchievements } from '@/sanity/requests/fetchAchievements';
 
@@ -21,7 +22,7 @@ export const Hero = () => {
 
   const [adminDatas, setAdminDatas] = useState<AdminData[]>([]);
   const [plates, setPlates] = useState<(typeof localData)[number][]>([]);
-  // const [isTablet, setIsTablet] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchAdminDatas = async () => {
@@ -46,22 +47,11 @@ export const Hero = () => {
     });
 
     setPlates(plates);
-  }, [localData, adminDatas]);
 
-  // useEffect(() => {
-  //   const handleDisplayWidth = () => {
-  //     if (window.innerWidth > 767 && window.innerWidth < 1280) {
-  //       setIsTablet(true);
-  //     } else {
-  //       setIsTablet(false);
-  //     }
-  //   };
-  //   handleDisplayWidth();
-  //   window.addEventListener('resize', handleDisplayWidth);
-  //   return () => {
-  //     window.removeEventListener('resize', handleDisplayWidth);
-  //   };
-  // }, []);
+    if (plates.length > 0) {
+      setLoading(false);
+    }
+  }, [localData, adminDatas]);
 
   return (
     <Section isHerosection>
@@ -71,7 +61,6 @@ export const Hero = () => {
             <Image
               width={480}
               height={551}
-              // layout="responsive"
               alt="Юлія Степаненко"
               src="/images/hero/Hero-mobile@2x.jpg"
               priority={true}
@@ -89,7 +78,16 @@ export const Hero = () => {
             {description2}
           </p>
           <div className="flex flex-col gap-[36px] ">
-            <Slider data={plates} component={HeroPlate} section={'hero'} />
+            {loading ? (
+              <Spinner />
+            ) : (
+              <Slider
+                data={plates}
+                component={HeroPlate}
+                section={'hero'}
+                className="max-md:h-[106px]"
+              />
+            )}
 
             <LinkToFeedback section={'hero'} />
           </div>
@@ -112,23 +110,6 @@ export const Hero = () => {
           </div>
 
           <div className="relative xl:mr-[47px]">
-            {/* <Image
-              width={isTablet ? 320 : 400}
-              height={isTablet ? 336 : 566}
-              alt="Юлія Степаненко"
-              src={
-                isTablet
-                  ? '/images/hero/Hero-tablet@2x.png'
-                  : '/images/hero/Hero-desktop@2x.png'
-              }
-              priority={true}
-              placeholder="blur"
-              blurDataURL={
-                isTablet
-                  ? '/images/hero/Hero-tablet.png'
-                  : '/images/hero/Hero-desktop.png'
-              }
-            /> */}
             <div className="hidden md:block xl:hidden">
               <Image
                 width={320}
