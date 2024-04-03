@@ -23,11 +23,11 @@ export const Feedback = ({ className = '' }: IFeedback) => {
       isChooseOrFeedbackSection
       sectionId={moveToFeedback}
     >
-      <Container className="md:flex justify-between">
-        <div className="relative">
-          <div className="absolute top-[-67px] left-0" id="feedbackId"></div>
-        </div>
+      <div className="relative">
+        <div className="absolute top-[-67px] left-0" id="feedbackId"></div>
+      </div>
 
+      <Container className="md:flex justify-between">
         <div className="xl:pt-[26px]">
           <SectionTitle
             text={title}
