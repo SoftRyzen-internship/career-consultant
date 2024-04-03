@@ -30,6 +30,7 @@
     "react-hook-form": "^7.51.1",
     "react-responsive": "^10.0.0",
     "react-scroll": "^1.9.0",
+    "react-spinners": "^0.13.8",
     "sanity": "^3.34.0",
     "swiper": "^11.0.7",
     "yup": "^1.4.0"
