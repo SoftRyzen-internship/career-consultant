@@ -55,9 +55,9 @@ export const Hero = () => {
 
   return (
     <Section isHerosection>
-      <div className="bg-customBackground  mx-auto flex flex-col justify-center items-center w-full max-w-[480px] md:hidden">
+      <div className="bg-customBackground  mx-auto flex flex-col justify-center items-center w-full max-w-[480px] md:hidden ">
         <Container>
-          <div className="w-full bg-customBackground  overflow-hidden rounded-[10px] mb-7">
+          <div className="w-full bg-customBackground  overflow-hidden rounded-[10px] mb-7 md:hidden ">
             <Image
               width={480}
               height={551}
@@ -77,6 +77,7 @@ export const Hero = () => {
             <span className="text-text01">{name}</span>
             {description2}
           </p>
+
           <div className="flex flex-col gap-[36px] ">
             {loading ? (
               <Spinner />
@@ -95,7 +96,7 @@ export const Hero = () => {
       </div>
 
       <Container>
-        <div className=" hidden md:flex md:flex-row justify-between md:items-start xl:items-center ">
+        <div className=" hidden md:flex md:flex-row justify-between md:items-start xl:items-center xl:h-[566px]">
           <div className="md:w-[336px] md:pt-5  xl:w-[638px] ">
             <h1 className="inline-block font-fixel font-bold text-[40px] leading-[0.95] text-text01 text-left md:mb-5 xl:text-[78px] xl:mb-[38px] ">
               {title}
