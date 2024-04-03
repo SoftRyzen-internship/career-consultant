@@ -128,7 +128,7 @@
   align-items: center;
 }
 .check-text-error {
-  display: flex;
+  display: inline-flex;
   align-items: center;
 }
 
