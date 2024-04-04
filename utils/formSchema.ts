@@ -5,7 +5,7 @@ export const formSchema = yup.object().shape({
     .string()
     .required("Ім'я обов'язкове")
     .max(30, 'Максимальна кількість символів - 30')
-    .matches(/^[\sA-Za-zА-Яа-яҐґЄєІіЇїʼ`-]+$/, "Невірне ім'я"),
+    .matches(/^[\sA-Za-zА-Яа-яҐґЄєІіЇїʼ`'-]+$/, "Невірне ім'я"),
   email: yup
     .string()
     .required("E-mail обов'язковий")
