@@ -20,5 +20,3 @@ export const formSchema = yup.object().shape({
   message: yup.string(),
   checkbox: yup.boolean().required("Обов'язкове поле"),
 });
-
-// /^[\sA-Za-zА-Яа-яҐґЄєІіЇїʼ`'-]+$/;
