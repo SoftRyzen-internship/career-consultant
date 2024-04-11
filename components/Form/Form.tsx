@@ -105,7 +105,6 @@ export const Form: React.FC = () => {
       methods.setValue('name', result.name);
       methods.setValue('email', result.email);
       methods.setValue('message', result.message);
-      methods.setValue('checkbox', result.checkbox);
     }
   }, [
     errors,
