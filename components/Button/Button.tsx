@@ -19,7 +19,7 @@ export const Button = ({
   disabled = false,
 }: IButton) => {
   const className = classNames({
-    'ml-auto w-[112px] text-sm text-accent hover:text-accentPressed focus:text-accentPressed transition-[color] ease-in-out xl:text-[18px] xl:leading-[1.5] xl:w-[126px]':
+    'ml-auto w-max text-sm text-accent hover:text-accentPressed focus:text-accentPressed transition-[color] ease-in-out xl:text-[18px] xl:leading-[1.5] xl:w-[126px]':
       type === 'button',
     'submit-btn-base bg-accent hover:bg-accentHover focus:bg-accentHover active:bg-accentPressed transition-[background] ease-in-out':
       type === 'submit' && isSubmitError === false && isSubmitted === false,
